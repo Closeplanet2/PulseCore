@@ -27,15 +27,15 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 # Maven
 ```
 <repository>
-    <id>pandaspigotcore</id>
-    <url>https://maven.pkg.github.com/closeplanet2/PandaSpigotCore</url>
+    <id>pulsecore</id>
+    <url>https://maven.pkg.github.com/closeplanet2/PulseCore</url>
 </repository>
 ```
 ```
 <dependency>
-  <groupId>com.closeplanet2</groupId>
-  <artifactId>pandaspigotcore</artifactId>
-  <version>1.0.3-beta</version>
+  <groupId>com.pandapulsestudios</groupId>
+  <artifactId>pulsecore</artifactId>
+  <version>1.0.0-a</version>
 </dependency>
 ```
 
