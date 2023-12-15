@@ -2,7 +2,6 @@ package com.pandapulsestudios.pulsecore.Player;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
-import com.pandapulsestudios.pulsecore.StaticTests.StaticUUID;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -13,6 +12,13 @@ import java.util.Base64;
 import java.util.UUID;
 
 public class HeadAPI {
+    private static boolean IS_TYPE(String variable) {
+        try {
+            var uuid = UUID.fromString(variable);
+            return true;
+        } catch (Exception ex) { return false; }
+    }
+
     public static ItemStack ReturnPlayerHead(OfflinePlayer player){
         if(player == null) return null;
 
@@ -25,7 +31,7 @@ public class HeadAPI {
 
     public static ItemStack ReturnPlayerHead(String uuid){
         if(uuid == null) return null;
-        if(StaticUUID.IS_TYPE(uuid)) return null;
+        if(IS_TYPE(uuid)) return null;
 
         var offlinePlayer = Bukkit.getOfflinePlayer(UUID.fromString(uuid));
         return ReturnPlayerHead(offlinePlayer);

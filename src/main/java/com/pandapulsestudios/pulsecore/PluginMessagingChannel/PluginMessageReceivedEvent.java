@@ -5,7 +5,6 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 public class PluginMessageReceivedEvent extends Event {
-
     @Override
     public HandlerList getHandlers() {return handlers;}
 
@@ -21,5 +20,4 @@ public class PluginMessageReceivedEvent extends Event {
         this.player = player;
         this.message = message;
     }
-
 }

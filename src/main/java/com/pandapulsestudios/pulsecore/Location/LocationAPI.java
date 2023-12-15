@@ -1,13 +1,15 @@
 package com.pandapulsestudios.pulsecore.Location;
 
-import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,36 +22,59 @@ public class LocationAPI {
         return new Location(world, x, y , z);
     }
 
-    public static void STORE_LOCATION(Object locationName, Location location){
-        PulseCore.STORED_LOCATION.put(locationName.toString(), location);
+    public static Location LOCATION(Player player, double x, double y, double z, float yaw, float pitch){ return LOCATION(player.getWorld(), x, y, z, yaw, pitch); }
+    public static Location LOCATION(UUID worldUUID, double x, double y, double z, float yaw, float pitch){return LOCATION(Bukkit.getWorld(worldUUID), x, y, z, yaw, pitch);}
+    public static Location LOCATION(String worldName, double x, double y, double z, float yaw, float pitch){return LOCATION(Bukkit.getWorld(worldName), x, y, z, yaw, pitch);}
+    public static Location LOCATION(World world, double x, double y, double z, float yaw, float pitch){
+        if(world == null) return null;
+        return new Location(world, x, y , z, yaw, pitch);
     }
 
-    public static Location RETURN_LOCATION(Object locationName){
-        return PulseCore.STORED_LOCATION.getOrDefault(locationName.toString(), null);
+    public static void TeleportLocation(String locationName, Player... players){
+        for(var pulseLocation : PulseCoreMain.registeredLocations){
+            if(pulseLocation.locationName().equals(locationName)) pulseLocation.TeleportPlayers(players);
+        }
     }
 
-    public static void TELEPORT_TO_LOCATION(Object locationName, Player player, Location defaultt){
-        var location = RETURN_LOCATION(locationName);
-        if(location == null) location = defaultt;
-        if(location != null) player.teleport(location);
+    public static void TeleportLocation(String locationName, Entity... entities){
+        for(var pulseLocation : PulseCoreMain.registeredLocations){
+            if(pulseLocation.locationName().equals(locationName)) pulseLocation.TeleportPlayers(entities);
+        }
     }
 
-    public static Object RETURN_CLOSEST_LOCATION(List<Location> locations, Location location, boolean return_loc, boolean return_distance){
+    public static List<PulseLocation> ReturnAllPulseLocations(Location location, boolean useDistanceForEvent){
+        var data = new ArrayList<PulseLocation>();
+        for(var pulseLocation : PulseCoreMain.registeredLocations) if (pulseLocation.isLocationForEvent(location, useDistanceForEvent)) data.add(pulseLocation);
+        return data;
+    }
+
+    public static Location ReturnClosestLocation(List<Location> locations, Location originLocation){
         var distance = Double.POSITIVE_INFINITY;
-        Location l = null;
+        Location location = null;
         for(var s : locations){
-            if(location.distance(s) < distance){
-                distance = location.distance(s);
-                l = s;
+            if(originLocation.distance(s) < distance){
+                distance = originLocation.distance(s);
+                location = s;
                 if(distance == 0) break;
             }
         }
-        if(return_distance) return distance;
-        if(return_loc) return l;
-        return null;
+        return location;
     }
 
-    public static boolean isBlockBetweenLocations(Location location1, Location location2, Block block) {
+    public static Double ReturnDistanceClosestLocation(List<Location> locations, Location originLocation){
+        var distance = Double.POSITIVE_INFINITY;
+        Location location = null;
+        for(var s : locations){
+            if(originLocation.distance(s) < distance){
+                distance = originLocation.distance(s);
+                location = s;
+                if(distance == 0) break;
+            }
+        }
+        return distance;
+    }
+
+    public static boolean IsBlockBetweenLocations(Location location1, Location location2, Block block) {
         // Get the World object for the locations
         var world = location1.getWorld();
 
@@ -68,7 +93,7 @@ public class LocationAPI {
                 block.getZ() >= minZ && block.getZ() <= maxZ;
     }
 
-    public static boolean isBlockBetweenLocations(Location location1, Location location2) {
+    public static boolean IsBlockBetweenLocations(Location location1, Location location2) {
         World world = location1.getWorld();
 
         var x1 = location1.getBlockX();

@@ -1,6 +1,7 @@
 package com.pandapulsestudios.pulsecore.Items;
 
 import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
+import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -47,63 +48,10 @@ public class ItemStackAPI {
         return a.isSimilar(b);
     }
 
-    public static Builder builder(){return new Builder();}
-    public static final class Builder{
-        private String itemName = "test";
-        private Material itemMaterial = Material.DIAMOND_PICKAXE;
-        private int itemAmount = 1;
-        private List<String> itemLore = new ArrayList<>();
-        private List<ItemFlag> itemFlags = new ArrayList<>();
-        private HashMap<String, String> nbtTags = new HashMap<>();
-        private HashMap<Enchantment, Integer> enchantments = new HashMap<>();
-
-        public Builder(){}
-
-        public Builder itemName(String itemName){
-            this.itemName = itemName;
-            return this;
+    public static PulseItemStack ReturnPulseItem(ItemStack itemStack){
+        for(var pulseItemStack: PulseCoreMain.registeredItemStacks){
+            if(pulseItemStack.isItemStack(itemStack)) return pulseItemStack;
         }
-
-        public Builder itemMaterial(Material itemMaterial){
-            this.itemMaterial = itemMaterial;
-            return this;
-        }
-
-        public Builder itemAmount(int itemAmount){
-            this.itemAmount = itemAmount;
-            return this;
-        }
-
-        public Builder itemLore(String... itemLore){
-            this.itemLore.addAll(Arrays.asList(itemLore));
-            return this;
-        }
-
-        public Builder itemFlags(ItemFlag... itemFlags){
-            this.itemFlags.addAll(Arrays.asList(itemFlags));
-            return this;
-        }
-
-        public Builder addNBTTag(String key, String value){
-            nbtTags.put(key, value);
-            return this;
-        }
-
-        public Builder addEnchantment(Enchantment enchantment, Integer level){
-            enchantments.put(enchantment, level);
-            return this;
-        }
-
-        public ItemStack build(){
-            ItemStack itemStack = new ItemStack(itemMaterial, itemAmount);
-            var itemMeta = itemStack.getItemMeta();
-            if(itemMeta != null) itemMeta.setDisplayName(itemName);
-            if(itemMeta != null) itemMeta.setLore(itemLore);
-            if(itemMeta != null) for(var enchantment : enchantments.keySet()) itemMeta.addEnchant(enchantment, enchantments.get(enchantment), true);
-            if(itemMeta != null) for(var itemFlag : itemFlags) itemMeta.addItemFlags(itemFlag);
-            if(itemMeta != null) itemStack.setItemMeta(itemMeta);
-            for(String key : nbtTags.keySet()) NBTAPI.AddNBT(itemStack, key, nbtTags.get(key));
-            return itemStack;
-        }
+        return null;
     }
 }

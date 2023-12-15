@@ -1,14 +1,13 @@
 package com.pandapulsestudios.pulsecore.PluginMessagingChannel;
 
 import com.google.common.io.ByteStreams;
-import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
 public class PluginMessageLibrary implements PluginMessageListener {
-
     private static String CHANNEL_NAME = "BungeeCord";
 
     public PluginMessageLibrary(JavaPlugin javaPlugin){
@@ -25,7 +24,7 @@ public class PluginMessageLibrary implements PluginMessageListener {
         var out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
         out.writeUTF(serverName);
-        player.sendPluginMessage(PulseCore.Instance, CHANNEL_NAME, out.toByteArray());
+        player.sendPluginMessage(PulseCoreMain.Instance, CHANNEL_NAME, out.toByteArray());
     }
 
     @Override

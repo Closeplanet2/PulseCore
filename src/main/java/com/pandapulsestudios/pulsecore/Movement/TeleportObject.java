@@ -1,8 +1,9 @@
 package com.pandapulsestudios.pulsecore.Movement;
 
-import com.pandapulsestudios.pulsecore.Console.ChatAPI;
+import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
+import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
-import com.pandapulsestudios.pulsecore.Player.ToggleActions;
+import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import org.bukkit.Location;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -45,7 +46,7 @@ public class TeleportObject {
                 continue;
             }
             if(displayTime){
-                ChatAPI.SEND(String.format("Teleporting... (%d/%d)", timeToWait, totalTime), player);
+                ChatAPI.SendChat(String.format("Teleporting... (%d/%d)", timeToWait, totalTime), MessageType.PlayerMessage, false, player);
             }
         }
 
@@ -55,7 +56,7 @@ public class TeleportObject {
 
     private boolean TeleportNow(){
         for(var player : players.keySet()){
-            if(!PlayerAPI.GET_TOGGLE_STAT(player, ToggleActions.PlayerTeleportEvent)) continue;
+            if(!PlayerAPI.CanDoAction(PlayerAction.PlayerTeleport, player)) continue;
             player.teleport(liveTarget == null ? softTarget : liveTarget.getLocation());
         }
         return true;

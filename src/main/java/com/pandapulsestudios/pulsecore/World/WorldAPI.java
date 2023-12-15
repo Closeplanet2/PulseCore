@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore.World;
 
-import com.pandapulsestudios.pulsecore.Files.DirAPI;
-import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore.FilesSystem.DirAPI;
+import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import com.pandapulsestudios.pulsecore.Time.TimeLock;
 import org.bukkit.*;
 
@@ -71,52 +71,52 @@ public class WorldAPI {
 
     public static void TimeLock(String world, TimeLock timeLock){ TimeLock(Bukkit.getWorld(world), timeLock);}
     public static void TimeLock(World world, TimeLock timeLock){
-        if(timeLock == null) PulseCore.timeLockLock.remove(world);
-        else PulseCore.timeLockLock.put(world, timeLock);
+        if(timeLock == null) PulseCoreMain.timeLockLock.remove(world);
+        else PulseCoreMain.timeLockLock.put(world, timeLock);
     }
 
     public static void DifficultyLock(String world, Difficulty difficulty){ DifficultyLock(Bukkit.getWorld(world), difficulty);}
     public static void DifficultyLock(World world, Difficulty difficulty){
-        if(difficulty == null) PulseCore.difficultyLock.remove(world);
-        else PulseCore.difficultyLock.put(world, difficulty);
+        if(difficulty == null) PulseCoreMain.difficultyLock.remove(world);
+        else PulseCoreMain.difficultyLock.put(world, difficulty);
     }
 
     public static void GameModeLock(String world, GameMode gameMode){ GameModeLock(Bukkit.getWorld(world), gameMode);}
     public static void GameModeLock(World world, GameMode gameMode){
-        if(gameMode == null) PulseCore.gameModeLock.remove(world);
-        else PulseCore.gameModeLock.put(world, gameMode);
+        if(gameMode == null) PulseCoreMain.gameModeLock.remove(world);
+        else PulseCoreMain.gameModeLock.put(world, gameMode);
     }
 
     public static void HeartLock(String world, int heartLevel){}
     public static void HeartLock(World world, int heartLevel){
-        if(heartLevel <= 0) PulseCore.heartLockLock.remove(world);
-        else PulseCore.heartLockLock.put(world, Math.min(20, heartLevel));
+        if(heartLevel <= 0) PulseCoreMain.heartLockLock.remove(world);
+        else PulseCoreMain.heartLockLock.put(world, Math.min(20, heartLevel));
     }
 
     public static void HungerLock(String world, int hungerLevel){}
     public static void HungerLock(World world, int hungerLevel){
-        if(hungerLevel <= 0) PulseCore.hungerLockLock.remove(world);
-        else PulseCore.hungerLockLock.put(world, Math.min(20, hungerLevel));
+        if(hungerLevel <= 0) PulseCoreMain.hungerLockLock.remove(world);
+        else PulseCoreMain.hungerLockLock.put(world, Math.min(20, hungerLevel));
     }
 
     public static void SaturationLock(String world, int saturationLevel){}
     public static void SaturationLock(World world, int saturationLevel){
-        if(saturationLevel <= 0) PulseCore.saturationLockLock.remove(world);
-        else PulseCore.saturationLockLock.put(world, Math.min(20, saturationLevel));
+        if(saturationLevel <= 0) PulseCoreMain.saturationLockLock.remove(world);
+        else PulseCoreMain.saturationLockLock.put(world, Math.min(20, saturationLevel));
     }
 
     public static void HandleLoop(){
-        for(var world : PulseCore.timeLockLock.keySet()) world.setTime(PulseCore.timeLockLock.get(world).time);
-        for(var world : PulseCore.difficultyLock.keySet()) world.setDifficulty(PulseCore.difficultyLock.get(world));
+        for(var world : PulseCoreMain.timeLockLock.keySet()) world.setTime(PulseCoreMain.timeLockLock.get(world).time);
+        for(var world : PulseCoreMain.difficultyLock.keySet()) world.setDifficulty(PulseCoreMain.difficultyLock.get(world));
         for(var player : Bukkit.getOnlinePlayers()){
-            for(var world : PulseCore.gameModeLock.keySet())
-                if(world.getPlayers().contains(player)) player.setGameMode(PulseCore.gameModeLock.get(world));
-            for(var world : PulseCore.heartLockLock.keySet())
-                if(world.getPlayers().contains(player)) player.setHealth(PulseCore.heartLockLock.get(world));
-            for(var world : PulseCore.hungerLockLock.keySet())
-                if(world.getPlayers().contains(player)) player.setFoodLevel(PulseCore.hungerLockLock.get(world));
-            for(var world : PulseCore.saturationLockLock.keySet())
-                if(world.getPlayers().contains(player)) player.setSaturation(PulseCore.saturationLockLock.get(world));
+            for(var world : PulseCoreMain.gameModeLock.keySet())
+                if(world.getPlayers().contains(player)) player.setGameMode(PulseCoreMain.gameModeLock.get(world));
+            for(var world : PulseCoreMain.heartLockLock.keySet())
+                if(world.getPlayers().contains(player)) player.setHealth(PulseCoreMain.heartLockLock.get(world));
+            for(var world : PulseCoreMain.hungerLockLock.keySet())
+                if(world.getPlayers().contains(player)) player.setFoodLevel(PulseCoreMain.hungerLockLock.get(world));
+            for(var world : PulseCoreMain.saturationLockLock.keySet())
+                if(world.getPlayers().contains(player)) player.setSaturation(PulseCoreMain.saturationLockLock.get(world));
         }
     }
 }
