@@ -10,7 +10,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 public class NBTAPI {
-    public static String GetNBT(ItemStack itemStack, String key){
+    public static String Get(ItemStack itemStack, String key){
         if(itemStack == null || key == null) return null;
         if(!itemStack.hasItemMeta()) return null;
 
@@ -21,7 +21,7 @@ public class NBTAPI {
         return null;
     }
 
-    public static String GetNBT(Entity entity, String key){
+    public static String Get(Entity entity, String key){
         if(entity == null || key == null) return null;
         PersistentDataContainer pdc = entity.getPersistentDataContainer();
         NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance,key);
@@ -29,7 +29,7 @@ public class NBTAPI {
         return null;
     }
 
-    public static boolean AddNBT(ItemStack itemStack, String key, String value){
+    public static boolean Add(ItemStack itemStack, String key, String value){
         if(itemStack == null || key == null) return false;
         if(!itemStack.hasItemMeta()) return false;
         ItemMeta meta = itemStack.hasItemMeta() ? itemStack.getItemMeta() : Bukkit.getItemFactory().getItemMeta(itemStack.getType());
@@ -40,7 +40,7 @@ public class NBTAPI {
         return true;
     }
 
-    public static boolean AddNBT(Entity entity, String key, String value){
+    public static boolean Add(Entity entity, String key, String value){
         if(entity == null || key == null) return false;
         PersistentDataContainer pdc = entity.getPersistentDataContainer();
         NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance, key);
@@ -48,7 +48,7 @@ public class NBTAPI {
         return true;
     }
 
-    public static boolean HasNBT(ItemStack itemStack, String key){
+    public static boolean Has(ItemStack itemStack, String key){
         if(itemStack == null || key == null) return false;
         if(!itemStack.hasItemMeta()) return false;
         ItemMeta meta = itemStack.getItemMeta();
@@ -56,13 +56,13 @@ public class NBTAPI {
         return pdc.has(new NamespacedKey(PulseCoreMain.Instance,key),PersistentDataType.STRING);
     }
 
-    public static boolean HasNBT(Entity entity, String key){
+    public static boolean Has(Entity entity, String key){
         if(entity == null || key == null) return false;
         PersistentDataContainer pdc = entity.getPersistentDataContainer();
         return pdc.has(new NamespacedKey(PulseCoreMain.Instance,key),PersistentDataType.STRING);
     }
 
-    public static boolean RemoveNBT(ItemStack itemStack, String key){
+    public static boolean Remove(ItemStack itemStack, String key){
         if(itemStack == null || key == null) return false;
         if(!itemStack.hasItemMeta()) return false;
         ItemMeta meta = itemStack.getItemMeta();
@@ -72,7 +72,7 @@ public class NBTAPI {
         return true;
     }
 
-    public static boolean RemoveNBT(Entity entity, String key){
+    public static boolean Remove(Entity entity, String key){
         if(entity == null || key == null) return false;
         PersistentDataContainer pdc = entity.getPersistentDataContainer();
         pdc.remove(new NamespacedKey(PulseCoreMain.Instance,key));

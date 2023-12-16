@@ -1,6 +1,7 @@
 package com.pandapulsestudios.pulsecore.World;
 
 import com.pandapulsestudios.pulsecore.FilesSystem.DirAPI;
+import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import com.pandapulsestudios.pulsecore.Time.TimeLock;
 import org.bukkit.*;
@@ -67,7 +68,20 @@ public class WorldAPI {
     public static World LoadWorld(String worldName){
         if(worldName == null) return null;
         return Bukkit.createWorld(new WorldCreator(worldName));
-    }//
+    }
+
+    public static void WorldLockPlayerAction(String worldName, PlayerAction playerAction, boolean playerActionState){
+        WorldLockPlayerAction(Bukkit.getWorld(worldName), playerAction, playerActionState);
+    }
+    public static void WorldLockPlayerAction(World world, PlayerAction playerAction, boolean playerActionState){
+        if(!PulseCoreMain.playerActionLock.containsKey(world)) PulseCoreMain.playerActionLock.put(world, new ArrayList<>());
+        if(!playerActionState){
+            if(PulseCoreMain.playerActionLock.get(world).contains(playerAction)) return;
+            PulseCoreMain.playerActionLock.get(world).add(playerAction);
+        }else{
+            PulseCoreMain.playerActionLock.get(world).remove(playerAction);
+        }
+    }
 
     public static void TimeLock(String world, TimeLock timeLock){ TimeLock(Bukkit.getWorld(world), timeLock);}
     public static void TimeLock(World world, TimeLock timeLock){
@@ -87,19 +101,19 @@ public class WorldAPI {
         else PulseCoreMain.gameModeLock.put(world, gameMode);
     }
 
-    public static void HeartLock(String world, int heartLevel){}
+    public static void HeartLock(String world, int heartLevel){ HeartLock(Bukkit.getWorld(world), heartLevel); }
     public static void HeartLock(World world, int heartLevel){
         if(heartLevel <= 0) PulseCoreMain.heartLockLock.remove(world);
         else PulseCoreMain.heartLockLock.put(world, Math.min(20, heartLevel));
     }
 
-    public static void HungerLock(String world, int hungerLevel){}
+    public static void HungerLock(String world, int hungerLevel){ HungerLock(Bukkit.getWorld(world), hungerLevel); }
     public static void HungerLock(World world, int hungerLevel){
         if(hungerLevel <= 0) PulseCoreMain.hungerLockLock.remove(world);
         else PulseCoreMain.hungerLockLock.put(world, Math.min(20, hungerLevel));
     }
 
-    public static void SaturationLock(String world, int saturationLevel){}
+    public static void SaturationLock(String world, int saturationLevel){ SaturationLock(Bukkit.getWorld(world), saturationLevel); }
     public static void SaturationLock(World world, int saturationLevel){
         if(saturationLevel <= 0) PulseCoreMain.saturationLockLock.remove(world);
         else PulseCoreMain.saturationLockLock.put(world, Math.min(20, saturationLevel));

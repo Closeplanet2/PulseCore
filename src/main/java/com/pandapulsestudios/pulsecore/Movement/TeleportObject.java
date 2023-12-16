@@ -3,7 +3,7 @@ package com.pandapulsestudios.pulsecore.Movement;
 import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
-import com.pandapulsestudios.pulsecore.Player.PlayerAction;
+import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import org.bukkit.Location;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -46,7 +46,7 @@ public class TeleportObject {
                 continue;
             }
             if(displayTime){
-                ChatAPI.SendChat(String.format("Teleporting... (%d/%d)", timeToWait, totalTime), MessageType.PlayerMessage, false, player);
+                ChatAPI.SendChat(String.format("Teleporting... (%d/%d)", timeToWait, totalTime), MessageType.PlayerMessageFromPlugin, false, player);
             }
         }
 

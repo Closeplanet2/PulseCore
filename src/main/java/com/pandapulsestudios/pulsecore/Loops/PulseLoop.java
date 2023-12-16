@@ -17,7 +17,7 @@ public interface PulseLoop {
             public void run() { LoopFunction(); }
         }, StartDelay(), LoopInterval());
         ServerDataAPI.STORE(ReturnID(), id, true);
-        ChatAPI.SendChat(String.format("&3Registered Loop: %s", ReturnID()), MessageType.ConsoleMessageNormal, true);
+        ChatAPI.SendChat(String.format("&3Registered Loop: %s", ReturnID()), MessageType.ConsoleMessageNormal, true, null);
         return id;
     }
 

@@ -12,44 +12,33 @@ import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.CustomLoop;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.pandapulsestudios.pulsecore.Recipes.CustomRecipe;
+import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
 import com.pandapulsestudios.pulsevariable.API.JavaAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class JavaClassAPI {
 
-    public static void RegisterRaw(JavaPlugin javaPlugin, Class<? extends Annotation>... toFind){
-        try {Register(javaPlugin, toFind); }
+    public static void RegisterRaw(JavaPlugin javaPlugin){
+        try { Register(javaPlugin); }
         catch (Exception e) { throw new RuntimeException(e); }
     }
-    public static void Register(JavaPlugin javaPlugin, Class<? extends Annotation>... toFind) throws Exception {
-        var interfaceClasses = JavaAPI.ReturnALlClassOfTypes(javaPlugin, toFind);
+    public static void Register(JavaPlugin javaPlugin) throws Exception {
+        var interfaceClasses = JavaAPI.ReturnALlClassOfTypes(javaPlugin, CustomEnchantment.class, CustomEvent.class,
+                CustomItemStack.class, CustomLocation.class, CustomLoop.class, CustomRecipe.class);
 
-        if(interfaceClasses.containsKey(CustomLocation.class)){
-            for(var enchantmentInterface : interfaceClasses.get(CustomLocation.class)) Register((PulseLocation) enchantmentInterface.getConstructor().newInstance());
-        }
-
-        if(interfaceClasses.containsKey(CustomEnchantment.class)){
-            for(var enchantmentInterface : interfaceClasses.get(CustomEnchantment.class)) Register((PulseEnchantment) enchantmentInterface.getConstructor().newInstance());
-        }
-
-        if(interfaceClasses.containsKey(CustomEvent.class)){
-            for(var listenerInterface : interfaceClasses.get(CustomEvent.class)) Register(javaPlugin, (Listener) listenerInterface.getConstructor().newInstance());
-        }
-
-        if(interfaceClasses.containsKey(CustomItemStack.class)){
-            for(var itemStackInterface : interfaceClasses.get(CustomItemStack.class)) Register((PulseItemStack) itemStackInterface.getConstructor().newInstance());
-        }
-
-        if(interfaceClasses.containsKey(CustomLoop.class)){
-            for(var itemStackInterface : interfaceClasses.get(CustomLoop.class)) Register(javaPlugin, (PulseLoop) itemStackInterface.getConstructor().newInstance());
-        }
+        for(var enchantmentInterface : interfaceClasses.get(CustomLocation.class)) Register((PulseLocation) enchantmentInterface.getConstructor().newInstance());
+        for(var enchantmentInterface : interfaceClasses.get(CustomEnchantment.class)) Register((PulseEnchantment) enchantmentInterface.getConstructor().newInstance());
+        for(var listenerInterface : interfaceClasses.get(CustomEvent.class)) Register(javaPlugin, (Listener) listenerInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomItemStack.class)) Register((PulseItemStack) itemStackInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomLoop.class)) Register(javaPlugin, (PulseLoop) itemStackInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomRecipe.class)) Register(javaPlugin, (PulseRecipe) itemStackInterface.getConstructor().newInstance());
     }
 
     private static void Register(PulseEnchantment pulseEnchantment) throws Exception {
@@ -76,11 +65,16 @@ public class JavaClassAPI {
 
     private static void Register(JavaPlugin javaPlugin, Listener listener){
         Bukkit.getPluginManager().registerEvents(listener, javaPlugin);
-        ChatAPI.SendChat(String.format("&3Registered Event: %s", listener.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true);
+        ChatAPI.SendChat(String.format("&3Registered Event: %s", listener.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseLoop pulseLoop){
         pulseLoop.RegisterLoop(javaPlugin);
         PulseCoreMain.registeredLoops.add(pulseLoop);
+    }
+
+    private static void Register(JavaPlugin javaPlugin, PulseRecipe pulseShapedRecipe){
+        Bukkit.addRecipe(pulseShapedRecipe.ReturnShapedRecipe(javaPlugin));
+        pulseShapedRecipe.Registered();
     }
 }

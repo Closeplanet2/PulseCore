@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore.Sound;
 
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
-import com.pandapulsestudios.pulsecore.Player.PlayerAction;
+import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
