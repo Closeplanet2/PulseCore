@@ -35,7 +35,7 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 <dependency>
   <groupId>com.pandapulsestudios</groupId>
   <artifactId>pulsecore</artifactId>
-  <version>1.0.0-a</version>
+  <version>1.0.2-a</version>
 </dependency>
 ```
 
