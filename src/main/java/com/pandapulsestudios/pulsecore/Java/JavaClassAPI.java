@@ -28,6 +28,11 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class JavaClassAPI {
+    public static boolean IsPluginInstalled(JavaPlugin javaPlugin, Object pluginName){
+        javaPlugin = javaPlugin == null ? PulseCoreMain.Instance : javaPlugin;
+        return javaPlugin.getServer().getPluginManager().getPlugin(pluginName.toString()) != null;
+    }
+
     public static void RegisterRaw(JavaPlugin javaPlugin){
         try { Register(javaPlugin); }
         catch (Exception e) { throw new RuntimeException(e); }

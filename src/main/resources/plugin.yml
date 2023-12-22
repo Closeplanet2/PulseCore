@@ -1,5 +1,5 @@
 name: PulseCore
-version: 1.0.3-a
+version: 1.0.4-a
 main: com.pandapulsestudios.pulsecore.PulseCoreMain
 authors: [Closeplanet2, PandaPulseStudios]
 depend: [PulseVariable]
