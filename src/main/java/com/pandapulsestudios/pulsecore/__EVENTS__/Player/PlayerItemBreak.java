@@ -25,6 +25,7 @@ public class PlayerItemBreak implements Listener {
         for(var itemStack : inventoryItems.keySet()) TestItemStack(event, itemStack, inventoryItems.get(itemStack));
         TestItemStack(event, event.getBrokenItem(), ItemLocation.BrokenItem);
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)) pulseLocation.PlayerItemBreakEvent(event, event.getPlayer().getLocation());
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.PlayerItemBreakEvent(event);
     }
 
     private void TestItemStack(PlayerItemBreakEvent event, ItemStack itemStack, ItemLocation itemLocation){

@@ -45,8 +45,7 @@ public class EntityCombustByEntity implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityCombustByEntity, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityCombustByEntity, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -55,5 +54,7 @@ public class EntityCombustByEntity implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityCombustByEntityEvent(event, livingEntity.getLocation(), isAttacker)) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityCombustByEntityEvent(event)) event.setCancelled(true);
     }
 }

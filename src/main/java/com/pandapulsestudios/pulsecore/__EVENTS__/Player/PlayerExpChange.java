@@ -30,5 +30,7 @@ public class PlayerExpChange implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)) pulseLocation.PlayerExpChangeEvent(event, event.getPlayer().getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.PlayerExpChangeEvent(event);
     }
 }

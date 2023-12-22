@@ -42,5 +42,7 @@ public class Brew implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.BrewEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.BrewEvent(event)) event.setCancelled(true);
     }
 }

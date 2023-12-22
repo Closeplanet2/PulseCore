@@ -34,8 +34,7 @@ public class PrepareItemEnchant implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PrepareItemEnchant, event.getEnchanter());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.PrepareItemEnchant, event.getEnchanter())) event.setCancelled(true);
         }
 
         var world = event.getEnchanter().getLocation().getWorld();
@@ -46,5 +45,7 @@ public class PrepareItemEnchant implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEnchanter().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PrepareItemEnchantEvent(event, event.getEnchanter().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PrepareItemEnchantEvent(event)) event.setCancelled(true);
     }
 }

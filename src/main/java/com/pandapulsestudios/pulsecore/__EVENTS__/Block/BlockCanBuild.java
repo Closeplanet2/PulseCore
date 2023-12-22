@@ -36,8 +36,7 @@ public class BlockCanBuild implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.BlockCanBuild, event.getPlayer());
-            if(!event.isBuildable()) event.setBuildable(state);
+            if(!event.isBuildable() && !PlayerAPI.CanDoAction(PlayerAction.BlockCanBuild, event.getPlayer())) event.setBuildable(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -52,5 +51,7 @@ public class BlockCanBuild implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isBuildable() && pdListener.BlockCanBuildEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setBuildable(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isBuildable() && coreEvent.BlockCanBuildEvent(event)) event.setBuildable(true);
     }
 }

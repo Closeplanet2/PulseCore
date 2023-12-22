@@ -35,13 +35,12 @@ public class BlockBreak implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.BlockBreak, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.BlockBreak, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
         if(PulseCoreMain.playerActionLock.containsKey(world)){
-            if(!event.isCancelled()) event.setCancelled(PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.BlockBreak));
+            if(!event.isCancelled() && PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.BlockBreak)) event.setCancelled(true);
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){
@@ -51,5 +50,7 @@ public class BlockBreak implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.BlockBreakEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.BlockBreakEvent(event)) event.setCancelled(true);
     }
 }

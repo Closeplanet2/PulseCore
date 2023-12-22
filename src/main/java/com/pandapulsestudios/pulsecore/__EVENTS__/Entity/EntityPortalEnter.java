@@ -32,5 +32,7 @@ public class EntityPortalEnter implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true))  pulseLocation.EntityPortalEnterEvent(event, livingEntity.getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.EntityPortalEnterEvent(event);
     }
 }

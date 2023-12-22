@@ -40,8 +40,7 @@ public class EntityDamageByBlock implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityDamageByBlock, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityDamageByBlock, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -54,5 +53,7 @@ public class EntityDamageByBlock implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.EntityDamageByBlockEvent(event, event.getDamager(), PersistentDataAPI.GetAll(event.getDamager()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityDamageByBlockEvent(event)) event.setCancelled(true);
     }
 }

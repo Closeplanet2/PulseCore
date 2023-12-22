@@ -35,8 +35,7 @@ public class PlayerToggleSprint implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerToggleSprint, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.PlayerToggleSprint, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -45,5 +44,7 @@ public class PlayerToggleSprint implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PlayerToggleSprintEvent(event, event.getPlayer().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerToggleSprintEvent(event)) event.setCancelled(true);
     }
 }

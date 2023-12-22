@@ -32,8 +32,7 @@ public class PlayerMove {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerMove, player);
-            if(!isCancelled) isCancelled = state;
+            if(!isCancelled && !PlayerAPI.CanDoAction(PlayerAction.PlayerMove, player)) isCancelled = true;
         }
 
         var world = player.getLocation().getWorld();
@@ -46,6 +45,8 @@ public class PlayerMove {
             var state = pulseLocation.PlayerMove(player, lastLocation, newLocation);
             if(!isCancelled) isCancelled = state;
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!isCancelled && coreEvent.PlayerMove(player, lastLocation, newLocation)) isCancelled = true;
 
         if(isCancelled) player.teleport(lastLocation);
     }

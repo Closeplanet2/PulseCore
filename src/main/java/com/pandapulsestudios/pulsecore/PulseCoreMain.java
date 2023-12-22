@@ -2,6 +2,7 @@ package com.pandapulsestudios.pulsecore;
 
 import com.pandapulsestudios.pulsecore.Block.PulsePersistentData;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
+import com.pandapulsestudios.pulsecore.Events.PulseCoreEvents;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
 import com.pandapulsestudios.pulsecore.Java.JavaClassAPI;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
@@ -54,6 +55,7 @@ public final class PulseCoreMain extends JavaPlugin {
     public static ArrayList<TeleportObject> teleportObjects = new ArrayList<>();
     public static ArrayList<PulseNBTListener> nbtListeners = new ArrayList<>();
     public static ArrayList<PulsePersistentData> persistentDataListeners = new ArrayList<>();
+    public static ArrayList<PulseCoreEvents> pulseCoreEvents = new ArrayList<>();
 
     public static boolean handlePlayerActionEventsInHouse = true;
 

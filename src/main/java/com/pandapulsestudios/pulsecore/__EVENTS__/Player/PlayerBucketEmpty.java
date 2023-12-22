@@ -35,8 +35,7 @@ public class PlayerBucketEmpty implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerBucketEmpty, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.PlayerBucketEmpty, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -49,5 +48,7 @@ public class PlayerBucketEmpty implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.PlayerBucketEmptyEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerBucketEmptyEvent(event)) event.setCancelled(true);
     }
 }

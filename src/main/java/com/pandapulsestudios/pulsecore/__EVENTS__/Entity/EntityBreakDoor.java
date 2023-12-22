@@ -38,8 +38,7 @@ public class EntityBreakDoor implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.BlockBreak, (Player) event.getEntity());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.BlockBreak, (Player) event.getEntity())) event.setCancelled(true);
         }
 
         var world = event.getEntity().getLocation().getWorld();
@@ -52,5 +51,7 @@ public class EntityBreakDoor implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.EntityBreakDoorEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityBreakDoorEvent(event)) event.setCancelled(true);
     }
 }

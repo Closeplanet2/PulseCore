@@ -38,8 +38,7 @@ public class EntityShootBow implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityShootBow, (Player) event.getEntity());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityShootBow, (Player) event.getEntity())) event.setCancelled(true);
         }
 
         var world = event.getEntity().getLocation().getWorld();
@@ -48,5 +47,7 @@ public class EntityShootBow implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEntity().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityShootBowEvent(event, event.getEntity().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityShootBowEvent(event)) event.setCancelled(true);
     }
 }

@@ -36,5 +36,7 @@ public class CraftItem implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getClickedInventory().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.CraftItemEvent(event, event.getClickedInventory().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.CraftItemEvent(event)) event.setCancelled(true);
     }
 }

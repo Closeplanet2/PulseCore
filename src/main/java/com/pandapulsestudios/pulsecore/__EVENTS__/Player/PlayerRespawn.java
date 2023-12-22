@@ -28,5 +28,7 @@ public class PlayerRespawn implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)) pulseLocation.PlayerRespawnEvent(event, event.getPlayer().getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.PlayerRespawnEvent(event);
     }
 }

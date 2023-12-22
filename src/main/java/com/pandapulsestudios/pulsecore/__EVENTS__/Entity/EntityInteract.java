@@ -39,8 +39,7 @@ public class EntityInteract implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityInteract, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityInteract, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -53,5 +52,7 @@ public class EntityInteract implements Listener {
         for(var pdListener : PulseCoreMain.persistentDataListeners){
             if(!event.isCancelled() && pdListener.EntityInteractEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityInteractEvent(event)) event.setCancelled(true);
     }
 }

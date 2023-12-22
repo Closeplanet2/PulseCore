@@ -39,8 +39,7 @@ public class EntityTeleport implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityTeleport, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityTeleport, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -49,5 +48,7 @@ public class EntityTeleport implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityTeleportEvent(event, livingEntity.getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityTeleportEvent(event)) event.setCancelled(true);
     }
 }

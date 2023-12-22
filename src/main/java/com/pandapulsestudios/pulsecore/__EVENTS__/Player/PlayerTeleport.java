@@ -35,8 +35,7 @@ public class PlayerTeleport implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerTeleport, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.PlayerTeleport, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -45,5 +44,7 @@ public class PlayerTeleport implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PlayerTeleportEvent(event, event.getPlayer().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerTeleportEvent(event)) event.setCancelled(true);
     }
 }

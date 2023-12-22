@@ -35,8 +35,7 @@ public class PlayerShearEntity implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerShearEntity, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.PlayerShearEntity, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -45,5 +44,7 @@ public class PlayerShearEntity implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PlayerShearEntityEvent(event, event.getPlayer().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerShearEntityEvent(event)) event.setCancelled(true);
     }
 }

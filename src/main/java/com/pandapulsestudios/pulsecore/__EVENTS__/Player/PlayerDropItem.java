@@ -35,8 +35,7 @@ public class PlayerDropItem implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.PlayerDropItem, event.getPlayer());
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && PlayerAPI.CanDoAction(PlayerAction.PlayerDropItem, event.getPlayer())) event.setCancelled(true);
         }
 
         var world = event.getPlayer().getLocation().getWorld();
@@ -45,5 +44,7 @@ public class PlayerDropItem implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PlayerDropItemEvent(event, event.getPlayer().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerDropItemEvent(event)) event.setCancelled(true);
     }
 }

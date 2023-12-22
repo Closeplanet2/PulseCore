@@ -45,5 +45,7 @@ public class PlayerPortal implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.PlayerPortalEvent(event, event.getPlayer().getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.PlayerPortalEvent(event)) event.setCancelled(true);
     }
 }

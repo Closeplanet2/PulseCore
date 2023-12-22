@@ -20,6 +20,8 @@ import java.util.HashMap;
 public class PlayerJoin implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(PlayerJoinEvent event){
+        if(!PulseCoreMain.playerData.containsKey(event.getPlayer().getUniqueId())) PulseCoreMain.playerData.put(event.getPlayer().getUniqueId(), new HashMap<>());
+
         var inventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getPlayer());
 
         for(var itemStack : inventoryItems.keySet()){
@@ -31,5 +33,7 @@ public class PlayerJoin implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)) pulseLocation.PlayerJoinEvent(event, event.getPlayer().getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.PlayerJoinEvent(event);
     }
 }

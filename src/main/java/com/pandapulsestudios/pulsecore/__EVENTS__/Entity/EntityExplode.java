@@ -38,8 +38,7 @@ public class EntityExplode implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityExplode, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.EntityExplode, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -48,5 +47,7 @@ public class EntityExplode implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityExplodeEvent(event, livingEntity.getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityExplodeEvent(event)) event.setCancelled(true);
     }
 }

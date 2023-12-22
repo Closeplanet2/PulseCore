@@ -32,5 +32,7 @@ public class EntityDeath implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEntity().getLocation(), true)) pulseLocation.EntityDeathEvent(event, event.getEntity().getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.EntityDeathEvent(event);
     }
 }

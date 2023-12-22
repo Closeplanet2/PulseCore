@@ -28,8 +28,7 @@ public class FoodLevelChange implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.FoodLevelChange, player);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(PlayerAction.FoodLevelChange, player)) event.setCancelled(true);
         }
 
         var world = player.getLocation().getWorld();
@@ -49,5 +48,7 @@ public class FoodLevelChange implements Listener {
             var state = pulseLocation.FoodLevelChangeEvent(event, eventLocation);
             if(!event.isCancelled()) event.setCancelled(state);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.FoodLevelChangeEvent(event)) event.setCancelled(true);
     }
 }

@@ -6,7 +6,9 @@ import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
 import com.pandapulsestudios.pulsecore.Enchantment.CustomEnchantment;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
+import com.pandapulsestudios.pulsecore.Events.CustomCoreEvents;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
+import com.pandapulsestudios.pulsecore.Events.PulseCoreEvents;
 import com.pandapulsestudios.pulsecore.Items.CustomItemStack;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
 import com.pandapulsestudios.pulsecore.Location.CustomLocation;
@@ -40,7 +42,7 @@ public class JavaClassAPI {
     public static void Register(JavaPlugin javaPlugin) throws Exception {
         var interfaceClasses = JavaAPI.ReturnALlClassOfTypes(javaPlugin, CustomEnchantment.class, CustomEvent.class,
                 CustomItemStack.class, CustomLocation.class, CustomLoop.class, CustomRecipe.class, CustomNBT.class,
-                CustomPersistentData.class);
+                CustomPersistentData.class, CustomCoreEvents.class);
 
         for(var enchantmentInterface : interfaceClasses.get(CustomLocation.class)) Register((PulseLocation) enchantmentInterface.getConstructor().newInstance());
         for(var enchantmentInterface : interfaceClasses.get(CustomEnchantment.class)) Register((PulseEnchantment) enchantmentInterface.getConstructor().newInstance());
@@ -50,6 +52,7 @@ public class JavaClassAPI {
         for(var itemStackInterface : interfaceClasses.get(CustomRecipe.class)) Register(javaPlugin, (PulseRecipe) itemStackInterface.getConstructor().newInstance());
         for(var itemStackInterface : interfaceClasses.get(CustomNBT.class)) Register(javaPlugin, (PulseNBTListener) itemStackInterface.getConstructor().newInstance());
         for(var itemStackInterface : interfaceClasses.get(CustomPersistentData.class)) Register(javaPlugin, (PulsePersistentData) itemStackInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomCoreEvents.class)) Register((PulseCoreEvents) itemStackInterface.getConstructor().newInstance());
     }
 
     private static void Register(PulseEnchantment pulseEnchantment) throws Exception {
@@ -77,6 +80,11 @@ public class JavaClassAPI {
     private static void Register(JavaPlugin javaPlugin, Listener listener){
         Bukkit.getPluginManager().registerEvents(listener, javaPlugin);
         ChatAPI.SendChat(String.format("&3Registered Event: %s", listener.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
+    }
+
+    private static void Register(PulseCoreEvents pulseCoreEvents){
+        PulseCoreMain.pulseCoreEvents.add(pulseCoreEvents);
+        ChatAPI.SendChat(String.format("&3Registered Core Event Event: %s", pulseCoreEvents.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseLoop pulseLoop){

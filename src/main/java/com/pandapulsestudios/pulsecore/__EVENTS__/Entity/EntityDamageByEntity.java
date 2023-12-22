@@ -46,8 +46,7 @@ public class EntityDamageByEntity implements Listener {
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
             var playerAction = isAttacker ? PlayerAction.EntityDamageByEntityAttacker : PlayerAction.EntityDamageByEntity;
-            var state = PlayerAPI.CanDoAction(playerAction, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && !PlayerAPI.CanDoAction(playerAction, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -59,5 +58,7 @@ public class EntityDamageByEntity implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityDamageByEntityEvent(event, livingEntity.getLocation(), isAttacker)) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityDamageByEntityEvent(event)) event.setCancelled(true);
     }
 }

@@ -30,5 +30,7 @@ public class PlayerLevelChange implements Listener {
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)) pulseLocation.PlayerLevelChangeEvent(event, event.getPlayer().getLocation());
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) coreEvent.PlayerLevelChangeEvent(event);
     }
 }

@@ -39,8 +39,7 @@ public class EntityRegainHealth implements Listener {
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityRegainHealth, (Player) livingEntity);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && PlayerAPI.CanDoAction(PlayerAction.EntityRegainHealth, (Player) livingEntity)) event.setCancelled(true);
         }
 
         var world = livingEntity.getLocation().getWorld();
@@ -49,5 +48,7 @@ public class EntityRegainHealth implements Listener {
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             if(!event.isCancelled() && pulseLocation.EntityRegainHealthEvent(event, livingEntity.getLocation())) event.setCancelled(true);
         }
+
+        for(var coreEvent : PulseCoreMain.pulseCoreEvents) if(!event.isCancelled() && coreEvent.EntityRegainHealthEvent(event)) event.setCancelled(true);
     }
 }
