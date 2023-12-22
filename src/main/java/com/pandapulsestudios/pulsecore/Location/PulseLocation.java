@@ -43,9 +43,9 @@ public interface PulseLocation {
     default boolean PrepareItemEnchantEvent(PrepareItemEnchantEvent event, Location location){ return false; }
     default boolean EntityBreakDoorEvent(EntityBreakDoorEvent event, Location location){ return false; }
     default boolean EntityCombustByBlockEvent(EntityCombustByBlockEvent event, Location location){ return false; }
-    default boolean EntityCombustByEntityEvent(EntityCombustByEntityEvent event, Location location){ return false; }
+    default boolean EntityCombustByEntityEvent(EntityCombustByEntityEvent event, Location location, boolean isAttacker){ return false; }
     default boolean EntityDamageByBlockEvent(EntityDamageByBlockEvent event, Location location){ return false; }
-    default boolean EntityDamageByEntityEvent(EntityDamageByEntityEvent event, Location location){ return false; }
+    default boolean EntityDamageByEntityEvent(EntityDamageByEntityEvent event, Location location, boolean isAttacker){ return false; }
     default void EntityDeathEvent(EntityDeathEvent event, Location location){  }
     default boolean EntityExplodeEvent(EntityExplodeEvent event, Location location){ return false; }
     default boolean EntityInteractEvent(EntityInteractEvent event, Location location){ return false; }

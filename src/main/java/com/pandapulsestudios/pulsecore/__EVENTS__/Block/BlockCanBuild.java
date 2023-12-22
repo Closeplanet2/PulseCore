@@ -1,9 +1,11 @@
 package com.pandapulsestudios.pulsecore.__Events__.Block;
 
+import com.pandapulsestudios.pulsecore.Block.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
+import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
@@ -17,13 +19,20 @@ public class BlockCanBuild implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(BlockCanBuildEvent event){
         if(event.getPlayer() == null) return;
-
         var inventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getPlayer());
+
         for(var itemStack : inventoryItems.keySet()){
-            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
-                var state = pulseEnchantment.BlockCanBuildEvent(event, itemStack, inventoryItems.get(itemStack));
-                if(!event.isBuildable()) event.setBuildable(state);
+            if(itemStack.getItemMeta() == null) continue;
+            for(var nbtListener : PulseCoreMain.nbtListeners){
+                if(!event.isBuildable() && nbtListener.BlockCanBuildEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer())) event.setBuildable(true);
             }
+
+            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
+                if(!event.isBuildable() && pulseEnchantment.BlockCanBuildEvent(event, itemStack, inventoryItems.get(itemStack))) event.setBuildable(true);
+            }
+
+            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
+            if(pulseItemStack != null) if(!event.isBuildable() && pulseItemStack.BlockCanBuildEvent(event, itemStack, inventoryItems.get(itemStack))) event.setBuildable(true);
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
@@ -36,17 +45,12 @@ public class BlockCanBuild implements Listener {
             if(!event.isBuildable()) event.setBuildable(PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.BlockCanBuild));
         }
 
-        for(var itemStack : inventoryItems.keySet()){
-            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
-            if(pulseItemStack == null) continue;
-            var state = pulseItemStack.BlockCanBuildEvent(event, itemStack, inventoryItems.get(itemStack));
-            if(!event.isBuildable()) event.setBuildable(state);
+        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){
+            if(!event.isBuildable() && pulseLocation.BlockCanBuildEvent(event, event.getBlock().getLocation())) event.setBuildable(true);
         }
 
-        var eventLocation = event.getBlock().getLocation();
-        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(eventLocation, true)){
-            var state = pulseLocation.BlockCanBuildEvent(event, eventLocation);
-            if(!event.isBuildable()) event.setBuildable(state);
+        for(var pdListener : PulseCoreMain.persistentDataListeners){
+            if(!event.isBuildable() && pdListener.BlockCanBuildEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setBuildable(true);
         }
     }
 }

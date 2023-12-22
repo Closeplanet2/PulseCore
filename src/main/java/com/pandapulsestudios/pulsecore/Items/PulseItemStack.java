@@ -21,6 +21,7 @@ import org.bukkit.event.player.*;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,7 +52,7 @@ public interface PulseItemStack {
             itemMeta.setUnbreakable(unbreakable());
         }
         itemStack.setItemMeta(itemMeta);
-        for(String key : nbtTags().keySet()) NBTAPI.Add(itemStack, key, nbtTags().get(key));
+        for(String key : nbtTags().keySet()) NBTAPI.Add(null, itemStack, PersistentDataType.STRING, key, nbtTags().get(key));
         return itemStack;
     }
 
@@ -72,9 +73,9 @@ public interface PulseItemStack {
     default boolean PrepareItemEnchantEvent(PrepareItemEnchantEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean EntityBreakDoorEvent(EntityBreakDoorEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean EntityCombustByBlockEvent(EntityCombustByBlockEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
-    default boolean EntityCombustByEntityEvent(EntityCombustByEntityEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
+    default boolean EntityCombustByEntityEvent(EntityCombustByEntityEvent event, ItemStack itemStack, ItemLocation itemLocation, boolean isAttacker){ return false; }
     default boolean EntityDamageByBlockEvent(EntityDamageByBlockEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
-    default boolean EntityDamageByEntityEvent(EntityDamageByEntityEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
+    default boolean EntityDamageByEntityEvent(EntityDamageByEntityEvent event, ItemStack itemStack, ItemLocation itemLocation, boolean isAttacker){ return false; }
     default void EntityDeathEvent(EntityDeathEvent event, ItemStack itemStack, ItemLocation itemLocation){  }
     default boolean EntityExplodeEvent(EntityExplodeEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean EntityInteractEvent(EntityInteractEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
@@ -83,8 +84,8 @@ public interface PulseItemStack {
     default boolean EntityShootBowEvent(EntityShootBowEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean EntityTeleportEvent(EntityTeleportEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean FoodLevelChangeEvent(FoodLevelChangeEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
-    default boolean BrewEvent(BrewEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
-    default boolean CraftItemEvent(CraftItemEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
+    default boolean BrewEvent(BrewEvent event, ItemStack itemStack){ return false; }
+    default boolean CraftItemEvent(CraftItemEvent event, ItemStack itemStack){ return false; }
     default boolean AsyncPlayerChatEvent(AsyncPlayerChatEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean PlayerBedEnterEvent(PlayerBedEnterEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean PlayerBedLeaveEvent(PlayerBedLeaveEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }

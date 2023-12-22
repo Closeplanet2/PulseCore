@@ -16,4 +16,8 @@ public class EnchantmentAPI {
         }
         return data;
     }
+
+    public static void LogEvents(boolean state){
+
+    }
 }

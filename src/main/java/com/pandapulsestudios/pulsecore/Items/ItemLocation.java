@@ -1,9 +1,10 @@
 package com.pandapulsestudios.pulsecore.Items;
 
 public enum ItemLocation {
-    PlayerMainHand,
-    PlayerOffHand,
-    PlayerArmor,
-    PlayerInventory,
+    EntityMainHand,
+    EntityOffHand,
+    EntityArmor,
+    EntityInventory,
+    BrokenItem,
     Container
 }

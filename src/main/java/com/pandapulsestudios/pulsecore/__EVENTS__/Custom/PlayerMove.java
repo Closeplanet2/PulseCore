@@ -1,8 +1,10 @@
 package com.pandapulsestudios.pulsecore.__Events__.Custom;
 
+import com.pandapulsestudios.pulsecore.Block.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
+import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
@@ -14,11 +16,19 @@ public class PlayerMove {
         var isCancelled = false;
 
         var inventoryItems = PlayerAPI.ReturnALlPlayerItems(player);
+
         for(var itemStack : inventoryItems.keySet()){
-            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
-                var state = pulseEnchantment.PlayerMove(player, lastLocation, newLocation, itemStack, inventoryItems.get(itemStack));
-                if(!isCancelled) isCancelled = state;
+            if(itemStack.getItemMeta() == null) continue;
+            for(var nbtListener : PulseCoreMain.nbtListeners){
+                if(!isCancelled && nbtListener.PlayerMove(player, lastLocation, newLocation, itemStack, NBTAPI.GetAll(itemStack))) isCancelled = true;
             }
+
+            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
+                if(!isCancelled && pulseEnchantment.PlayerMove(player, lastLocation, newLocation, itemStack, inventoryItems.get(itemStack))) isCancelled = true;
+            }
+
+            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
+            if(pulseItemStack != null) if(!isCancelled && pulseItemStack.PlayerMove(player, lastLocation, newLocation, itemStack, inventoryItems.get(itemStack))) isCancelled = true;
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
@@ -31,21 +41,12 @@ public class PlayerMove {
             if(!isCancelled) isCancelled = PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.PlayerMove);
         }
 
-        for(var itemStack : inventoryItems.keySet()){
-            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
-            if(pulseItemStack == null) continue;
-            var state = pulseItemStack.PlayerMove(player, lastLocation, newLocation, itemStack, inventoryItems.get(itemStack));
-            if(!isCancelled) isCancelled = state;
-        }
-
         var eventLocation = player.getLocation();
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(eventLocation, true)){
             var state = pulseLocation.PlayerMove(player, lastLocation, newLocation);
             if(!isCancelled) isCancelled = state;
         }
 
-        if(isCancelled){
-            player.teleport(lastLocation);
-        }
+        if(isCancelled) player.teleport(lastLocation);
     }
 }

@@ -4,6 +4,7 @@ import com.pandapulsestudios.pulsecore.Items.ItemLocation;
 import com.pandapulsestudios.pulsecore.Player.Enums.HandlePlayerAction;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -28,11 +29,19 @@ public class PlayerAPI {
         var foundInformation = new HashMap<ItemStack, ItemLocation>();
         for(var itemStack : player.getInventory().getContents()){
             if(itemStack == null) continue;
-            else if(itemStack.isSimilar(player.getInventory().getItemInMainHand())) foundInformation.put(itemStack, ItemLocation.PlayerMainHand);
-            else if(itemStack.isSimilar(player.getInventory().getItemInOffHand())) foundInformation.put(itemStack, ItemLocation.PlayerOffHand);
-            else if(ArmorContentsContains(player.getInventory().getArmorContents(), itemStack)) foundInformation.put(itemStack, ItemLocation.PlayerArmor);
-            else foundInformation.put(itemStack, ItemLocation.PlayerInventory);
+            else if(itemStack.isSimilar(player.getInventory().getItemInMainHand())) foundInformation.put(itemStack, ItemLocation.EntityMainHand);
+            else if(itemStack.isSimilar(player.getInventory().getItemInOffHand())) foundInformation.put(itemStack, ItemLocation.EntityOffHand);
+            else if(ArmorContentsContains(player.getInventory().getArmorContents(), itemStack)) foundInformation.put(itemStack, ItemLocation.EntityArmor);
+            else foundInformation.put(itemStack, ItemLocation.EntityInventory);
         }
+        return foundInformation;
+    }
+
+    public static HashMap<ItemStack, ItemLocation> ReturnALlPlayerItems(LivingEntity livingEntity){
+        var foundInformation = new HashMap<ItemStack, ItemLocation>();
+        for(var itemStack : livingEntity.getEquipment().getArmorContents()) foundInformation.put(itemStack, ItemLocation.EntityArmor);
+        foundInformation.put(livingEntity.getEquipment().getItemInOffHand(), ItemLocation.EntityMainHand);
+        foundInformation.put(livingEntity.getEquipment().getItemInOffHand(), ItemLocation.EntityOffHand);
         return foundInformation;
     }
 

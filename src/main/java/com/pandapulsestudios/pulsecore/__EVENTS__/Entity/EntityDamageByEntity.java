@@ -4,50 +4,60 @@ import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
+import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 @CustomEvent
 public class EntityDamageByEntity implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(EntityDamageByEntityEvent event){
-        if(!(event.getEntity() instanceof Player player)) return;
+        Handler(event.getEntity(), event, false);
+        Handler(event.getDamager(), event, true);
+    }
 
-        var inventoryItems = PlayerAPI.ReturnALlPlayerItems(player);
+    private void Handler(Entity entity, EntityDamageByEntityEvent event, boolean isAttacker){
+        if(!(entity instanceof LivingEntity livingEntity)) return;
+        var isEntityPlayer = livingEntity instanceof Player;
+        var inventoryItems = isEntityPlayer ? PlayerAPI.ReturnALlPlayerItems((Player) livingEntity) : PlayerAPI.ReturnALlPlayerItems(livingEntity);
+
         for(var itemStack : inventoryItems.keySet()){
-            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
-                var state = pulseEnchantment.EntityDamageByEntityEvent(event, itemStack, inventoryItems.get(itemStack));
-                if(!event.isCancelled()) event.setCancelled(state);
+            if(itemStack.getItemMeta() == null) continue;
+            for(var nbtListener : PulseCoreMain.nbtListeners){
+                if(!event.isCancelled() && nbtListener.EntityDamageByEntityEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity, isAttacker)) event.setCancelled(true);
             }
-        }
 
-        if(PulseCoreMain.handlePlayerActionEventsInHouse){
-            var state = PlayerAPI.CanDoAction(PlayerAction.EntityDamageByEntity, player);
-            if(!event.isCancelled()) event.setCancelled(state);
-        }
+            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
+                if(!event.isCancelled() && pulseEnchantment.EntityDamageByEntityEvent(event, itemStack, inventoryItems.get(itemStack), isAttacker)) event.setCancelled(true);
+            }
 
-        var world = player.getLocation().getWorld();
-        if(PulseCoreMain.playerActionLock.containsKey(world)){
-            if(!event.isCancelled()) event.setCancelled(PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.EntityDamageByEntity));
-        }
-
-        for(var itemStack : inventoryItems.keySet()){
             var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
-            if(pulseItemStack == null) continue;
-            var state = pulseItemStack.EntityDamageByEntityEvent(event, itemStack, inventoryItems.get(itemStack));
+            if(pulseItemStack != null) if(!event.isCancelled() && pulseItemStack.EntityDamageByEntityEvent(event, itemStack, inventoryItems.get(itemStack), isAttacker)) event.setCancelled(true);
+        }
+
+        if(PulseCoreMain.handlePlayerActionEventsInHouse && isEntityPlayer){
+            var playerAction = isAttacker ? PlayerAction.EntityDamageByEntityAttacker : PlayerAction.EntityDamageByEntity;
+            var state = PlayerAPI.CanDoAction(playerAction, (Player) livingEntity);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        var eventLocation = player.getLocation();
-        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(eventLocation, true)){
-            var state = pulseLocation.EntityDamageByEntityEvent(event, eventLocation);
-            if(!event.isCancelled()) event.setCancelled(state);
+        var world = livingEntity.getLocation().getWorld();
+        if(PulseCoreMain.playerActionLock.containsKey(world) && isEntityPlayer) {
+            var playerAction = isAttacker ? PlayerAction.EntityDamageByEntityAttacker : PlayerAction.EntityDamageByEntity;
+            if(!event.isCancelled()) event.setCancelled(PulseCoreMain.playerActionLock.get(world).contains(playerAction));
+        }
+
+        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
+            if(!event.isCancelled() && pulseLocation.EntityDamageByEntityEvent(event, livingEntity.getLocation(), isAttacker)) event.setCancelled(true);
         }
     }
 }

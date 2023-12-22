@@ -1,16 +1,21 @@
 package com.pandapulsestudios.pulsecore;
 
+import com.pandapulsestudios.pulsecore.Block.PulsePersistentData;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
 import com.pandapulsestudios.pulsecore.Java.JavaClassAPI;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
+import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Stopwatch.PulseStopwatch;
 import com.pandapulsestudios.pulsecore.Time.TimeLock;
 import com.pandapulsestudios.pulsecore.Timer.PulseTimer;
 import com.pandapulsestudios.pulsecore.World.WorldAPI;
+import com.pandapulsestudios.pulsecore.__External__.SmartInvs.InventoryManager;
+import com.pandapulsestudios.pulsecore.__External__.SmartInvs.SmartInvsPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.GameMode;
 import org.bukkit.World;
@@ -25,6 +30,9 @@ import java.util.UUID;
 
 public final class PulseCoreMain extends JavaPlugin {
     public static PulseCoreMain Instance;
+
+    public static InventoryManager manager() { return PulseCoreMain.Instance.smartInvsPlugin.manager(); }
+    private SmartInvsPlugin smartInvsPlugin;
 
     public static HashMap<PlayerAction, HashMap<UUID, Boolean>> playerToggleActions = new HashMap<>();
     public static HashMap<String, Object> serverData = new HashMap<>();
@@ -44,12 +52,16 @@ public final class PulseCoreMain extends JavaPlugin {
     public static ArrayList<PulseLocation> registeredLocations = new ArrayList<>();
     public static ArrayList<PulseLoop> registeredLoops = new ArrayList<>();
     public static ArrayList<TeleportObject> teleportObjects = new ArrayList<>();
+    public static ArrayList<PulseNBTListener> nbtListeners = new ArrayList<>();
+    public static ArrayList<PulsePersistentData> persistentDataListeners = new ArrayList<>();
 
     public static boolean handlePlayerActionEventsInHouse = true;
+
     @Override
     public void onEnable() {
         Instance = this;
         for(var playerAction : PlayerAction.values()) playerToggleActions.put(playerAction, new HashMap<>());
         JavaClassAPI.RegisterRaw(this);
+        for(var player: Bukkit.getOnlinePlayers()) playerData.put(player.getUniqueId(), new HashMap<>());
     }
 }

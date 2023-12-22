@@ -1,5 +1,7 @@
 package com.pandapulsestudios.pulsecore.Java;
 
+import com.pandapulsestudios.pulsecore.Block.CustomPersistentData;
+import com.pandapulsestudios.pulsecore.Block.PulsePersistentData;
 import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
 import com.pandapulsestudios.pulsecore.Enchantment.CustomEnchantment;
@@ -11,6 +13,8 @@ import com.pandapulsestudios.pulsecore.Location.CustomLocation;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.CustomLoop;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
+import com.pandapulsestudios.pulsecore.NBT.CustomNBT;
+import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import com.pandapulsestudios.pulsecore.Recipes.CustomRecipe;
 import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
@@ -24,14 +28,14 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class JavaClassAPI {
-
     public static void RegisterRaw(JavaPlugin javaPlugin){
         try { Register(javaPlugin); }
         catch (Exception e) { throw new RuntimeException(e); }
     }
     public static void Register(JavaPlugin javaPlugin) throws Exception {
         var interfaceClasses = JavaAPI.ReturnALlClassOfTypes(javaPlugin, CustomEnchantment.class, CustomEvent.class,
-                CustomItemStack.class, CustomLocation.class, CustomLoop.class, CustomRecipe.class);
+                CustomItemStack.class, CustomLocation.class, CustomLoop.class, CustomRecipe.class, CustomNBT.class,
+                CustomPersistentData.class);
 
         for(var enchantmentInterface : interfaceClasses.get(CustomLocation.class)) Register((PulseLocation) enchantmentInterface.getConstructor().newInstance());
         for(var enchantmentInterface : interfaceClasses.get(CustomEnchantment.class)) Register((PulseEnchantment) enchantmentInterface.getConstructor().newInstance());
@@ -39,6 +43,8 @@ public class JavaClassAPI {
         for(var itemStackInterface : interfaceClasses.get(CustomItemStack.class)) Register((PulseItemStack) itemStackInterface.getConstructor().newInstance());
         for(var itemStackInterface : interfaceClasses.get(CustomLoop.class)) Register(javaPlugin, (PulseLoop) itemStackInterface.getConstructor().newInstance());
         for(var itemStackInterface : interfaceClasses.get(CustomRecipe.class)) Register(javaPlugin, (PulseRecipe) itemStackInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomNBT.class)) Register(javaPlugin, (PulseNBTListener) itemStackInterface.getConstructor().newInstance());
+        for(var itemStackInterface : interfaceClasses.get(CustomPersistentData.class)) Register(javaPlugin, (PulsePersistentData) itemStackInterface.getConstructor().newInstance());
     }
 
     private static void Register(PulseEnchantment pulseEnchantment) throws Exception {
@@ -76,5 +82,15 @@ public class JavaClassAPI {
     private static void Register(JavaPlugin javaPlugin, PulseRecipe pulseShapedRecipe){
         Bukkit.addRecipe(pulseShapedRecipe.ReturnShapedRecipe(javaPlugin));
         pulseShapedRecipe.Registered();
+    }
+
+    private static void Register(JavaPlugin javaPlugin, PulseNBTListener pulseNBTListener){
+        PulseCoreMain.nbtListeners.add(pulseNBTListener);
+        ChatAPI.SendChat(String.format("&3Registered NBT Listener: %s", javaPlugin.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
+    }
+
+    private static void Register(JavaPlugin javaPlugin, PulsePersistentData pulsePersistentData){
+        PulseCoreMain.persistentDataListeners.add(pulsePersistentData);
+        ChatAPI.SendChat(String.format("&3Registered Persistent Data Listener: %s", javaPlugin.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 }

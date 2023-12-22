@@ -1,6 +1,7 @@
 package com.pandapulsestudios.pulsecore.NBT;
 
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.sun.jna.platform.win32.WinDef;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Entity;
@@ -8,74 +9,57 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.HashMap;
 
 public class NBTAPI {
-    public static String Get(ItemStack itemStack, String key){
-        if(itemStack == null || key == null) return null;
-        if(!itemStack.hasItemMeta()) return null;
-
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        PersistentDataContainer pdc = itemMeta.getPersistentDataContainer();
-        NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance, key);
-        if(pdc.has(namespacedKey, PersistentDataType.STRING)) return pdc.get(namespacedKey, PersistentDataType.STRING);
-        return null;
+    public static HashMap<String, Object> GetAll(ItemStack itemStack, PersistentDataType persistentDataType){
+        var data = new HashMap<String, Object>();
+        if(itemStack == null || itemStack.getItemMeta() == null) return data;
+        var pdc = itemStack.getItemMeta().getPersistentDataContainer();
+        for(var namespacedKey : pdc.getKeys()) data.put(namespacedKey.getKey(), pdc.get(namespacedKey, persistentDataType));
+        return data;
     }
 
-    public static String Get(Entity entity, String key){
-        if(entity == null || key == null) return null;
-        PersistentDataContainer pdc = entity.getPersistentDataContainer();
-        NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance,key);
-        if(pdc.has(namespacedKey, PersistentDataType.STRING)) return pdc.get(namespacedKey, PersistentDataType.STRING);
-        return null;
+    public static HashMap<String, Object> GetAll(ItemStack itemStack){
+        var data = new HashMap<String, Object>();
+        if(itemStack == null || !itemStack.hasItemMeta()) return data;
+        var pdc = itemStack.getItemMeta().getPersistentDataContainer();
+        for(var persistentDataType : PersistentDataTypes.values()){
+            for(var namespacedKey : pdc.getKeys()) data.put(namespacedKey.getKey(), pdc.get(namespacedKey, persistentDataType.persistentDataType));
+        }
+        return data;
     }
 
-    public static boolean Add(ItemStack itemStack, String key, String value){
-        if(itemStack == null || key == null) return false;
-        if(!itemStack.hasItemMeta()) return false;
-        ItemMeta meta = itemStack.hasItemMeta() ? itemStack.getItemMeta() : Bukkit.getItemFactory().getItemMeta(itemStack.getType());
-        PersistentDataContainer pdc = meta.getPersistentDataContainer();
-        NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance, key);
-        pdc.set(namespacedKey, PersistentDataType.STRING, value);
-        itemStack.setItemMeta(meta);
-        return true;
+    public static Object Get(JavaPlugin javaPlugin, ItemStack itemStack, String key, PersistentDataType persistentDataType){
+        if(itemStack == null || !itemStack.hasItemMeta()) return null;
+        javaPlugin = javaPlugin == null ? PulseCoreMain.Instance : javaPlugin;
+        var pdc = itemStack.getItemMeta().getPersistentDataContainer();
+        var namespacedKey = new NamespacedKey(javaPlugin, key);
+        return pdc.has(namespacedKey, persistentDataType) ? pdc.get(namespacedKey, persistentDataType) : null;
     }
 
-    public static boolean Add(Entity entity, String key, String value){
-        if(entity == null || key == null) return false;
-        PersistentDataContainer pdc = entity.getPersistentDataContainer();
-        NamespacedKey namespacedKey = new NamespacedKey(PulseCoreMain.Instance, key);
-        pdc.set(namespacedKey, PersistentDataType.STRING, value);
-        return true;
+    public static void Add(JavaPlugin javaPlugin, ItemStack itemStack, PersistentDataType persistentDataType, String key, Object value){
+        if(itemStack == null || !itemStack.hasItemMeta()) return;
+        javaPlugin = javaPlugin == null ? PulseCoreMain.Instance : javaPlugin;
+        var itemMeta = itemStack.getItemMeta();
+        var pdc = itemMeta.getPersistentDataContainer();
+        var namespacedKey = new NamespacedKey(javaPlugin, key);
+        pdc.set(namespacedKey, persistentDataType, value);
+        itemStack.setItemMeta(itemMeta);
     }
 
-    public static boolean Has(ItemStack itemStack, String key){
-        if(itemStack == null || key == null) return false;
-        if(!itemStack.hasItemMeta()) return false;
-        ItemMeta meta = itemStack.getItemMeta();
-        PersistentDataContainer pdc = meta.getPersistentDataContainer();
-        return pdc.has(new NamespacedKey(PulseCoreMain.Instance,key),PersistentDataType.STRING);
+    public static boolean Has(JavaPlugin javaPlugin, ItemStack itemStack, PersistentDataType persistentDataType, String key){
+        if(itemStack == null || !itemStack.hasItemMeta()) return false;
+        javaPlugin = javaPlugin == null ? PulseCoreMain.Instance : javaPlugin;
+        return itemStack.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(javaPlugin, key), persistentDataType);
     }
 
-    public static boolean Has(Entity entity, String key){
-        if(entity == null || key == null) return false;
-        PersistentDataContainer pdc = entity.getPersistentDataContainer();
-        return pdc.has(new NamespacedKey(PulseCoreMain.Instance,key),PersistentDataType.STRING);
-    }
-
-    public static boolean Remove(ItemStack itemStack, String key){
-        if(itemStack == null || key == null) return false;
-        if(!itemStack.hasItemMeta()) return false;
-        ItemMeta meta = itemStack.getItemMeta();
-        PersistentDataContainer pdc = meta.getPersistentDataContainer();
-        pdc.remove(new NamespacedKey(PulseCoreMain.Instance,key));
-        itemStack.setItemMeta(meta);
-        return true;
-    }
-
-    public static boolean Remove(Entity entity, String key){
-        if(entity == null || key == null) return false;
-        PersistentDataContainer pdc = entity.getPersistentDataContainer();
-        pdc.remove(new NamespacedKey(PulseCoreMain.Instance,key));
-        return true;
+    public static void Remove(JavaPlugin javaPlugin, ItemStack itemStack, String key){
+        if(itemStack == null || !itemStack.hasItemMeta()) return;
+        javaPlugin = javaPlugin == null ? PulseCoreMain.Instance : javaPlugin;
+        itemStack.getItemMeta().getPersistentDataContainer().remove(new NamespacedKey(javaPlugin, key));
     }
 }
+

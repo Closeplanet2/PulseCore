@@ -1,10 +1,13 @@
 package com.pandapulsestudios.pulsecore.__Events__.Inventory;
 
+import com.pandapulsestudios.pulsecore.Block.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemLocation;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
+import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
+import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -17,21 +20,21 @@ import org.bukkit.event.inventory.FurnaceSmeltEvent;
 public class CraftItem implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(CraftItemEvent event){
+        if(event.getCurrentItem() == null || !event.getCurrentItem().hasItemMeta()) return;
+
+        for(var nbtListener : PulseCoreMain.nbtListeners){
+            if(!event.isCancelled() && nbtListener.CraftItemEvent(event, event.getCurrentItem(), NBTAPI.GetAll(event.getCurrentItem()))) event.setCancelled(true);
+        }
+
         for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(event.getCurrentItem())){
-            var state = pulseEnchantment.CraftItemEvent(event, event.getCurrentItem(), ItemLocation.Container);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(!event.isCancelled() && pulseEnchantment.CraftItemEvent(event, event.getCurrentItem())) event.setCancelled(true);
         }
 
         var pulseItemStack = ItemStackAPI.ReturnPulseItem(event.getCurrentItem());
-        if(pulseItemStack != null){
-            var state = pulseItemStack.CraftItemEvent(event, event.getCurrentItem(), ItemLocation.Container);
-            if(!event.isCancelled()) event.setCancelled(state);
-        }
+        if(pulseItemStack != null) if(!event.isCancelled() && pulseItemStack.CraftItemEvent(event, event.getCurrentItem())) event.setCancelled(true);
 
-        var eventLocation = event.getInventory().getLocation();
-        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(eventLocation, true)){
-            var state = pulseLocation.CraftItemEvent(event, eventLocation);
-            if(!event.isCancelled()) event.setCancelled(state);
+        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getClickedInventory().getLocation(), true)){
+            if(!event.isCancelled() && pulseLocation.CraftItemEvent(event, event.getClickedInventory().getLocation())) event.setCancelled(true);
         }
     }
 }

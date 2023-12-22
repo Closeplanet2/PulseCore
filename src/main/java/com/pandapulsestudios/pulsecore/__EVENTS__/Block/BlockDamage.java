@@ -1,9 +1,11 @@
 package com.pandapulsestudios.pulsecore.__Events__.Block;
 
+import com.pandapulsestudios.pulsecore.Block.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
+import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCoreMain;
@@ -19,10 +21,17 @@ public class BlockDamage implements Listener {
         var inventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getPlayer());
 
         for(var itemStack : inventoryItems.keySet()){
-            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
-                var state = pulseEnchantment.BlockDamageEvent(event, itemStack, inventoryItems.get(itemStack));
-                if(!event.isCancelled()) event.setCancelled(state);
+            if(itemStack.getItemMeta() == null) continue;
+            for(var nbtListener : PulseCoreMain.nbtListeners){
+                if(!event.isCancelled() && nbtListener.BlockDamageEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer())) event.setCancelled(true);
             }
+
+            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItems(itemStack)){
+                if(!event.isCancelled() && pulseEnchantment.BlockDamageEvent(event, itemStack, inventoryItems.get(itemStack))) event.setCancelled(true);
+            }
+
+            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
+            if(pulseItemStack != null) if(!event.isCancelled() && pulseItemStack.BlockDamageEvent(event, itemStack, inventoryItems.get(itemStack))) event.setCancelled(true);
         }
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
@@ -35,17 +44,12 @@ public class BlockDamage implements Listener {
             if(!event.isCancelled()) event.setCancelled(PulseCoreMain.playerActionLock.get(world).contains(PlayerAction.BlockDamage));
         }
 
-        for(var itemStack : inventoryItems.keySet()){
-            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
-            if(pulseItemStack == null) continue;
-            var state = pulseItemStack.BlockDamageEvent(event, itemStack, inventoryItems.get(itemStack));
-            if(!event.isCancelled()) event.setCancelled(state);
+        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){
+            if(!event.isCancelled() && pulseLocation.BlockDamageEvent(event, event.getBlock().getLocation())) event.setCancelled(true);
         }
 
-        var eventLocation = event.getBlock().getLocation();
-        for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(eventLocation, true)){
-            var state = pulseLocation.BlockDamageEvent(event, eventLocation);
-            if(!event.isCancelled()) event.setCancelled(state);
+        for(var pdListener : PulseCoreMain.persistentDataListeners){
+            if(!event.isCancelled() && pdListener.BlockDamageEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()))) event.setCancelled(true);
         }
     }
 }

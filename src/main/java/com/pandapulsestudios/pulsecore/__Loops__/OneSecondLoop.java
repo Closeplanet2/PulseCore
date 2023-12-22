@@ -24,8 +24,8 @@ public class OneSecondLoop implements PulseLoop {
         for(var pulseTimeID : PulseCoreMain.pulseTimers.keySet()) PulseCoreMain.pulseTimers.get(pulseTimeID).TimerCallback();
         for(var pulseStopwatchID : PulseCoreMain.pulseStopwatches.keySet()) PulseCoreMain.pulseStopwatches.get(pulseStopwatchID).StopwatchCallback();
         for(var player : Bukkit.getOnlinePlayers()){
-            var storedLocation = (Location) PlayerDataAPI.GET(player.getUniqueId(), "StoredLocation");
-            PlayerMove.HandleEvent(player, storedLocation == null ? player.getLocation() : storedLocation, player.getLocation());
+            var storedLocation = PlayerDataAPI.GET(player.getUniqueId(), "StoredLocation");
+            PlayerMove.HandleEvent(player, storedLocation == null ? player.getLocation() : (Location) storedLocation, player.getLocation());
             PlayerDataAPI.STORE(player.getUniqueId(), "StoredLocation", player.getLocation());
         }
     }
