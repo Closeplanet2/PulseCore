@@ -1,18 +1,10 @@
 package com.pandapulsestudios.pulsecore.Items;
 
-import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
-import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 public class ItemStackAPI {
     public static int CountItem(Player player, ItemStack itemStack){
@@ -48,9 +40,17 @@ public class ItemStackAPI {
         return a.isSimilar(b);
     }
 
+    public static PulseItemStack ReturnPulseItem(String itemName){
+        for(var pulseItemName : PulseCore.CustomItemStacks.keySet()){
+            if(pulseItemName.equals(itemName)) return PulseCore.CustomItemStacks.get(pulseItemName);
+        }
+        return null;
+    }
+
     public static PulseItemStack ReturnPulseItem(ItemStack itemStack){
-        for(var pulseItemStack: PulseCoreMain.registeredItemStacks){
-            if(pulseItemStack.isItemStack(itemStack)) return pulseItemStack;
+        for(var pulseItemName : PulseCore.CustomItemStacks.keySet()){
+            var pulseItemStack = PulseCore.CustomItemStacks.get(pulseItemName);
+            if(pulseItemStack.returnItemStack().equals(itemStack)) return pulseItemStack;
         }
         return null;
     }

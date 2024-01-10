@@ -1,7 +1,6 @@
 package com.pandapulsestudios.pulsecore.PluginMessagingChannel;
 
 import com.google.common.io.ByteStreams;
-import com.pandapulsestudios.pulsecore.PulseCoreMain;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;

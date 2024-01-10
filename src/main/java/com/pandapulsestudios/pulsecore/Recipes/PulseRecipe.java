@@ -1,8 +1,8 @@
 package com.pandapulsestudios.pulsecore.Recipes;
 
 import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
-import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
-import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.pandapulsestudios.pulsecore.Chat.MessageType;
+import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.*;
@@ -17,7 +17,7 @@ public interface PulseRecipe {
     RecipeType recipeType();
     ItemStack recipeResult();
     default String recipeName(){ return getClass().getSimpleName(); }
-    default String nameSpace(){ return String.format("%s_%s", PulseCoreMain.class.getSimpleName(), recipeName()).toLowerCase(); }
+    default String nameSpace(){ return String.format("%s_%s", PulseCore.class.getSimpleName(), recipeName()).toLowerCase(); }
 
     //Values used in one or more recipe types
     default HashMap<Character, RecipeChoice> recipeMaterials(){ return new HashMap<>(); }

@@ -1,6 +1,6 @@
 package com.pandapulsestudios.pulsecore.Location;
 
-import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -31,20 +31,26 @@ public class LocationAPI {
     }
 
     public static void TeleportLocation(String locationName, Player... players){
-        for(var pulseLocation : PulseCoreMain.registeredLocations){
+        for(var pulseLocationName : PulseCore.CustomLocations.keySet()){
+            var pulseLocation = PulseCore.CustomLocations.get(pulseLocationName);
             if(pulseLocation.locationName().equals(locationName)) pulseLocation.TeleportPlayers(players);
         }
     }
 
     public static void TeleportLocation(String locationName, Entity... entities){
-        for(var pulseLocation : PulseCoreMain.registeredLocations){
+        for(var pulseLocationName : PulseCore.CustomLocations.keySet()){
+            var pulseLocation = PulseCore.CustomLocations.get(pulseLocationName);
             if(pulseLocation.locationName().equals(locationName)) pulseLocation.TeleportPlayers(entities);
         }
     }
 
     public static List<PulseLocation> ReturnAllPulseLocations(Location location, boolean useDistanceForEvent){
         var data = new ArrayList<PulseLocation>();
-        for(var pulseLocation : PulseCoreMain.registeredLocations) if (pulseLocation.isLocationForEvent(location, useDistanceForEvent)) data.add(pulseLocation);
+        for(var pulseLocationName : PulseCore.CustomLocations.keySet()){
+            var pulseLocation = PulseCore.CustomLocations.get(pulseLocationName);
+            var isLocationForEvent = pulseLocation.storedLocation().distance(location) <= (useDistanceForEvent ? pulseLocation.distanceForEvents() : 1);
+            if (isLocationForEvent) data.add(pulseLocation);
+        }
         return data;
     }
 

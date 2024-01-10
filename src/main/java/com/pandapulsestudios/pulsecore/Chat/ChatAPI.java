@@ -1,9 +1,7 @@
 package com.pandapulsestudios.pulsecore.Chat;
 
-import com.pandapulsestudios.pulsecore.Chat.Enums.ConsoleMessageType;
-import com.pandapulsestudios.pulsecore.Chat.Enums.MessageType;
-import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
+import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -66,6 +64,4 @@ public class ChatAPI {
 
         return chatColorMessage;
     }
-
-
 }

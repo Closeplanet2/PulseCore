@@ -3,7 +3,7 @@ package com.pandapulsestudios.pulsecore.Player;
 import com.pandapulsestudios.pulsecore.Items.ItemLocation;
 import com.pandapulsestudios.pulsecore.Player.Enums.HandlePlayerAction;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
-import com.pandapulsestudios.pulsecore.PulseCoreMain;
+import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -12,17 +12,25 @@ import java.util.HashMap;
 
 public class PlayerAPI {
     public static boolean CanDoAction(PlayerAction playerAction, Player... players){
-        for(var player : players) if(!PulseCoreMain.playerToggleActions.get(playerAction).getOrDefault(player.getUniqueId(), true)) return false;
+        for(var player : players){
+            var playerHashmap = PulseCore.playerToggleActions.getOrDefault(playerAction, new HashMap<>());
+            var playerActionState = playerHashmap.getOrDefault(player.getUniqueId(), true);
+            if(!playerActionState) return false;
+        }
         return true;
     }
 
     public static void TogglePlayerAction(PlayerAction playerAction, boolean state, Player... players){
-        for(var player : players) PulseCoreMain.playerToggleActions.get(playerAction).put(player.getUniqueId(), state);
+        for(var player : players){
+            var playerHashmap = PulseCore.playerToggleActions.getOrDefault(playerAction, new HashMap<>());
+            playerHashmap.put(player.getUniqueId(), state);
+            PulseCore.playerToggleActions.put(playerAction, playerHashmap);
+        }
     }
 
     public static void HandlePlayerActions(HandlePlayerAction handlePlayerAction){
-        if(!PulseCoreMain.handlePlayerActionEventsInHouse) return;
-        PulseCoreMain.handlePlayerActionEventsInHouse = handlePlayerAction == HandlePlayerAction.InPulseCore;
+        if(!PulseCore.handlePlayerActionEventsInHouse) return;
+        PulseCore.handlePlayerActionEventsInHouse = handlePlayerAction == HandlePlayerAction.InPulseCore;
     }
 
     public static HashMap<ItemStack, ItemLocation> ReturnALlPlayerItems(Player player){
