@@ -11,6 +11,7 @@ import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
 import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
+import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
 import com.pandapulsestudios.pulsecore.Time.TimeLock;
 import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
 import org.bukkit.Difficulty;
@@ -37,6 +38,7 @@ public final class PulseCore extends JavaPlugin {
     public static HashMap<String, PulseLocation> CustomLocations = new HashMap<>();
     public static HashMap<String, PulseItemStack> CustomItemStacks = new HashMap<>();
     public static HashMap<String, PulseLoop> CustomLoops = new HashMap<>();
+    public static HashMap<String, PulseScoreboard> CustomScoreboards = new HashMap<>();
     public static HashMap<World, Difficulty> difficultyLock = new HashMap<>();
     public static HashMap<World, GameMode> gameModeLock = new HashMap<>();
     public static HashMap<World, TimeLock> timeLockLock = new HashMap<>();

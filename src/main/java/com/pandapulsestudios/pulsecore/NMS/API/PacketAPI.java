@@ -2,6 +2,7 @@ package com.pandapulsestudios.pulsecore.NMS.API;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.NMS.Builder.SynchedEntityDataBuilder;
 import com.pandapulsestudios.pulsecore.NMS.Enum.EntityAnimationType;
 import com.pandapulsestudios.pulsecore.NMS.Enum.GameProfileKeys;
@@ -20,6 +21,7 @@ import org.bukkit.craftbukkit.v1_20_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.awt.*;
 import java.util.UUID;
 
 public class PacketAPI {

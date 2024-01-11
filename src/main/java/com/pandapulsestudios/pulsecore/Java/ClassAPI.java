@@ -23,6 +23,7 @@ import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import com.pandapulsestudios.pulsecore.Recipes.CustomRecipe;
 import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
+import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
 import com.pandapulsestudios.pulsecore.World.CustomWorld;
 import com.pandapulsestudios.pulsecore.World.PulseWorld;
 import org.bukkit.Bukkit;

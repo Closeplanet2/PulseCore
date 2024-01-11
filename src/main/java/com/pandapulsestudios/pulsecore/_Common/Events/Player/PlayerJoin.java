@@ -8,6 +8,9 @@ import com.pandapulsestudios.pulsecore.Location.LocationAPI;
 import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
+import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboardData;
+import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboardLines;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -41,5 +44,22 @@ public class PlayerJoin implements Listener {
                 pulseItemStack.PlayerJoinEvent(event, itemStack, playerInventoryItems.get(itemStack));
             }
         }
+
+        var firstSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 1")
+                .addLine(1, new PulseScoreboardData("Hello1"))
+                .addLine(2, new PulseScoreboardData("Hello2"))
+                .build();
+        var secondSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 2")
+                .addLine(1, new PulseScoreboardData("Hello3"))
+                .addLine(2, new PulseScoreboardData("Hello4"))
+                .build();
+        var pulseScoreboard = PulseScoreboard.builder()
+                .scoreboardID(event.getPlayer().getDisplayName())
+                .addPlayer(event.getPlayer())
+                .addLineHolder(20, firstSection)
+                .addLineHolder(20, secondSection)
+                .create(false);
     }
 }

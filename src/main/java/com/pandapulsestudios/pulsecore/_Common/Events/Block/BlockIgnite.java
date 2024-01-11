@@ -29,14 +29,13 @@ public class BlockIgnite implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.handlePlayerActionEventsInHouse && event.getPlayer() != null){
             var state = PlayerAPI.CanDoAction(PlayerAction.BlockIgnite, event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
-        var playerWorld = event.getPlayer().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.BlockIgnite);
+        if(PulseCore.playerActionLock.containsKey(event.getBlock().getWorld())){
+            var state = PulseCore.playerActionLock.get(event.getBlock().getWorld()).contains(PlayerAction.BlockIgnite);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -45,24 +44,26 @@ public class BlockIgnite implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getPlayer());
-        for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+        if(event.getPlayer() != null){
+            var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getPlayer());
+            for(var itemStack : playerInventoryItems.keySet()){
+                if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
-                var state = nbtListener.BlockIgniteEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
-                if(!event.isCancelled()) event.setCancelled(state);
-            }
+                for(var nbtListener : PulseCore.nbtListeners){
+                    var state = nbtListener.BlockIgniteEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
+                    if(!event.isCancelled()) event.setCancelled(state);
+                }
 
-            for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItem(itemStack)){
-                var state = pulseEnchantment.BlockIgniteEvent(event, itemStack, playerInventoryItems.get(itemStack));
-                if(!event.isCancelled()) event.setCancelled(state);
-            }
+                for(var pulseEnchantment : EnchantmentAPI.ReturnCustomEnchantmentOnItem(itemStack)){
+                    var state = pulseEnchantment.BlockIgniteEvent(event, itemStack, playerInventoryItems.get(itemStack));
+                    if(!event.isCancelled()) event.setCancelled(state);
+                }
 
-            var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
-            if(pulseItemStack != null){
-                var state = pulseItemStack.BlockIgniteEvent(event, itemStack, playerInventoryItems.get(itemStack));
-                if(!event.isCancelled()) event.setCancelled(state);
+                var pulseItemStack = ItemStackAPI.ReturnPulseItem(itemStack);
+                if(pulseItemStack != null){
+                    var state = pulseItemStack.BlockIgniteEvent(event, itemStack, playerInventoryItems.get(itemStack));
+                    if(!event.isCancelled()) event.setCancelled(state);
+                }
             }
         }
 

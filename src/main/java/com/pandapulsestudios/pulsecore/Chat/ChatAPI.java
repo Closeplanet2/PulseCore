@@ -51,7 +51,7 @@ public class ChatAPI {
         }
     }
 
-    private static String format(String message, boolean addPrefix, String messagePrefix){
+    public static String format(String message, boolean addPrefix, String messagePrefix){
         var prefixMessage = (addPrefix ? messagePrefix : "") + message;
         var chatColorMessage = ChatColor.translateAlternateColorCodes('&', prefixMessage);
 
