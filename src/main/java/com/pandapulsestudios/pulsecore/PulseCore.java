@@ -9,8 +9,10 @@ import com.pandapulsestudios.pulsecore.Java.ClassAPI;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
+import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Time.TimeLock;
+import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
 import org.bukkit.Difficulty;
 import org.bukkit.GameMode;
 import org.bukkit.World;
@@ -24,6 +26,7 @@ import java.util.UUID;
 public final class PulseCore extends JavaPlugin {
 
     public static PulseCore Instance;
+    public static SmartInvsPlugin SmartInvsPlugin;
 
     public static HashMap<PlayerAction, HashMap<UUID, Boolean>> PlayerToggeableActions = new HashMap<>();
     public static HashMap<String, Object> ServerData = new HashMap<>();
@@ -44,11 +47,13 @@ public final class PulseCore extends JavaPlugin {
     public static ArrayList<PersistentDataCallbacks> persistentDataCallbacks = new ArrayList<>();
     public static ArrayList<PulseCoreEvents> PulseCoreEvents = new ArrayList<>();
     public static ArrayList<TeleportObject> TeleportObjects = new ArrayList<>();
+    public static ArrayList<PulseNBTListener> nbtListeners = new ArrayList<>();
     public static boolean handlePlayerActionEventsInHouse = true;
 
     @Override
     public void onEnable() {
         Instance = this;
+        SmartInvsPlugin = new SmartInvsPlugin(this);
         ClassAPI.RegisterClasses(this);
     }
 }

@@ -13,7 +13,8 @@ import java.util.HashMap;
 public class PlayerAPI {
     public static boolean CanDoAction(PlayerAction playerAction, Player... players){
         for(var player : players){
-            var playerHashmap = PulseCore.playerToggleActions.getOrDefault(playerAction, new HashMap<>());
+            if(player == null) continue;
+            var playerHashmap = PulseCore.PlayerToggeableActions.getOrDefault(playerAction, new HashMap<>());
             var playerActionState = playerHashmap.getOrDefault(player.getUniqueId(), true);
             if(!playerActionState) return false;
         }
@@ -22,9 +23,9 @@ public class PlayerAPI {
 
     public static void TogglePlayerAction(PlayerAction playerAction, boolean state, Player... players){
         for(var player : players){
-            var playerHashmap = PulseCore.playerToggleActions.getOrDefault(playerAction, new HashMap<>());
+            var playerHashmap = PulseCore.PlayerToggeableActions.getOrDefault(playerAction, new HashMap<>());
             playerHashmap.put(player.getUniqueId(), state);
-            PulseCore.playerToggleActions.put(playerAction, playerHashmap);
+            PulseCore.PlayerToggeableActions.put(playerAction, playerHashmap);
         }
     }
 

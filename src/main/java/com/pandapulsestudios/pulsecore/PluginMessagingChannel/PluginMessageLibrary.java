@@ -1,6 +1,7 @@
 package com.pandapulsestudios.pulsecore.PluginMessagingChannel;
 
 import com.google.common.io.ByteStreams;
+import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,7 +24,7 @@ public class PluginMessageLibrary implements PluginMessageListener {
         var out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
         out.writeUTF(serverName);
-        player.sendPluginMessage(PulseCoreMain.Instance, CHANNEL_NAME, out.toByteArray());
+        player.sendPluginMessage(PulseCore.Instance, CHANNEL_NAME, out.toByteArray());
     }
 
     @Override

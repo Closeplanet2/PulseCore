@@ -15,10 +15,9 @@ import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
 public class GlowAPI {
-    public static void GlowEntity(Entity entity, Player player, ChatColor chatColor){
+    public static void GlowEntity(Entity entity, Player player){
         var dataBuilder = SynchedEntityDataBuilder.CreateBuilder().isGlowing(true);
         var datWatcher = NMS_API.EntityMetaWatcher(entity, dataBuilder);
         PacketAPI.Play.Server.SetEntityMetaDataPacket(entity, datWatcher, player);
-
     }
 }

@@ -34,7 +34,7 @@ public interface PulseRecipe {
     default int recipeDemand(){ return 1; }
     default int recipeSpecialPrice(){ return 1; }
 
-    default Recipe ReturnShapedRecipe(JavaPlugin javaPlugin){
+    default Recipe ReturnRecipe(JavaPlugin javaPlugin){
         if(recipeType() == RecipeType.BlastingRecipe){
             return new BlastingRecipe(new NamespacedKey(javaPlugin, nameSpace()), recipeResult(), recipeSource(), recipeExperience(), recipeCookingTime());
         }else if(recipeType() == RecipeType.CampfireRecipe){

@@ -47,6 +47,8 @@ public class AsyncPlayerChat implements Listener {
 
         if(PulseCoreMain.handlePlayerActionEventsInHouse){
             if(!event.isCancelled()) event.setCancelled(!PlayerAPI.CanDoAction(PlayerAction.AsyncPlayerChatSend, event.getPlayer()));
+
+
             if(!event.isCancelled()){
                 event.setCancelled(true);
                 for(var player : event.getRecipients()) ChatAPI.SendChat(event.getMessage(), MessageType.PlayerMessageFromPlayer, true, event.getPlayer(), player);
