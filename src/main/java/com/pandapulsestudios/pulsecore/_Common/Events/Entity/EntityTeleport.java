@@ -52,7 +52,7 @@ public class EntityTeleport implements Listener {
 
         var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(livingEntity);
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.nbtListeners){
                 var state = nbtListener.EntityTeleportEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity);

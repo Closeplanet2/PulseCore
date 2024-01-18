@@ -16,8 +16,10 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\opener\InventoryOpener.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Enchantment\CustomEnchantment.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Loops\PulseLoop.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\Enum\EntityAnimationType.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerToggleSprint.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\BanListTypeTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\_Loops\OneSecondLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NBT\CustomNBT.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockDamage.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Enchantment\EnchantWrapper.java
@@ -33,13 +35,13 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SandstoneTypeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\content\Pagination.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\PulseCoreEvents.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboard.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ParticleTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\NoteToneTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WorldEnvironmentTest.java
-D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Holograms\HologramsAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\_Loops\HalfSecondLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Recipes\PulseRecipe.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityRegainHealth.java
-D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Loops\OneSecondLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\StringTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\IntegerTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityExplode.java
@@ -91,6 +93,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ChatColorTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\CoalTypeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Enchantment\EnchantmentAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Holograms\Hologram.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Java\PluginAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\content\SlotIterator.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockIgnite.java
@@ -105,6 +108,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Reflection\ReflectionAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityCombustByEntity.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Items\ItemLocation.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboardLines.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FireworkEffectTypeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityDeath.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\PortalTypeTest.java
@@ -112,11 +116,11 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\AsyncPlayerChat.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\LongTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\API\ServerDataAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboardData.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\NetherWartsStateTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryProvider.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ArtTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Movement\TeleportObject.java
-D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Loops\HalfSecondLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerGameModeChange.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerJoin.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundCategoryTest.java
@@ -156,6 +160,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\Builder\SynchedEntityDataBuilder.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\SmartInvsPlugin.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\PluginMessagingChannel\PluginMessageLibrary.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\_Loops\ScoreboardUpdateLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\Interface\CustomVariable.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\StatisticTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\DoubleTest.java

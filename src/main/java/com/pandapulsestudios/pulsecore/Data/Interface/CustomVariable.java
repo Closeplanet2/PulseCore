@@ -4,4 +4,5 @@ public interface CustomVariable {
     default Class<?> ClassType(){ return null; }
     String SerializeData();
     Object DeSerializeData(String serializedData);
+    Object DefaultValue();
 }

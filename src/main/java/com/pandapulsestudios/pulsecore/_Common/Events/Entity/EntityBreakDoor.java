@@ -51,7 +51,7 @@ public class EntityBreakDoor implements Listener {
 
         var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(event.getEntity());
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.nbtListeners){
                 var state = nbtListener.EntityBreakDoorEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getEntity());

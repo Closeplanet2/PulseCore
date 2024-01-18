@@ -1,12 +1,24 @@
 package com.pandapulsestudios.pulsecore.Data.API;
 
+import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
+import com.pandapulsestudios.pulsecore.Chat.MessageType;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class VariableAPI {
+    public static void REGISTER_VAR_TEST(PulseVariableTest pulseVariableTest, boolean override_if_found){
+        for(var classType : pulseVariableTest.ClassTypes()){
+            if(PulseCore.CustomVariableTests.containsKey(classType) && !override_if_found) continue;
+            PulseCore.CustomVariableTests.put(classType, pulseVariableTest);
+            ChatAPI.SendChat(String.format("&3Registered Pulse Variable Test: %s", classType.getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
+        }
+    }
+
     public static boolean REGISTER_VAR_TEST(Class<?> test_class, PulseVariableTest variableLogic, boolean override_if_found){
         if(PulseCore.CustomVariableTests.containsKey(test_class) && !override_if_found) return false;
         PulseCore.CustomVariableTests.put(test_class, variableLogic);
@@ -14,18 +26,7 @@ public class VariableAPI {
     }
 
     public static PulseVariableTest RETURN_TEST_FROM_TYPE(Class<?> classType){
-        for(var test_key : PulseCore.CustomVariableTests.keySet()){
-            var test = PulseCore.CustomVariableTests.get(test_key);
-            if(test.ClassTypes().contains(classType)) return test;
-        }
-        return null;
-    }
-    public static PulseVariableTest RETURN_TEST_FROM_TYPE(String type){
-        for(var test_key : PulseCore.CustomVariableTests.keySet()){
-            var test = PulseCore.CustomVariableTests.get(test_key);
-            for(var t : test.ClassTypes()) if(t.getSimpleName().equalsIgnoreCase(type)) return test;
-        }
-        return null;
+        return PulseCore.CustomVariableTests.getOrDefault(classType, null);
     }
 
     public static List<String> RETURN_AS_ALL_TYPES(String text, boolean addVariableName, boolean isArrayType) {

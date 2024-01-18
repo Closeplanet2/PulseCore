@@ -5,6 +5,7 @@ import com.pandapulsestudios.pulsecore.Block.Interface.PersistentDataInterface;
 import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.Chat.MessageType;
 import com.pandapulsestudios.pulsecore.Data.API.ServerDataAPI;
+import com.pandapulsestudios.pulsecore.Data.API.VariableAPI;
 import com.pandapulsestudios.pulsecore.Data.Interface.CustomVariableTest;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.CustomEnchantment;
@@ -66,10 +67,7 @@ public class ClassAPI {
     }
 
     private static void Register(PulseVariableTest pulseVariableTest){
-        for(var classType : pulseVariableTest.ClassTypes()){
-            PulseCore.CustomVariableTests.put(classType, pulseVariableTest);
-            ChatAPI.SendChat(String.format("&3Registered Pulse Variable Test: %s", classType.getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
-        }
+        VariableAPI.REGISTER_VAR_TEST(pulseVariableTest, false);
     }
 
     private static void Register(PulseEnchantment pulseEnchantment) {

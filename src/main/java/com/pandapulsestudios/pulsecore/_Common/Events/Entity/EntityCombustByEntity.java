@@ -58,7 +58,7 @@ public class EntityCombustByEntity implements Listener {
 
         var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(livingEntity);
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.nbtListeners){
                 var state = nbtListener.EntityCombustByEntityEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity, isAttacker);

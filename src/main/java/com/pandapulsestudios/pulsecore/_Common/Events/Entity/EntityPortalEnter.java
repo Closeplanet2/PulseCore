@@ -35,7 +35,7 @@ public class EntityPortalEnter implements Listener {
 
         var playerInventoryItems = PlayerAPI.ReturnALlPlayerItems(livingEntity);
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.nbtListeners){
                 nbtListener.EntityPortalEnterEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity);
