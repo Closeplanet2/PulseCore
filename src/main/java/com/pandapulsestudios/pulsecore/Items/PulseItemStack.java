@@ -61,7 +61,6 @@ public interface PulseItemStack {
         inventory.addItem(returnItemStack());
     }
 
-    default void RegisteredItemStack(){ ChatAPI.SendChat(String.format("&3Registered ItemStack: %s", itemName()), MessageType.ConsoleMessageNormal, true, null); }
     default boolean BlockBreakEvent(BlockBreakEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean BlockPlaceEvent(BlockPlaceEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean BlockCanBuildEvent(BlockCanBuildEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }

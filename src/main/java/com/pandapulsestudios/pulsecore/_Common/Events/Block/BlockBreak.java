@@ -20,8 +20,10 @@ public class BlockBreak implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(BlockBreakEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.BlockBreakEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.BlockBreakEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){

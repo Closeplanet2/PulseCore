@@ -21,7 +21,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class PlayerJoin implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerJoinEvent event){
-        for(var pulseCoreEvent : PulseCore.PulseCoreEvents) pulseCoreEvent.PlayerJoinEvent(event);
+        for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.PlayerJoinEvent(event);
+            }
+        }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             pulseLocation.PlayerJoinEvent(event, event.getPlayer().getLocation());

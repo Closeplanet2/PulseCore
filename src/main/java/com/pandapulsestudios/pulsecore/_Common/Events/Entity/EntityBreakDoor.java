@@ -24,8 +24,10 @@ public class EntityBreakDoor implements Listener {
         var isEntityPlayer = event.getEntity() instanceof Player;
 
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.EntityBreakDoorEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(isEntityPlayer ? (Player) event.getEntity() : null, event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.EntityBreakDoorEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){

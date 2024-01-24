@@ -23,7 +23,11 @@ public class EntityPortalEnter implements Listener {
         if(!(event.getEntity() instanceof LivingEntity livingEntity)) return;
         var isEntityPlayer = livingEntity instanceof Player;
 
-        for(var pulseCoreEvent : PulseCore.PulseCoreEvents) pulseCoreEvent.EntityPortalEnterEvent(event);
+        for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
+            if(pulseCoreEvent.CanDoEvent(isEntityPlayer ? (Player) livingEntity : null, event.getLocation())){
+                pulseCoreEvent.pulseCoreEvents.EntityPortalEnterEvent(event);
+            }
+        }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){
             pulseLocation.EntityPortalEnterEvent(event, livingEntity.getLocation());

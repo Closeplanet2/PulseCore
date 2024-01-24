@@ -10,7 +10,4 @@ public interface PulseLoop {
     Long LoopInterval();
     void LoopFunction();
     default String ReturnID(){ return getClass().getSimpleName();}
-    default void RegisterLoop(){
-        ChatAPI.SendChat(String.format("&3Registered Loop: %s", ReturnID()), MessageType.ConsoleMessageNormal, true, null);
-    }
 }

@@ -7,4 +7,9 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface CustomCoreEvents { }
+public @interface CustomCoreEvents {
+    boolean op();
+    String[] perms();
+    String[] worlds();
+    String[] regions();
+}

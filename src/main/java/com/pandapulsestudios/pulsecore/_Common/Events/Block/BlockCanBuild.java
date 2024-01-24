@@ -19,8 +19,10 @@ public class BlockCanBuild implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(BlockCanBuildEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.BlockCanBuildEvent(event);
-            if(!event.isBuildable()) event.setBuildable(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.BlockCanBuildEvent(event);
+                if(!event.isBuildable()) event.setBuildable(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){

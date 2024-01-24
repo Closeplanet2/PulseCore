@@ -20,8 +20,10 @@ public class PlayerBedEnter implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerBedEnterEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.PlayerBedEnterEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.PlayerBedEnterEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){

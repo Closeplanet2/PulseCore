@@ -19,8 +19,10 @@ public class BlockDamage implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(BlockDamageEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.BlockDamageEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.BlockDamageEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){

@@ -20,7 +20,11 @@ import org.bukkit.event.player.PlayerExpChangeEvent;
 public class PlayerExpChange implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerExpChangeEvent event){
-        for(var pulseCoreEvent : PulseCore.PulseCoreEvents) pulseCoreEvent.PlayerExpChangeEvent(event);
+        for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.PlayerExpChangeEvent(event);
+            }
+        }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){
             pulseLocation.PlayerExpChangeEvent(event, event.getPlayer().getLocation());

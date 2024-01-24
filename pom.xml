@@ -6,7 +6,7 @@
 
     <groupId>com.pandapulsestudios</groupId>
     <artifactId>pulsecore</artifactId>
-    <version>1.1.8-a</version>
+    <version>1.1.9-a</version>
     <name>PulseCore</name>
 
     <distributionManagement>
@@ -61,6 +61,13 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>sk89q-repo</id>
+            <url>https://maven.enginehub.org/repo/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -68,6 +75,12 @@
             <version>1.20.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
             <classifier>remapped-mojang</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q.worldguard</groupId>
+            <artifactId>worldguard-bukkit</artifactId>
+            <version>LATEST</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

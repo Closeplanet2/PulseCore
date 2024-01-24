@@ -40,11 +40,13 @@ com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\RaidRaidStatus
 com\pandapulsestudios\pulsecore\Items\ItemLocation.class
 com\pandapulsestudios\pulsecore\NMS\API\PacketAPI$Play.class
 com\pandapulsestudios\pulsecore\Chat\ConsoleMessageType.class
+com\pandapulsestudios\pulsecore\_External\WorldGuard\WorldGuardAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ChatColorTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\NetherWartsStateTest.class
 com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboardLines$PulseScoreboardLinesBuilder.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\GameModeTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\CoalTypeTest.class
+com\pandapulsestudios\pulsecore\_External\WorldGuard\WorldGuardAPI$REGION.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundCategoryTest.class
 com\pandapulsestudios\pulsecore\Player\HeadAPI.class
 com\pandapulsestudios\pulsecore\Java\JavaAPI.class
@@ -54,7 +56,9 @@ com\pandapulsestudios\pulsecore\NMS\API\PacketAPI$Play$Server.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidCollisionModeTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.class
 com\pandapulsestudios\pulsecore\Block\API\BlockDataAPI.class
+com\pandapulsestudios\pulsecore\Events\EventWrapper.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WorldTypeTest.class
+com\pandapulsestudios\pulsecore\Java\SoftDependPlugins.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaUtil\UUIDTest.class
 com\pandapulsestudios\pulsecore\PulseCore.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\BoolTest.class
@@ -90,6 +94,7 @@ com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ParticleTest.c
 com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboardData.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\DoubleTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundTest.class
+com\pandapulsestudios\pulsecore\_External\WorldGuard\WorldGuardAPI$FLAGS.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WarningWarningTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\RotationTest.class
 com\pandapulsestudios\pulsecore\_Common\_Loops\ScoreboardUpdateLoop.class

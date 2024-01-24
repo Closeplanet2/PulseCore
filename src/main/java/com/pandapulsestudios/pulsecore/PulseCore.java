@@ -3,6 +3,7 @@ package com.pandapulsestudios.pulsecore;
 import com.pandapulsestudios.pulsecore.Block.Interface.PersistentDataCallbacks;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
+import com.pandapulsestudios.pulsecore.Events.EventWrapper;
 import com.pandapulsestudios.pulsecore.Events.PulseCoreEvents;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
 import com.pandapulsestudios.pulsecore.Java.ClassAPI;
@@ -47,7 +48,7 @@ public final class PulseCore extends JavaPlugin {
     public static HashMap<World, Integer> saturationLockLock = new HashMap<>();
     public static HashMap<World, List<PlayerAction>> playerActionLock = new HashMap<>();
     public static ArrayList<PersistentDataCallbacks> persistentDataCallbacks = new ArrayList<>();
-    public static ArrayList<PulseCoreEvents> PulseCoreEvents = new ArrayList<>();
+    public static ArrayList<EventWrapper> PulseCoreEvents = new ArrayList<>();
     public static ArrayList<TeleportObject> TeleportObjects = new ArrayList<>();
     public static ArrayList<PulseNBTListener> nbtListeners = new ArrayList<>();
     public static boolean handlePlayerActionEventsInHouse = true;

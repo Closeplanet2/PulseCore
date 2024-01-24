@@ -17,8 +17,10 @@ public class PlayerMove {
         var isCancelled = false;
 
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.PlayerMove(player, lastLocation, newLocation);
-            if(!isCancelled) isCancelled = state;
+            if(pulseCoreEvent.CanDoEvent(player, newLocation)){
+                var state = pulseCoreEvent.pulseCoreEvents.PlayerMove(player, lastLocation, newLocation);
+                if(!isCancelled) isCancelled = !state;
+            }
         }
 
         if(PulseCore.handlePlayerActionEventsInHouse){

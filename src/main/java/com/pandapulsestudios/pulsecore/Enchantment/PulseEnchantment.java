@@ -36,9 +36,6 @@ public interface PulseEnchantment {
         itemStack.setItemMeta(itemMeta);
         return itemStack.getEnchantmentLevel(ReturnEnchantment()) != 0;
     }
-    default void RegisteredEnchantment(){
-        ChatAPI.SendChat(String.format("&3Registered Enchantment: %s", enchantmentName()), MessageType.ConsoleMessageNormal, true, null);
-    }
 
     default boolean BlockBreakEvent(BlockBreakEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }
     default boolean BlockPlaceEvent(BlockPlaceEvent event, ItemStack itemStack, ItemLocation itemLocation){ return false; }

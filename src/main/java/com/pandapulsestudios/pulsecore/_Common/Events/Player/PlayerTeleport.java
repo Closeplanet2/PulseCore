@@ -21,8 +21,10 @@ public class PlayerTeleport implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerTeleportEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.PlayerTeleportEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.PlayerTeleportEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){

@@ -23,8 +23,10 @@ public class FoodLevelChange implements Listener {
         var isEntityPlayer = event.getEntity() instanceof Player;
 
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.FoodLevelChangeEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(isEntityPlayer ? (Player) event.getEntity() : null, event.getEntity().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.FoodLevelChangeEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEntity().getLocation(), true)){

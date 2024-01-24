@@ -21,7 +21,11 @@ import org.bukkit.event.entity.EntityDeathEvent;
 public class EntityDeath implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(EntityDeathEvent event){
-        for(var pulseCoreEvent : PulseCore.PulseCoreEvents) pulseCoreEvent.EntityDeathEvent(event);
+        for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
+            if(pulseCoreEvent.CanDoEvent(null, event.getEntity().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.EntityDeathEvent(event);
+            }
+        }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEntity().getLocation(), true)){
             pulseLocation.EntityDeathEvent(event, event.getEntity().getLocation());

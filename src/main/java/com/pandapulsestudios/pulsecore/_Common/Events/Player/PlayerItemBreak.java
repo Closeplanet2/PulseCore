@@ -21,7 +21,9 @@ public class PlayerItemBreak implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerItemBreakEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-           pulseCoreEvent.PlayerItemBreakEvent(event);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.PlayerItemBreakEvent(event);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){

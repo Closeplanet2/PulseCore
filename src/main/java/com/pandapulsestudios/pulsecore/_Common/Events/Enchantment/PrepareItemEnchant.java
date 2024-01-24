@@ -20,8 +20,10 @@ public class PrepareItemEnchant implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(PrepareItemEnchantEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.PrepareItemEnchantEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getEnchanter(), event.getEnchantBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.PrepareItemEnchantEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getEnchanter().getLocation(), true)){

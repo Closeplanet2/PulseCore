@@ -30,8 +30,4 @@ public interface PulseWorld {
     default World CloneWorldFromBase(String newWorldName, boolean deleteOldWorld, ArrayList<String> ignore){
         return WorldAPI.CreateCopy(defaultWorldName(), newWorldName, deleteOldWorld, ignore);
     }
-
-    default void RegisteredWorld(){
-        ChatAPI.SendChat(String.format("&3Registered World: %s", defaultWorldName()), MessageType.ConsoleMessageNormal, true, null);
-    }
 }

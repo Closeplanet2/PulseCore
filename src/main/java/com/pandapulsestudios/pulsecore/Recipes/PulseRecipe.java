@@ -61,6 +61,4 @@ public interface PulseRecipe {
         }
         return null;
     }
-
-    default void Registered(){ChatAPI.SendChat(String.format("&3Registered %s: %s", recipeType().name(), recipeName()), MessageType.ConsoleMessageNormal, true, null); }
 }

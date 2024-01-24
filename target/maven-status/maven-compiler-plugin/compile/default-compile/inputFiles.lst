@@ -59,6 +59,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\StatisticType.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\EntityEffectTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\HeightMapTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\EventWrapper.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Location\CustomLocation.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\Enums\PlayerAction.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\RotationTest.java
@@ -80,6 +81,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\GameModeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\Interface\CustomVariableTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ChatColorBungTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Java\SoftDependPlugins.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBucketEmpty.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\API\GlowAPI.java
@@ -123,6 +125,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryProvider.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ArtTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Movement\TeleportObject.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\WorldGuard\WorldGuardAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerGameModeChange.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerJoin.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundCategoryTest.java

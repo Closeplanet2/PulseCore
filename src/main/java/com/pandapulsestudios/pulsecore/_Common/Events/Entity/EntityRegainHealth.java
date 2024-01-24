@@ -25,8 +25,10 @@ public class EntityRegainHealth implements Listener {
         var isEntityPlayer = livingEntity instanceof Player;
 
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.EntityRegainHealthEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(isEntityPlayer ? (Player) event.getEntity() : null, event.getEntity().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.EntityRegainHealthEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(livingEntity.getLocation(), true)){

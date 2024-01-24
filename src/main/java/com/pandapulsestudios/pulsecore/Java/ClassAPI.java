@@ -12,6 +12,7 @@ import com.pandapulsestudios.pulsecore.Enchantment.CustomEnchantment;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
 import com.pandapulsestudios.pulsecore.Events.CustomCoreEvents;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
+import com.pandapulsestudios.pulsecore.Events.EventWrapper;
 import com.pandapulsestudios.pulsecore.Events.PulseCoreEvents;
 import com.pandapulsestudios.pulsecore.Items.CustomItemStack;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
@@ -47,7 +48,7 @@ public class ClassAPI {
         for(var CustomEvent : interfaceClasses.get(CustomEvent.class)) Register(javaPlugin, (Listener) CustomEvent.getConstructor().newInstance());
         for(var CustomVariableTest : interfaceClasses.get(CustomVariableTest.class)) Register((PulseVariableTest) CustomVariableTest.getConstructor().newInstance());
         for(var CustomEnchantment : interfaceClasses.get(CustomEnchantment.class)) Register((PulseEnchantment) CustomEnchantment.getConstructor().newInstance());
-        for(var CustomEnchantment : interfaceClasses.get(CustomCoreEvents.class)) Register((PulseCoreEvents) CustomEnchantment.getConstructor().newInstance());
+        for(var CustomEnchantment : interfaceClasses.get(CustomCoreEvents.class)) Register(CustomEnchantment, (PulseCoreEvents) CustomEnchantment.getConstructor().newInstance());
         for(var CustomEnchantment : interfaceClasses.get(CustomItemStack.class)) Register((PulseItemStack) CustomEnchantment.getConstructor().newInstance());
         for(var CustomEnchantment : interfaceClasses.get(CustomLocation.class)) Register((PulseLocation) CustomEnchantment.getConstructor().newInstance());
         for(var CustomEnchantment : interfaceClasses.get(CustomLoop.class)) Register(javaPlugin, (PulseLoop) CustomEnchantment.getConstructor().newInstance());
@@ -59,6 +60,7 @@ public class ClassAPI {
     private static void Register(PersistentDataCallbacks persistentDataCallbacks){
         persistentDataCallbacks.RegisteredPersistentData();
         PulseCore.persistentDataCallbacks.add(persistentDataCallbacks);
+        ChatAPI.SendChat(String.format("&1Registered Persistent Data Callbacks: %s", persistentDataCallbacks.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, Listener listener){
@@ -72,22 +74,23 @@ public class ClassAPI {
 
     private static void Register(PulseEnchantment pulseEnchantment) {
         PulseCore.CustomEnchantments.put(pulseEnchantment.enchantmentName(), pulseEnchantment);
-        pulseEnchantment.RegisteredEnchantment();
+        ChatAPI.SendChat(String.format("&4Registered Enchantment: %s", pulseEnchantment.enchantmentName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
-    private static void Register(PulseCoreEvents pulseCoreEvents){
-        PulseCore.PulseCoreEvents.add(pulseCoreEvents);
-        ChatAPI.SendChat(String.format("&3Registered Pulse Core Event: %s", pulseCoreEvents.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
+    private static void Register(Class<?> tClass, PulseCoreEvents pulseCoreEvents){
+        if(!tClass.isAnnotationPresent(CustomCoreEvents.class)) return;
+        PulseCore.PulseCoreEvents.add(new EventWrapper(pulseCoreEvents, tClass.getAnnotation(CustomCoreEvents.class)));
+        ChatAPI.SendChat(String.format("&5Registered Custom Core Event: %s", pulseCoreEvents.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(PulseItemStack pulseItemStack){
         PulseCore.CustomItemStacks.put(pulseItemStack.itemName(), pulseItemStack);
-        pulseItemStack.RegisteredItemStack();
+        ChatAPI.SendChat(String.format("&6Registered ItemStack: %s", pulseItemStack.itemName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(PulseLocation pulseLocation){
         PulseCore.CustomLocations.put(pulseLocation.locationName(), pulseLocation);
-        pulseLocation.RegisteredLocation();
+        ChatAPI.SendChat(String.format("&7Registered Location: %s", pulseLocation.locationName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseLoop pulseLoop){
@@ -99,21 +102,21 @@ public class ClassAPI {
         }, pulseLoop.StartDelay(), pulseLoop.LoopInterval());
 
         ServerDataAPI.STORE("LOOP:" + pulseLoop.ReturnID(), id, true);
-        pulseLoop.RegisterLoop();
+        ChatAPI.SendChat(String.format("&8Registered Loop: %s", pulseLoop.ReturnID()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseRecipe pulseRecipe){
         Bukkit.addRecipe(pulseRecipe.ReturnRecipe(javaPlugin));
-        pulseRecipe.Registered();
+        ChatAPI.SendChat(String.format("&9Registered %s: %s", pulseRecipe.recipeType().name(), pulseRecipe.recipeName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseNBTListener pulseNBTListener){
         PulseCore.nbtListeners.add(pulseNBTListener);
-        ChatAPI.SendChat(String.format("&3Registered NBT Listener: %s", javaPlugin.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
+        ChatAPI.SendChat(String.format("&aRegistered NBT Listener: %s", javaPlugin.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
     private static void Register(PulseWorld pulseWorld){
         pulseWorld.LoadWorld(null);
-        pulseWorld.RegisteredWorld();
+        ChatAPI.SendChat(String.format("&bRegistered World: %s", pulseWorld.defaultWorldName()), MessageType.ConsoleMessageNormal, true, null);
     }
 }

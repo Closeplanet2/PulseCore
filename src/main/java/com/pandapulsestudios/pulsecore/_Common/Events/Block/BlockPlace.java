@@ -19,8 +19,10 @@ public class BlockPlace implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(BlockPlaceEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.BlockPlaceEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.BlockPlaceEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){

@@ -21,7 +21,9 @@ public class PlayerLevelChange implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerLevelChangeEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            pulseCoreEvent.PlayerLevelChangeEvent(event);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.PlayerLevelChangeEvent(event);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){

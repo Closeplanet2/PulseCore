@@ -21,7 +21,9 @@ public class PlayerRespawn implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void OnBlockBreak(PlayerRespawnEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            pulseCoreEvent.PlayerRespawnEvent(event);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation())){
+                pulseCoreEvent.pulseCoreEvents.PlayerRespawnEvent(event);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getPlayer().getLocation(), true)){

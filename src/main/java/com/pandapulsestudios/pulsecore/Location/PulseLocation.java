@@ -31,7 +31,6 @@ public interface PulseLocation {
         for(var entity : entities) entity.teleport(storedLocation());
     }
 
-    default void RegisteredLocation(){ ChatAPI.SendChat(String.format("&3Registered Location: %s", locationName()), MessageType.ConsoleMessageNormal, true, null); }
     default boolean BlockBreakEvent(BlockBreakEvent event, Location location){ return false; }
     default boolean BlockPlaceEvent(BlockPlaceEvent event, Location location){ return false; }
     default boolean BlockCanBuildEvent(BlockCanBuildEvent event, Location location){ return false; }

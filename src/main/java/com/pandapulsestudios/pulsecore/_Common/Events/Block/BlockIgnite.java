@@ -20,8 +20,10 @@ public class BlockIgnite implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(BlockIgniteEvent event){
         for(var pulseCoreEvent : PulseCore.PulseCoreEvents){
-            var state = pulseCoreEvent.BlockIgniteEvent(event);
-            if(!event.isCancelled()) event.setCancelled(state);
+            if(pulseCoreEvent.CanDoEvent(event.getPlayer(), event.getBlock().getLocation())){
+                var state = pulseCoreEvent.pulseCoreEvents.BlockIgniteEvent(event);
+                if(!event.isCancelled()) event.setCancelled(state);
+            }
         }
 
         for(var pulseLocation :  LocationAPI.ReturnAllPulseLocations(event.getBlock().getLocation(), true)){
