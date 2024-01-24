@@ -44,6 +44,7 @@ public class DirAPI {
     public static boolean Create(File directory){ return directory.exists() || directory.mkdirs(); }
     public static List<File> ReturnAllDirectoryPaths(File directory, boolean loop){
         var data = new ArrayList<File>();
+        Create(directory);
         if(directory.isDirectory() && !directory.exists()) return data;
         for(var child : directory.listFiles()){
             if(child.isDirectory() && loop) data.addAll(ReturnAllDirectoryPaths(child, loop));

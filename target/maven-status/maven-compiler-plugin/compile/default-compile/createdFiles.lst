@@ -53,6 +53,7 @@ com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidTest.clas
 com\pandapulsestudios\pulsecore\NMS\API\PacketAPI$Play$Server.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidCollisionModeTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.class
+com\pandapulsestudios\pulsecore\Block\API\BlockDataAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WorldTypeTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaUtil\UUIDTest.class
 com\pandapulsestudios\pulsecore\PulseCore.class
@@ -64,6 +65,7 @@ com\pandapulsestudios\pulsecore\Player\Enums\HandlePlayerAction.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WorldEnvironmentTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\AxisTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\EffectTest.class
+com\pandapulsestudios\pulsecore\Inventory\InventoryAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\FloatTest.class
 com\pandapulsestudios\pulsecore\Reflection\ReflectionAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\EntityEffectTest.class
