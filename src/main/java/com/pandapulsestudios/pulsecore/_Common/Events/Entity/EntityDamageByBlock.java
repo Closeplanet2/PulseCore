@@ -15,7 +15,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
-import org.bukkit.event.entity.EntityDamageByBlockEvent;
 
 @CustomEvent
 public class EntityDamageByBlock implements Listener {
@@ -37,14 +36,14 @@ public class EntityDamageByBlock implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityDamageByBlock, (Player) livingEntity);
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = livingEntity.getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityDamageByBlock);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityDamageByBlock);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -57,7 +56,7 @@ public class EntityDamageByBlock implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityDamageByBlockEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity);
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -74,7 +73,7 @@ public class EntityDamageByBlock implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getDamager())) continue;
             var feedbackState = persistentDataCallback.EntityDamageByBlockEvent(event, event.getDamager(), PersistentDataAPI.GetAll(event.getDamager()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

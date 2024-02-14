@@ -15,7 +15,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityCombustByBlockEvent;
-import org.bukkit.event.entity.EntityCombustByBlockEvent;
 
 @CustomEvent
 public class EntityCombustByBlock implements Listener {
@@ -37,14 +36,14 @@ public class EntityCombustByBlock implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityCombustByBlock, (Player) livingEntity);
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = livingEntity.getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityCombustByBlock);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityCombustByBlock);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -57,7 +56,7 @@ public class EntityCombustByBlock implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityCombustByBlockEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity);
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -74,7 +73,7 @@ public class EntityCombustByBlock implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getCombuster())) continue;
             var feedbackState = persistentDataCallback.EntityCombustByBlockEvent(event, event.getCombuster(), PersistentDataAPI.GetAll(event.getCombuster()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

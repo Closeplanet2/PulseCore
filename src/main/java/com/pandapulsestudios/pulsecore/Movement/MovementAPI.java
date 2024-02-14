@@ -1,6 +1,6 @@
 package com.pandapulsestudios.pulsecore.Movement;
 
-import com.pandapulsestudios.pulsecore.Data.API.PlayerDataAPI;
+import com.pandapulsestudios.pulsecore.Data.API.UUIDDataAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import org.bukkit.Location;
@@ -9,12 +9,12 @@ import org.bukkit.entity.Player;
 public class MovementAPI {
     public static void LockPlayerLocation(Player player){ LockPlayerLocation(player, player.getLocation()); }
     public static void LockPlayerLocation(Player player, Location location){
-        PlayerDataAPI.STORE(player.getUniqueId(), "MovementLoop", location);
+        UUIDDataAPI.STORE(player.getUniqueId(), "MovementLoop", location);
         PlayerAPI.TogglePlayerAction(PlayerAction.PlayerMove, false, player);
     }
 
     public static void UnLockPlayerLocation(Player player){
-        PlayerDataAPI.REMOVE(player.getUniqueId(), "MovementLoop");
+        UUIDDataAPI.REMOVE(player.getUniqueId(), "MovementLoop");
         PlayerAPI.TogglePlayerAction(PlayerAction.PlayerMove, true, player);
     }
 
@@ -26,7 +26,7 @@ public class MovementAPI {
     }
 
     private static Location ReturnLockedLocation(Player player){
-        var location = PlayerDataAPI.GET(player.getUniqueId(), "MovementLoop", null);
+        var location = UUIDDataAPI.GET(player.getUniqueId(), "MovementLoop", null);
         if(location == null) return null;
         return (Location) location;
     }

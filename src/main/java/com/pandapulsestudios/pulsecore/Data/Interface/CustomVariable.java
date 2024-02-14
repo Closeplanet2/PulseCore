@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore.Data.Interface;
 
 public interface CustomVariable {
-    default Class<?> ClassType(){ return null; }
+    Class<?> ClassType();
     String SerializeData();
     Object DeSerializeData(String serializedData);
     Object DefaultValue();

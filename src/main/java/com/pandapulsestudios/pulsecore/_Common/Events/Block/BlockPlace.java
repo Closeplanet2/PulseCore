@@ -30,14 +30,14 @@ public class BlockPlace implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.HandlePlayerActionEventsInHouse){
             var state = PlayerAPI.CanDoAction(PlayerAction.BlockPlace, event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getPlayer().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.BlockPlace);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.BlockPlace);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -50,7 +50,7 @@ public class BlockPlace implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.BlockPlaceEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -67,7 +67,7 @@ public class BlockPlace implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBlock())) continue;
             var feedbackState = persistentDataCallback.BlockPlaceEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

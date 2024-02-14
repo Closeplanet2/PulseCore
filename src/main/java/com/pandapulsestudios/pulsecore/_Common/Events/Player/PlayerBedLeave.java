@@ -9,11 +9,9 @@ import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBedLeaveEvent;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
 
 @CustomEvent
@@ -32,14 +30,14 @@ public class PlayerBedLeave implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.HandlePlayerActionEventsInHouse){
             var state = PlayerAPI.CanDoAction(PlayerAction.PlayerBedLeave, event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getPlayer().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.PlayerBedLeave);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.PlayerBedLeave);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -52,7 +50,7 @@ public class PlayerBedLeave implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.PlayerBedLeaveEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -69,7 +67,7 @@ public class PlayerBedLeave implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBed())) continue;
             var feedbackState = persistentDataCallback.PlayerBedLeaveEvent(event, event.getBed(), PersistentDataAPI.GetAll(event.getBed()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

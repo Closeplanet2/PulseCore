@@ -12,7 +12,6 @@ import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.event.block.BlockIgniteEvent;
 
 @CustomEvent
@@ -31,13 +30,13 @@ public class BlockIgnite implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && event.getPlayer() != null){
+        if(PulseCore.HandlePlayerActionEventsInHouse && event.getPlayer() != null){
             var state = PlayerAPI.CanDoAction(PlayerAction.BlockIgnite, event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
-        if(PulseCore.playerActionLock.containsKey(event.getBlock().getWorld())){
-            var state = PulseCore.playerActionLock.get(event.getBlock().getWorld()).contains(PlayerAction.BlockIgnite);
+        if(PulseCore.PlayerActionLock.containsKey(event.getBlock().getWorld())){
+            var state = PulseCore.PlayerActionLock.get(event.getBlock().getWorld()).contains(PlayerAction.BlockIgnite);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -51,7 +50,7 @@ public class BlockIgnite implements Listener {
             for(var itemStack : playerInventoryItems.keySet()){
                 if(itemStack.getItemMeta() == null) continue;
 
-                for(var nbtListener : PulseCore.nbtListeners){
+                for(var nbtListener : PulseCore.NbtListeners){
                     var state = nbtListener.BlockIgniteEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
                     if(!event.isCancelled()) event.setCancelled(state);
                 }
@@ -69,7 +68,7 @@ public class BlockIgnite implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBlock())) continue;
             var feedbackState = persistentDataCallback.BlockIgniteEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

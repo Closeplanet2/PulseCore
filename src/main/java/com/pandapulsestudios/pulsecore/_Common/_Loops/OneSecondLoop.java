@@ -1,6 +1,6 @@
 package com.pandapulsestudios.pulsecore._Common._Loops;
 
-import com.pandapulsestudios.pulsecore.Data.API.PlayerDataAPI;
+import com.pandapulsestudios.pulsecore.Data.API.UUIDDataAPI;
 import com.pandapulsestudios.pulsecore.Loops.CustomLoop;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore._Common.Events.Custom.PlayerMove;
@@ -18,9 +18,9 @@ public class OneSecondLoop implements PulseLoop {
     @Override
     public void LoopFunction() {
         for(var player : Bukkit.getOnlinePlayers()){
-            var storedLocation = PlayerDataAPI.GET(player.getUniqueId(), "StoredLocation", null);
+            var storedLocation = UUIDDataAPI.GET(player.getUniqueId(), "StoredLocation", null);
             PlayerMove.HandleEvent(player, storedLocation == null ? player.getLocation() : (Location) storedLocation, player.getLocation());
-            PlayerDataAPI.STORE(player.getUniqueId(), "StoredLocation", player.getLocation());
+            UUIDDataAPI.STORE(player.getUniqueId(), "StoredLocation", player.getLocation());
         }
     }
 }

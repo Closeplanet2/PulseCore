@@ -25,7 +25,6 @@ import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import com.pandapulsestudios.pulsecore.Recipes.CustomRecipe;
 import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
-import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
 import com.pandapulsestudios.pulsecore.World.CustomWorld;
 import com.pandapulsestudios.pulsecore.World.PulseWorld;
 import org.bukkit.Bukkit;
@@ -59,7 +58,7 @@ public class ClassAPI {
 
     private static void Register(PersistentDataCallbacks persistentDataCallbacks){
         persistentDataCallbacks.RegisteredPersistentData();
-        PulseCore.persistentDataCallbacks.add(persistentDataCallbacks);
+        PulseCore.PersistentDataCallbacks.add(persistentDataCallbacks);
         ChatAPI.SendChat(String.format("&1Registered Persistent Data Callbacks: %s", persistentDataCallbacks.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 
@@ -111,7 +110,7 @@ public class ClassAPI {
     }
 
     private static void Register(JavaPlugin javaPlugin, PulseNBTListener pulseNBTListener){
-        PulseCore.nbtListeners.add(pulseNBTListener);
+        PulseCore.NbtListeners.add(pulseNBTListener);
         ChatAPI.SendChat(String.format("&aRegistered NBT Listener: %s", javaPlugin.getClass().getSimpleName()), MessageType.ConsoleMessageNormal, true, null);
     }
 

@@ -1,6 +1,5 @@
 package com.pandapulsestudios.pulsecore._Common.Events.Entity;
 
-import com.pandapulsestudios.pulsecore.Block.API.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
@@ -13,7 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
 
 @CustomEvent
@@ -34,14 +32,14 @@ public class EntityShootBow implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityShootBow, (Player) event.getEntity());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getEntity().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityShootBow);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityShootBow);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -54,7 +52,7 @@ public class EntityShootBow implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityShootBowEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getEntity());
                 if(!event.isCancelled()) event.setCancelled(state);
             }

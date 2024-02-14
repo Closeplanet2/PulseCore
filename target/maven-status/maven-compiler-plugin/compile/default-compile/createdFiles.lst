@@ -52,6 +52,7 @@ com\pandapulsestudios\pulsecore\Player\HeadAPI.class
 com\pandapulsestudios\pulsecore\Java\JavaAPI.class
 com\pandapulsestudios\pulsecore\Data\API\VariableAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidTest.class
+com\pandapulsestudios\pulsecore\Data\API\UUIDDataAPI.class
 com\pandapulsestudios\pulsecore\NMS\API\PacketAPI$Play$Server.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidCollisionModeTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.class

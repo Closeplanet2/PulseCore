@@ -1,6 +1,5 @@
 package com.pandapulsestudios.pulsecore._Common.Events.Entity;
 
-import com.pandapulsestudios.pulsecore.Block.API.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
@@ -42,14 +41,14 @@ public class EntityCombustByEntity implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityCombustByEntity, (Player) livingEntity);
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = livingEntity.getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityCombustByEntity);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityCombustByEntity);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -62,7 +61,7 @@ public class EntityCombustByEntity implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityCombustByEntityEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity, isAttacker);
                 if(!event.isCancelled()) event.setCancelled(state);
             }

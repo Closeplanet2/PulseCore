@@ -15,7 +15,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityInteractEvent;
-import org.bukkit.event.entity.EntityInteractEvent;
 
 @CustomEvent
 public class EntityInteract implements Listener {
@@ -36,14 +35,14 @@ public class EntityInteract implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityInteract, (Player) livingEntity);
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = livingEntity.getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityInteract);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityInteract);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -56,7 +55,7 @@ public class EntityInteract implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityInteractEvent(event, itemStack, NBTAPI.GetAll(itemStack), livingEntity);
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -73,7 +72,7 @@ public class EntityInteract implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBlock())) continue;
             var feedbackState = persistentDataCallback.EntityInteractEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

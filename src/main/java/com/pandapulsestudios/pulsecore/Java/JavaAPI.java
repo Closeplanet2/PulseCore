@@ -36,8 +36,12 @@ public class JavaAPI {
 
     public static List<Class<?>> ReturnAllClassFromPlugin(JavaPlugin javaPlugin) throws Exception{
         var data = new ArrayList<Class<?>>();
-        for(var className : ReturnAllClassNamesFromPlugin(javaPlugin)) data.add(Class.forName(className));
+        for(var className : ReturnAllClassNamesFromPlugin(javaPlugin)) data.add(ReturnClassFromPlugin(className));
         return data;
+    }
+
+    public static Class<?> ReturnClassFromPlugin(String className) throws ClassNotFoundException {
+        return Class.forName(className);
     }
 
     public static List<String> ReturnAllClassNamesFromPlugin(JavaPlugin javaPlugin) throws Exception{

@@ -1,5 +1,5 @@
 name: PulseCore
-version: 1.1.9-a
+version: 1.1.14-a
 main: com.pandapulsestudios.pulsecore.PulseCore
 authors: [Closeplanet2, PandaPulseStudios]
 softdepend: [WorldGuard]

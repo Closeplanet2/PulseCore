@@ -1,19 +1,15 @@
 package com.pandapulsestudios.pulsecore._Common.Events.Player;
 
-import com.pandapulsestudios.pulsecore.Block.API.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
 import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
-import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerExpChangeEvent;
 import org.bukkit.event.player.PlayerExpChangeEvent;
 
 @CustomEvent
@@ -38,7 +34,7 @@ public class PlayerExpChange implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 nbtListener.PlayerExpChangeEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
             }
 

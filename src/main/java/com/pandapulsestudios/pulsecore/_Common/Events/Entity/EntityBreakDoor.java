@@ -9,12 +9,10 @@ import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityBreakDoorEvent;
 
 @CustomEvent
@@ -35,14 +33,14 @@ public class EntityBreakDoor implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse && isEntityPlayer){
+        if(PulseCore.HandlePlayerActionEventsInHouse && isEntityPlayer){
             var state = PlayerAPI.CanDoAction(PlayerAction.EntityBreakDoor, (Player) event.getEntity());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getEntity().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld) && isEntityPlayer){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EntityBreakDoor);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld) && isEntityPlayer){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EntityBreakDoor);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -55,7 +53,7 @@ public class EntityBreakDoor implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EntityBreakDoorEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getEntity());
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -72,7 +70,7 @@ public class EntityBreakDoor implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBlock())) continue;
             var feedbackState = persistentDataCallback.EntityBreakDoorEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

@@ -1,0 +1,16 @@
+var firstSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 1")
+                .addLine(1, new PulseScoreboardData("Hello1"))
+                .addLine(2, new PulseScoreboardData("Hello2"))
+                .build();
+        var secondSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 2")
+                .addLine(1, new PulseScoreboardData("Hello3"))
+                .addLine(2, new PulseScoreboardData("Hello4"))
+                .build();
+        var pulseScoreboard = PulseScoreboard.builder()
+                .scoreboardID(event.getPlayer().getDisplayName())
+                .addPlayer(event.getPlayer())
+                .addLineHolder(20, firstSection)
+                .addLineHolder(20, secondSection)
+                .create(false);

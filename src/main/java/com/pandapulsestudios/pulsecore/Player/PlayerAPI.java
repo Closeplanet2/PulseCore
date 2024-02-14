@@ -14,7 +14,7 @@ public class PlayerAPI {
     public static boolean CanDoAction(PlayerAction playerAction, Player... players){
         for(var player : players){
             if(player == null) continue;
-            var playerHashmap = PulseCore.PlayerToggeableActions.getOrDefault(playerAction, new HashMap<>());
+            var playerHashmap = PulseCore.PlayerToggleActions.getOrDefault(playerAction, new HashMap<>());
             var playerActionState = playerHashmap.getOrDefault(player.getUniqueId(), true);
             if(!playerActionState) return false;
         }
@@ -23,15 +23,15 @@ public class PlayerAPI {
 
     public static void TogglePlayerAction(PlayerAction playerAction, boolean state, Player... players){
         for(var player : players){
-            var playerHashmap = PulseCore.PlayerToggeableActions.getOrDefault(playerAction, new HashMap<>());
+            var playerHashmap = PulseCore.PlayerToggleActions.getOrDefault(playerAction, new HashMap<>());
             playerHashmap.put(player.getUniqueId(), state);
-            PulseCore.PlayerToggeableActions.put(playerAction, playerHashmap);
+            PulseCore.PlayerToggleActions.put(playerAction, playerHashmap);
         }
     }
 
     public static void HandlePlayerActions(HandlePlayerAction handlePlayerAction){
-        if(!PulseCore.handlePlayerActionEventsInHouse) return;
-        PulseCore.handlePlayerActionEventsInHouse = handlePlayerAction == HandlePlayerAction.InPulseCore;
+        if(!PulseCore.HandlePlayerActionEventsInHouse) return;
+        PulseCore.HandlePlayerActionEventsInHouse = handlePlayerAction == HandlePlayerAction.InPulseCore;
     }
 
     public static HashMap<ItemStack, ItemLocation> ReturnALlPlayerItems(Player player){

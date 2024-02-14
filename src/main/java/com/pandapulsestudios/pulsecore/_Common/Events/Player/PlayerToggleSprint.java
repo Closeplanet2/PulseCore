@@ -1,6 +1,5 @@
 package com.pandapulsestudios.pulsecore._Common.Events.Player;
 
-import com.pandapulsestudios.pulsecore.Block.API.PersistentDataAPI;
 import com.pandapulsestudios.pulsecore.Enchantment.EnchantmentAPI;
 import com.pandapulsestudios.pulsecore.Events.CustomEvent;
 import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
@@ -13,7 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerToggleSprintEvent;
 import org.bukkit.event.player.PlayerToggleSprintEvent;
 
 @CustomEvent
@@ -32,14 +30,14 @@ public class PlayerToggleSprint implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.HandlePlayerActionEventsInHouse){
             var state = PlayerAPI.CanDoAction(PlayerAction.PlayerToggleSprint, (Player) event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getPlayer().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.PlayerToggleSprint);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.PlayerToggleSprint);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -52,7 +50,7 @@ public class PlayerToggleSprint implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.PlayerToggleSprintEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
                 if(!event.isCancelled()) event.setCancelled(state);
             }

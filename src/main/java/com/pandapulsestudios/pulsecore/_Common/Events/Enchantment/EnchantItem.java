@@ -30,14 +30,14 @@ public class EnchantItem implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.HandlePlayerActionEventsInHouse){
             var state = PlayerAPI.CanDoAction(PlayerAction.EnchantItem, event.getEnchanter());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getEnchanter().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.EnchantItem);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.EnchantItem);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -50,7 +50,7 @@ public class EnchantItem implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.EnchantItemEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getEnchanter());
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -67,7 +67,7 @@ public class EnchantItem implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getEnchantBlock())) continue;
             var feedbackState = persistentDataCallback.EnchantItemEvent(event, event.getEnchantBlock(), PersistentDataAPI.GetAll(event.getEnchantBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);

@@ -4,7 +4,6 @@ import com.pandapulsestudios.pulsecore.Block.Interface.PersistentDataCallbacks;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
 import com.pandapulsestudios.pulsecore.Events.EventWrapper;
-import com.pandapulsestudios.pulsecore.Events.PulseCoreEvents;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
 import com.pandapulsestudios.pulsecore.Java.ClassAPI;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
@@ -30,9 +29,9 @@ public final class PulseCore extends JavaPlugin {
     public static PulseCore Instance;
     public static SmartInvsPlugin SmartInvsPlugin;
 
-    public static HashMap<PlayerAction, HashMap<UUID, Boolean>> PlayerToggeableActions = new HashMap<>();
+    public static HashMap<PlayerAction, HashMap<UUID, Boolean>> PlayerToggleActions = new HashMap<>();
     public static HashMap<String, Object> ServerData = new HashMap<>();
-    public static HashMap<UUID, HashMap<String, Object>> PlayerData = new HashMap<>();
+    public static HashMap<UUID, HashMap<String, Object>> UUIDData = new HashMap<>();
     public static HashMap<UUID, List<UUID>> HideMatrix = new HashMap<>();
     public static HashMap<Class<?>, PulseVariableTest> CustomVariableTests = new HashMap<>();
     public static HashMap<String, PulseEnchantment> CustomEnchantments = new HashMap<>();
@@ -40,18 +39,18 @@ public final class PulseCore extends JavaPlugin {
     public static HashMap<String, PulseItemStack> CustomItemStacks = new HashMap<>();
     public static HashMap<String, PulseLoop> CustomLoops = new HashMap<>();
     public static HashMap<String, PulseScoreboard> CustomScoreboards = new HashMap<>();
-    public static HashMap<World, Difficulty> difficultyLock = new HashMap<>();
-    public static HashMap<World, GameMode> gameModeLock = new HashMap<>();
-    public static HashMap<World, TimeLock> timeLockLock = new HashMap<>();
-    public static HashMap<World, Integer> heartLockLock = new HashMap<>();
-    public static HashMap<World, Integer> hungerLockLock = new HashMap<>();
-    public static HashMap<World, Integer> saturationLockLock = new HashMap<>();
-    public static HashMap<World, List<PlayerAction>> playerActionLock = new HashMap<>();
-    public static ArrayList<PersistentDataCallbacks> persistentDataCallbacks = new ArrayList<>();
+    public static HashMap<World, Difficulty> DifficultyLock = new HashMap<>();
+    public static HashMap<World, GameMode> GameModeLock = new HashMap<>();
+    public static HashMap<World, TimeLock> TimeLockLock = new HashMap<>();
+    public static HashMap<World, Integer> HeartLockLock = new HashMap<>();
+    public static HashMap<World, Integer> HungerLockLock = new HashMap<>();
+    public static HashMap<World, Integer> SaturationLockLock = new HashMap<>();
+    public static HashMap<World, List<PlayerAction>> PlayerActionLock = new HashMap<>();
+    public static ArrayList<PersistentDataCallbacks> PersistentDataCallbacks = new ArrayList<>();
     public static ArrayList<EventWrapper> PulseCoreEvents = new ArrayList<>();
     public static ArrayList<TeleportObject> TeleportObjects = new ArrayList<>();
-    public static ArrayList<PulseNBTListener> nbtListeners = new ArrayList<>();
-    public static boolean handlePlayerActionEventsInHouse = true;
+    public static ArrayList<PulseNBTListener> NbtListeners = new ArrayList<>();
+    public static boolean HandlePlayerActionEventsInHouse = true;
 
     @Override
     public void onEnable() {

@@ -14,7 +14,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBucketFillEvent;
-import org.bukkit.event.player.PlayerBucketFillEvent;
 
 @CustomEvent
 public class PlayerBucketFill implements Listener {
@@ -32,14 +31,14 @@ public class PlayerBucketFill implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerActionEventsInHouse){
+        if(PulseCore.HandlePlayerActionEventsInHouse){
             var state = PlayerAPI.CanDoAction(PlayerAction.PlayerBucketFill, (Player) event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
         var playerWorld = event.getPlayer().getWorld();
-        if(PulseCore.playerActionLock.containsKey(playerWorld)){
-            var state = PulseCore.playerActionLock.get(playerWorld).contains(PlayerAction.PlayerBucketFill);
+        if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
+            var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.PlayerBucketFill);
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
@@ -52,7 +51,7 @@ public class PlayerBucketFill implements Listener {
         for(var itemStack : playerInventoryItems.keySet()){
             if(itemStack.getItemMeta() == null) continue;
 
-            for(var nbtListener : PulseCore.nbtListeners){
+            for(var nbtListener : PulseCore.NbtListeners){
                 var state = nbtListener.PlayerBucketFillEvent(event, itemStack, NBTAPI.GetAll(itemStack), event.getPlayer());
                 if(!event.isCancelled()) event.setCancelled(state);
             }
@@ -69,7 +68,7 @@ public class PlayerBucketFill implements Listener {
             }
         }
 
-        for(var persistentDataCallback : PulseCore.persistentDataCallbacks){
+        for(var persistentDataCallback : PulseCore.PersistentDataCallbacks){
             if(!PersistentDataAPI.CanBeCalled(persistentDataCallback, event.getBlock())) continue;
             var feedbackState = persistentDataCallback.PlayerBucketFillEvent(event, event.getBlock(), PersistentDataAPI.GetAll(event.getBlock()));
             if(!event.isCancelled()) event.setCancelled(feedbackState);
