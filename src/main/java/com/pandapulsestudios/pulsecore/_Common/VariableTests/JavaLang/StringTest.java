@@ -35,5 +35,16 @@ public class StringTest implements PulseVariableTest {
     }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData;
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+
+    @Override
     public Object ReturnDefaultValue() { return ""; }
 }

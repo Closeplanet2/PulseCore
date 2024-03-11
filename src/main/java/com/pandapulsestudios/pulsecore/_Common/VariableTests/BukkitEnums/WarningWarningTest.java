@@ -34,6 +34,16 @@ public class WarningWarningTest implements PulseVariableTest {
     public Object DeSerializeData(Object serializedData) { return Warning.WarningState.valueOf(serializedData.toString()); }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return DeSerializeData(serializedData);
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return Warning.WarningState.OFF; }
 
     @Override

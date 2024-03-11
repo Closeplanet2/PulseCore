@@ -36,6 +36,16 @@ public class NetherWartsStateTest implements PulseVariableTest {
     }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return DeSerializeData(serializedData);
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return NetherWartsState.STAGE_ONE; }
 
     @Override

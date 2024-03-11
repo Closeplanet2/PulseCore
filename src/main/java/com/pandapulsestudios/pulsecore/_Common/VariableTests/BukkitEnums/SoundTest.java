@@ -36,6 +36,16 @@ public class SoundTest implements PulseVariableTest {
     }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return DeSerializeData(serializedData);
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return Sound.AMBIENT_CRIMSON_FOREST_MOOD; }
 
     @Override

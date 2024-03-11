@@ -2,45 +2,86 @@ package com.pandapulsestudios.pulsecore.Player;
 
 import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class VanishAPI {
-    public static void HIDE_PLAYER_FROM_PLAYER(Player a, List<Player> players) { for(var player : players) HIDE_PLAYER_FROM_PLAYER(a, player); }
-    public static void HIDE_PLAYER_FROM_PLAYER(Player a, Player b){
-        CreateBLankData(a, false);
-        if(!IS_HIDDEN_FROM_PLAYER(a, b)) PulseCore.HideMatrix.get(a.getUniqueId()).add(b.getUniqueId());
+
+    public static void ShowTargetToViewer(Player target, Player... viewer){
+        var viewerList = PulseCore.TargetViewerHideMatrix.getOrDefault(target.getUniqueId(), new ArrayList<>());
+        for(var view : viewer){
+            if(!viewerList.contains(view.getUniqueId())) viewerList.add(view.getUniqueId());
+        }
+        PulseCore.TargetViewerHideMatrix.put(target.getUniqueId(), viewerList);
     }
 
-    public static void SHOW_PLAYER_TO_PLAYER(Player a, List<Player> players) { for(var player : players) HIDE_PLAYER_FROM_PLAYER(a, player); }
-    public static void SHOW_PLAYER_TO_PLAYER(Player a, Player b){
-        CreateBLankData(a, false);
-        PulseCore.HideMatrix.get(a.getUniqueId()).remove(b.getUniqueId());
+    public static void ShowViewerToTarget(Player target, Player... viewer){
+        var viewerList = PulseCore.ViewerTargetHideMatrix.getOrDefault(target.getUniqueId(), new ArrayList<>());
+        for(var view : viewer){
+            if(!viewerList.contains(view.getUniqueId())) viewerList.add(view.getUniqueId());
+        }
+        PulseCore.ViewerTargetHideMatrix.put(target.getUniqueId(), viewerList);
     }
 
-    public static void REMOVE_ALL_VANISHES(Player player){
-        CreateBLankData(player, true);
-        UPDATE_VANISH(player);
+    public static void HideTargetFromView(Player target, Player... viewer){
+        var viewerList = PulseCore.TargetViewerHideMatrix.getOrDefault(target.getUniqueId(), new ArrayList<>());
+        for(var view : viewer) viewerList.remove(view.getUniqueId());
+        PulseCore.TargetViewerHideMatrix.put(target.getUniqueId(), viewerList);
     }
 
-    public static void UPDATE_VANISH(Player player){
-        CreateBLankData(player, false);
-        for(var otherPlayer : Bukkit.getOnlinePlayers()){
-            var hiddenPlayers = PulseCore.HideMatrix.get(player.getUniqueId());
-            if(hiddenPlayers.contains(otherPlayer.getUniqueId())) otherPlayer.hidePlayer(PulseCore.Instance, player);
-            else otherPlayer.showPlayer(PulseCore.Instance, player);
+    public static void HideViewerFromTarget(Player target, Player... viewer){
+        var viewerList = PulseCore.ViewerTargetHideMatrix.getOrDefault(target.getUniqueId(), new ArrayList<>());
+        for(var view : viewer) viewerList.remove(view.getUniqueId());
+        PulseCore.ViewerTargetHideMatrix.put(target.getUniqueId(), viewerList);
+    }
+
+    public static void UpdateTargetViewerHideMatrix(){
+        for(var target : PulseCore.TargetViewerHideMatrix.keySet()){
+            var targetPlayer = Bukkit.getPlayer(target);
+            if(targetPlayer != null){
+                UpdateTargetViewerHideMatrix(targetPlayer);
+                continue;
+            }
+
+            var targetEntity = Bukkit.getEntity(target);
+            if(targetEntity != null){
+                if(targetEntity.getType() != EntityType.PLAYER) continue;
+                UpdateTargetViewerHideMatrix((Player) targetEntity);
+            }
         }
     }
 
-    public static boolean IS_HIDDEN_FROM_PLAYER(Player a, Player b){
-        CreateBLankData(a, false);
-        return PulseCore.HideMatrix.get(a.getUniqueId()).contains(b.getUniqueId());
+    private static void UpdateTargetViewerHideMatrix(Player targetPlayer){
+        var viewerList = PulseCore.TargetViewerHideMatrix.getOrDefault(targetPlayer.getUniqueId(), new ArrayList<>());
+        for(var viewer : Bukkit.getOnlinePlayers()){
+            if(viewerList.contains(viewer.getUniqueId())) viewer.showPlayer(PulseCore.Instance, targetPlayer);
+            else viewer.hidePlayer(PulseCore.Instance, targetPlayer);
+        }
     }
 
-    private static void CreateBLankData(Player player, boolean override){
-        if(!PulseCore.HideMatrix.containsKey(player.getUniqueId()) || override)
-            PulseCore.HideMatrix.put(player.getUniqueId(), new ArrayList<>());
+    public static void UpdateViewerTargetHideMatrix(){
+        for(var target : PulseCore.ViewerTargetHideMatrix.keySet()){
+            var targetPlayer = Bukkit.getPlayer(target);
+            if(targetPlayer != null){
+                UpdateViewerTargetHideMatrix(targetPlayer);
+                continue;
+            }
+
+            var targetEntity = Bukkit.getEntity(target);
+            if(targetEntity != null){
+                if(targetEntity.getType() != EntityType.PLAYER) continue;
+                UpdateViewerTargetHideMatrix((Player) targetEntity);
+            }
+        }
+    }
+
+    private static void UpdateViewerTargetHideMatrix(Player targetPlayer){
+        var viewerList = PulseCore.ViewerTargetHideMatrix.getOrDefault(targetPlayer.getUniqueId(), new ArrayList<>());
+        for(var viewer : Bukkit.getOnlinePlayers()){
+            if(viewerList.contains(viewer.getUniqueId())) targetPlayer.showPlayer(PulseCore.Instance, viewer);
+            else targetPlayer.hidePlayer(PulseCore.Instance, viewer);
+        }
     }
 }

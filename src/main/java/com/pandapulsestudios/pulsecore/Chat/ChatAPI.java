@@ -6,6 +6,9 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class ChatAPI {
@@ -30,24 +33,30 @@ public class ChatAPI {
         else if(consoleMessageType == ConsoleMessageType.DoubleLine)
             for(var i = 0; i < amount; i++) SendChat("====================", MessageType.ConsoleMessageNormal, false, null);
         else if(consoleMessageType == ConsoleMessageType.NewLine)
-            for(var i = 0; i < amount; i++) SendChat("\n", MessageType.ConsoleMessageNormal, false, null);
+            for(var i = 0; i < amount; i++) SendChat("", MessageType.ConsoleMessageNormal, false, null);
     }
 
-    public static void SendChat(String message, MessageType messageType, boolean addPrefix, Player from, Player... players){
-        if(messageType == MessageType.PlayerMessageFromPlayer){
-            if(!PlayerAPI.CanDoAction(PlayerAction.AsyncPlayerChatGet, players)) return;
-            for(var player : players) player.sendMessage(format(message, addPrefix, String.format(PlayerPrefix, from.getDisplayName())));
-        } else if(messageType == MessageType.PlayerMessageFromPlugin){
-            if(!PlayerAPI.CanDoAction(PlayerAction.AsyncPlayerChatGet, players)) return;
-            for(var player : players) player.sendMessage(format(message, addPrefix, ConsolePrefix));
-        } else if(messageType == MessageType.BroadcastMessage){
-            Bukkit.broadcastMessage(format(message, addPrefix, BroadcastPrefix));
-        }else if(messageType == MessageType.ConsoleMessageNormal){
-            Bukkit.getConsoleSender().sendMessage(format(message, addPrefix, ConsolePrefix));
-        }else if(messageType == MessageType.ConsoleMessageError){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.BOLD + "" + ChatColor.DARK_RED + "===============");
-            Bukkit.getConsoleSender().sendMessage(format(message, addPrefix, ConsolePrefix));
-            Bukkit.getConsoleSender().sendMessage(ChatColor.BOLD + "" + ChatColor.DARK_RED + "===============");
+    public static void SendChat(String mess, MessageType messageType, boolean addPrefix, Player from, Player... players){
+        var data = new ArrayList<String>();
+        if(mess.contains("<SPLIT_LINE>")) data.addAll(Arrays.asList(mess.split("<SPLIT_LINE>")));
+        else data.add(mess);
+
+        for(var message : data){
+            if(messageType == MessageType.PlayerMessageFromPlayer){
+                if(!PlayerAPI.CanDoAction(PlayerAction.AsyncPlayerChatGet, players)) return;
+                for(var player : players) player.sendMessage(format(message, addPrefix, String.format(PlayerPrefix, from.getDisplayName())));
+            } else if(messageType == MessageType.PlayerMessageFromPlugin){
+                if(!PlayerAPI.CanDoAction(PlayerAction.AsyncPlayerChatGet, players)) return;
+                for(var player : players) player.sendMessage(format(message, addPrefix, ConsolePrefix));
+            } else if(messageType == MessageType.BroadcastMessage){
+                Bukkit.broadcastMessage(format(message, addPrefix, BroadcastPrefix));
+            }else if(messageType == MessageType.ConsoleMessageNormal){
+                Bukkit.getConsoleSender().sendMessage(format(message, addPrefix, ConsolePrefix));
+            }else if(messageType == MessageType.ConsoleMessageError){
+                Bukkit.getConsoleSender().sendMessage(ChatColor.BOLD + "" + ChatColor.DARK_RED + "===============");
+                Bukkit.getConsoleSender().sendMessage(format(message, addPrefix, ConsolePrefix));
+                Bukkit.getConsoleSender().sendMessage(ChatColor.BOLD + "" + ChatColor.DARK_RED + "===============");
+            }
         }
     }
 

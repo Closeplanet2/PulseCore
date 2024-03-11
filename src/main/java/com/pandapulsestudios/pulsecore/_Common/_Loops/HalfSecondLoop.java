@@ -19,7 +19,8 @@ public class HalfSecondLoop implements PulseLoop {
     @Override
     public void LoopFunction() {
         for(var player : Bukkit.getOnlinePlayers()) MovementAPI.MovePlayerToLock(player);
-        for(var player : Bukkit.getOnlinePlayers()) VanishAPI.UPDATE_VANISH(player);
+        VanishAPI.UpdateTargetViewerHideMatrix();
+        VanishAPI.UpdateViewerTargetHideMatrix();
         PulseCore.TeleportObjects.removeIf(TeleportObject::HandleOnLoop);
         WorldAPI.HandleLoop();
     }

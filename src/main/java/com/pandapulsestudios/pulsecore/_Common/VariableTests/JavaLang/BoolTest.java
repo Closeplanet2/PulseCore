@@ -37,5 +37,15 @@ public class BoolTest implements PulseVariableTest {
     }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return Boolean.parseBoolean(serializedData.toString());
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return false; }
 }

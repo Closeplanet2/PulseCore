@@ -1,9 +1,11 @@
 package com.pandapulsestudios.pulsecore.Player;
 
 import com.pandapulsestudios.pulsecore.Items.ItemLocation;
+import com.pandapulsestudios.pulsecore.NMS.Enum.GameProfileKeys;
 import com.pandapulsestudios.pulsecore.Player.Enums.HandlePlayerAction;
 import com.pandapulsestudios.pulsecore.Player.Enums.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import org.bukkit.craftbukkit.v1_20_R3.entity.CraftPlayer;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -54,8 +56,17 @@ public class PlayerAPI {
         return foundInformation;
     }
 
+    public static String[] GetPlayerTexture(Player player){
+        var currentProfile = ((CraftPlayer) player).getHandle().getGameProfile();
+        var currentProfileProp = currentProfile.getProperties();
+        var textureProp = currentProfileProp.get(GameProfileKeys.TEXTURES.key).iterator().next();
+        return new String[]{textureProp.value(), textureProp.signature()};
+    }
+
     private static boolean ArmorContentsContains(ItemStack[] itemStacks, ItemStack itemStack){
         for(var i : itemStacks) if(itemStack.isSimilar(i)) return true;
         return false;
     }
+
+
 }

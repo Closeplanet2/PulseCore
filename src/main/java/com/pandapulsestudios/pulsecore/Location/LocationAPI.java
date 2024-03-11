@@ -80,6 +80,14 @@ public class LocationAPI {
         return distance;
     }
 
+    public static Location FindMidPointBetween2Locations(Location a, Location b){
+        if(a.getWorld() != b.getWorld()) return null;
+        var newX = (a.getX() + b.getX()) / 2;
+        var newY = (a.getY() + b.getY()) / 2;
+        var newZ = (a.getZ() + b.getZ()) / 2;
+        return new Location(a.getWorld(), newX, newY, newZ);
+    }
+
     public static boolean IsBlockBetweenLocations(Location location1, Location location2, Block block) {
         // Get the World object for the locations
         var world = location1.getWorld();

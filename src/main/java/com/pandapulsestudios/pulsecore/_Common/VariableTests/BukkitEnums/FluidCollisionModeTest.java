@@ -34,6 +34,16 @@ public class FluidCollisionModeTest implements PulseVariableTest {
     public Object DeSerializeData(Object serializedData) { return FluidCollisionMode.valueOf(serializedData.toString()); }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return DeSerializeData(serializedData);
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return FluidCollisionMode.ALWAYS; }
 
     @Override

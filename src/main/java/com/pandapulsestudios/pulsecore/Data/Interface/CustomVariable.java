@@ -1,8 +1,9 @@
 package com.pandapulsestudios.pulsecore.Data.Interface;
 
+import java.util.HashMap;
+
 public interface CustomVariable {
-    Class<?> ClassType();
-    String SerializeData();
-    Object DeSerializeData(String serializedData);
+    HashMap<String, Object> SerializeData();
+    Object DeSerializeData(HashMap<String, Object> configData);
     Object DefaultValue();
 }

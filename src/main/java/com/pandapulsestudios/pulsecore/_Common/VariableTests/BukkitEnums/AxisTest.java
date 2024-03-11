@@ -2,6 +2,7 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Data.Interface.CustomVariableTest;
+import org.bukkit.Art;
 import org.bukkit.Axis;
 
 import java.util.ArrayList;
@@ -32,6 +33,16 @@ public class AxisTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
+        return Axis.valueOf(serializedData.toString());
+    }
+
+    @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
         return Axis.valueOf(serializedData.toString());
     }
 

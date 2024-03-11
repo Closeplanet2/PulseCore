@@ -35,6 +35,16 @@ public class WorldEnvironmentTest implements PulseVariableTest {
     public Object DeSerializeData(Object serializedData) { return World.Environment.valueOf(serializedData.toString()); }
 
     @Override
+    public Object SerializeBinaryData(Object serializedData) {
+        return serializedData.toString();
+    }
+
+    @Override
+    public Object DeSerializeBinaryData(Object serializedData) {
+        return DeSerializeData(serializedData);
+    }
+
+    @Override
     public Object ReturnDefaultValue() { return World.Environment.NORMAL; }
 
     @Override

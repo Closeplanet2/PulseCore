@@ -44,6 +44,18 @@ public class PacketAPI {
                 return serverPlayer;
             }
 
+            public static ServerPlayer SpawnPlayerCLonePacket(Location location, Player player){
+                var currentProfile = ((CraftPlayer) player).getHandle().getGameProfile();
+                var currentProfileProp = currentProfile.getProperties();
+                var textureProp = currentProfileProp.get(GameProfileKeys.TEXTURES.key).iterator().next();
+                var newGameProfile = new GameProfile(UUID.randomUUID(), player.getDisplayName());
+                newGameProfile.getProperties().put(GameProfileKeys.TEXTURES.key, new Property(GameProfileKeys.TEXTURES.key, textureProp.value(), textureProp.signature()));
+                var serverPlayer = NMS_API.CreateServerPlayer(newGameProfile, location, player);
+                PlayerInfoUpdatePacket(ClientboundPlayerInfoUpdatePacket.Action.ADD_PLAYER, serverPlayer, player);
+                ((CraftPlayer) player).getHandle().connection.send(new ClientboundAddEntityPacket(serverPlayer));
+                return serverPlayer;
+            }
+
             public static ExperienceOrb SpawnExperienceOrb(Location location, int amount, Player player){
                 var experienceOrb = new ExperienceOrb(NMS_API.ReturnServerLevel(player.getLocation()), location.getX(), location.getY(), location.getZ(), amount);
                 ((CraftPlayer) player).getHandle().connection.send(new ClientboundAddExperienceOrbPacket(experienceOrb));

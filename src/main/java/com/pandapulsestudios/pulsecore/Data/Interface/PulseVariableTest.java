@@ -8,6 +8,8 @@ public interface PulseVariableTest {
     List<Class<?>> ClassTypes();
     Object SerializeData(Object serializedData);
     Object DeSerializeData(Object serializedData);
+    Object SerializeBinaryData(Object serializedData);
+    Object DeSerializeBinaryData(Object serializedData);
 
     Object ReturnDefaultValue();
     default List<String> TabData(List<String> baseTabList, String currentArgument){
