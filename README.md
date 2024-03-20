@@ -9,14 +9,14 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 
 <h2 align="center">
 <img src="Images/BlockAPI.png" alt="Panda Spigot Core" width="600">
-</h2><!-- -->
+</h2>
 
 ```
 public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int radius, int gap, Material... materials);
 ```
 
 <h2 align="center">
-<img src="Images/PersistentDataAPI.png" alt="Panda Spigot Core" width="600">
+<img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
 </h2>
 
 ```
@@ -30,6 +30,14 @@ public static void Add(Block block, PersistentDataType persistentDataType, Names
 public static void Remove(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
 ```
 
+<h2 align="center">
+<img src="Images/TempBlockDataAPI.png" alt="TempBlockDataAPI" width="600">
+</h2>
 
-
-
+```
+public static LinkedHashMap<String, Object> GetALl(Block block);
+public static Object Get(Block block, String nameSpacedKey);
+public static boolean Has(Block block, String nameSpacedKey);
+public static void Add(Block block, String nameSpacedKey, Object object);
+public static void Remove(Block block, String nameSpacedKey);
+```
