@@ -16,6 +16,14 @@ public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int ra
 ```
 
 <h2 align="center">
+<img src="Images/ChatAPI.png" alt="ChatAPI" width="600">
+</h2>
+
+```
+public static String FormatMessage(String message, boolean translateColorCodes, boolean translateHexCodes);
+```
+
+<h2 align="center">
 <img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
 </h2>
 
