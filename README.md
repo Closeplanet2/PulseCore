@@ -7,7 +7,7 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 <br>
 </h2>
 
-<h2 align="center">
+<h2 align="center" style="margin-bottom: 0;">
 <img src="Images/BlockAPI.png" alt="Panda Spigot Core" width="600">
 </h2>
 
