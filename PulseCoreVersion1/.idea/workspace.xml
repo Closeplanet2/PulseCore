@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pulsecore:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9704e485-bdd3-4651-b509-2637480e226a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/BlockAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/PersistentDataAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/PersistentDataTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/PersistentDataAddedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/PersistentDataRemovedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Variable/PulseVariableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Variable/VariableAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/pulsecore_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PulseCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PulseCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/artifacts/OUT/pulsecore.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/artifacts/pulsecore_jar/pulsecore.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Bed/BedAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/API/BlockAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/API/BlockDataAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/API/PersistentDataAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/Interface/PersistentDataCallbacks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Block/Interface/PersistentDataInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Chat/ChatAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Chat/ConsoleMessageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Chat/MessageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/API/ServerDataAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/API/UUIDDataAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/API/VariableAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/DataHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/Enum/DataType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/Interface/CustomVariable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/Interface/CustomVariableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/Interface/PulseVariableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Enchantment/CustomEnchantment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Enchantment/EnchantWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Enchantment/EnchantmentAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Enchantment/PulseEnchantment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/CustomCoreEvents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/EventWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Events/PulseCoreEvents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/FileSystem/DirAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/FileSystem/FileAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Holograms/Hologram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Inventory/InventoryAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Items/CustomItemStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Items/ItemLocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Items/ItemStackAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Items/PulseItemStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Java/ClassAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Java/JavaAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Java/PluginAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Java/SoftDependPlugins.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Location/CustomLocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Location/LocationAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Location/PulseLocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Loops/CustomLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Loops/LoopAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Loops/PulseLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Movement/MovementAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Movement/TeleportObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Movement/TeleportsAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NBT/CustomNBT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NBT/NBTAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NBT/PulseNBTListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/API/GlowAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/API/NMS_API.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/API/PacketAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/Builder/SynchedEntityDataBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/Enum/EntityAnimationType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/Enum/GameProfileKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/Enum/PacketSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/NMS/NotesToSelf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Particle/ParticleAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/Enums/HandlePlayerAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/Enums/PlayerAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/HeadAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/PlayerAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/TitleAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Player/VanishAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PluginMessagingChannel/PluginMessageLibrary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PluginMessagingChannel/PluginMessageReceivedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Recipes/CustomRecipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Recipes/PulseRecipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Recipes/RecipeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Reflection/ReflectionAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboardData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboardLines.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Scoreboard/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Sound/SoundAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Time/TimeLock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/World/CustomWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/World/PulseWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/World/WorldAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Enums/PersistentDataTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockBreak.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockCanBuild.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockDamage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockIgnite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockPlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Enchantment/EnchantItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Enchantment/PrepareItemEnchant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityBreakDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityCombustByBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityCombustByEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDeath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityExplode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityInteract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityPortalEnter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityRegainHealth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityShootBow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityTeleport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/FoodLevelChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBedEnter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBedLeave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBucketEmpty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBucketFill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerDropItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerExpChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerFish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerGameModeChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerInteractEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerItemBreak.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerItemHeld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerJoin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerLevelChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerPortal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerRespawn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerShearEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerTeleport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerToggleSprint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ArtTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/AxisTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/BanListTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ChatColorBungTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ChatColorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/CoalTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/CropStateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/DifficultyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/DyeColorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EffectTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EffectTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EntityEffectTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EntityTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FireworkEffectTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FluidCollisionModeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FluidTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/GameModeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/GrassSpeciesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/HeightMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/InstrumentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/MaterialTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/NetherWartsStateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/NoteToneTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ParticleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/PortalTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/RaidRaidStatusTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/RotationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SandstoneTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SoundCategoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SoundTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/StatisticTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/StatisticType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/TreeTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WarningWarningTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WeatherTypeAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WorldEnvironmentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WorldTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/BoolTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/DoubleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/FloatTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/IntegerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/LongTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/StringTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaUtil/UUIDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/_Loops/HalfSecondLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/_Loops/OneSecondLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_Common/_Loops/ScoreboardUpdateLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/ClickableItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/SmartInventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/SmartInvsPlugin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/InventoryContents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/InventoryProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/Pagination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotIterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotPos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/ChestInventoryOpener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/InventoryOpener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/SpecialInventoryOpener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/_External/WorldGuard/WorldGuardAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Bed/BedAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Block/API/BlockAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Block/API/BlockDataAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Block/API/PersistentDataAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Block/Interface/PersistentDataCallbacks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Block/Interface/PersistentDataInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Chat/ChatAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Chat/ConsoleMessageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Chat/MessageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/API/ServerDataAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/API/UUIDDataAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/API/VariableAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/DataHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/Enum/DataType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/Interface/CustomVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/Interface/CustomVariableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Data/Interface/PulseVariableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Enchantment/CustomEnchantment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Enchantment/EnchantWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Enchantment/EnchantmentAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Enchantment/PulseEnchantment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Events/CustomCoreEvents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Events/CustomEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Events/EventWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Events/PulseCoreEvents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/FileSystem/DirAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/FileSystem/FileAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Holograms/Hologram$HologramBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Holograms/Hologram.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Inventory/InventoryAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Items/CustomItemStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Items/ItemLocation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Items/ItemStackAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Items/PulseItemStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Java/ClassAPI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Java/ClassAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Java/JavaAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Java/PluginAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Java/SoftDependPlugins.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Location/CustomLocation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Location/LocationAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Location/PulseLocation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Loops/CustomLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Loops/LoopAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Loops/PulseLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Movement/MovementAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Movement/TeleportObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Movement/TeleportsAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NBT/CustomNBT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NBT/NBTAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NBT/PulseNBTListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/API/GlowAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/API/NMS_API.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/API/PacketAPI$Play$Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/API/PacketAPI$Play.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/API/PacketAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/Builder/SynchedEntityDataBuilder$builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/Builder/SynchedEntityDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/Enum/EntityAnimationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/Enum/GameProfileKeys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/NMS/Enum/PacketSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Particle/ParticleAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/Enums/HandlePlayerAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/Enums/PlayerAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/HeadAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/PlayerAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/TitleAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Player/VanishAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/PluginMessagingChannel/PluginMessageLibrary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/PluginMessagingChannel/PluginMessageReceivedEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/PulseCore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Recipes/CustomRecipe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Recipes/PulseRecipe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Recipes/RecipeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Reflection/ReflectionAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboard$PulseScoreboardBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboardData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboardLines$PulseScoreboardLinesBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Scoreboard/PulseScoreboardLines.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Sound/SoundAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/Time/TimeLock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/World/CustomWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/World/PulseWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/World/WorldAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Enums/PersistentDataTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockBreak.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockCanBuild.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockDamage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockIgnite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Block/BlockPlace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Enchantment/EnchantItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Enchantment/PrepareItemEnchant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityBreakDoor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityCombustByBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityCombustByEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDeath.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityExplode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityInteract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityPortalEnter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityRegainHealth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityShootBow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityTeleport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Entity/FoodLevelChange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBedEnter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBedLeave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBucketEmpty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerBucketFill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerDropItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerExpChange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerFish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerGameModeChange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerInteractEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerItemBreak.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerItemHeld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerJoin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerLevelChange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerPortal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerRespawn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerShearEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerTeleport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/PlayerToggleSprint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ArtTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/AxisTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/BanListTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ChatColorBungTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ChatColorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/CoalTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/CropStateTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/DifficultyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/DyeColorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EffectTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EffectTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EntityEffectTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/EntityTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FireworkEffectTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FluidCollisionModeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/FluidTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/GameModeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/GrassSpeciesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/HeightMapTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/InstrumentTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/MaterialTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/NetherWartsStateTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/NoteToneTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/ParticleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/PortalTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/RaidRaidStatusTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/RotationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SandstoneTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SoundCategoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/SoundTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/StatisticTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/StatisticType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/TreeTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WarningWarningTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WeatherTypeAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WorldEnvironmentTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/BukkitEnums/WorldTypeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/BoolTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/DoubleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/FloatTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/IntegerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/LongTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaLang/StringTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/VariableTests/JavaUtil/UUIDTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/_Loops/HalfSecondLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/_Loops/OneSecondLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_Common/_Loops/ScoreboardUpdateLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/ClickableItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryManager$InvListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryManager$InvTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/InventoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/SmartInventory$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/SmartInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/SmartInvsPlugin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/InventoryContents$Impl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/InventoryContents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/InventoryProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/Pagination$Impl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/Pagination.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotIterator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotIterator$Impl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotIterator$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/content/SlotPos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/ChestInventoryOpener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/InventoryOpener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/SmartInvs/opener/SpecialInventoryOpener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/WorldGuard/WorldGuardAPI$FLAGS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/WorldGuard/WorldGuardAPI$REGION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/pandapulsestudios/pulsecore/_External/WorldGuard/WorldGuardAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/plugin.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.1-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.10-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.11-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.12-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.13-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.14-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.15-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.16-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.17-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.18-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.19-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.2-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.20-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.21-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.22-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.23-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.24-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.25-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.3-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.4-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.5-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.6-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.7-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.8-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/original-pulsecore-1.1.9-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.1-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.1-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.1-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.10-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.10-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.10-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.11-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.11-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.11-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.12-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.12-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.12-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.13-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.13-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.13-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.14-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.14-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.14-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.15-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.15-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.15-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.16-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.16-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.16-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.17-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.17-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.17-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.18-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.18-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.18-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.19-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.19-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.19-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.2-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.2-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.2-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.20-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.20-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.20-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.21-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.21-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.21-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.22-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.22-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.22-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.23-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.23-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.23-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.24-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.24-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.24-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.25-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.25-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.25-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.3-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.3-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.3-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.4-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.4-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.4-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.5-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.5-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.5-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.6-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.6-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.6-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.7-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.7-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.7-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.8-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.8-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.8-a.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.9-a-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.9-a-remapped.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/pulsecore-1.1.9-a.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2aBPyuurAVbNBxUsUDqRZ3Ztpei" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding Portfolio/Spigot Plugins/PulseCore/PulseCore/PulseCoreVersion1&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.16503906&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2880562&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore" />
+      <recent name="D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PulseCore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PulseCore" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PulseCore package" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9704e485-bdd3-4651-b509-2637480e226a" name="Changes" comment="" />
+      <created>1703789256694</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703789256694</updated>
+      <workItem from="1703789257740" duration="30975000" />
+      <workItem from="1703982722101" duration="5152000" />
+      <workItem from="1703988292177" duration="3861000" />
+      <workItem from="1704047365929" duration="23777000" />
+      <workItem from="1704108272365" duration="20129000" />
+      <workItem from="1704205234726" duration="1786000" />
+      <workItem from="1704900272967" duration="39797000" />
+      <workItem from="1704989789637" duration="1564000" />
+      <workItem from="1705007575953" duration="946000" />
+      <workItem from="1705094336238" duration="340000" />
+      <workItem from="1705096735650" duration="2254000" />
+      <workItem from="1705161130478" duration="16000" />
+      <workItem from="1705500551843" duration="2951000" />
+      <workItem from="1705581752766" duration="690000" />
+      <workItem from="1705584899624" duration="5000" />
+      <workItem from="1705604551961" duration="5096000" />
+      <workItem from="1705621241246" duration="736000" />
+      <workItem from="1705622108541" duration="1028000" />
+      <workItem from="1705937453606" duration="1635000" />
+      <workItem from="1706106622301" duration="703000" />
+      <workItem from="1706117117873" duration="48000" />
+      <workItem from="1706129037561" duration="642000" />
+      <workItem from="1706130917993" duration="9814000" />
+      <workItem from="1706186056706" duration="3000" />
+      <workItem from="1706460288288" duration="2902000" />
+      <workItem from="1706480017515" duration="1497000" />
+      <workItem from="1706702841547" duration="701000" />
+      <workItem from="1706710389968" duration="260000" />
+      <workItem from="1706710747806" duration="8767000" />
+      <workItem from="1706741978778" duration="3032000" />
+      <workItem from="1706794812744" duration="7324000" />
+      <workItem from="1707002430207" duration="1135000" />
+      <workItem from="1707089944622" duration="586000" />
+      <workItem from="1707679012244" duration="593000" />
+      <workItem from="1707923524848" duration="152000" />
+      <workItem from="1707946287258" duration="158000" />
+      <workItem from="1708011303219" duration="9566000" />
+      <workItem from="1708177177633" duration="332000" />
+      <workItem from="1708183142989" duration="2176000" />
+      <workItem from="1708200533519" duration="3000" />
+      <workItem from="1708247023439" duration="742000" />
+      <workItem from="1708718295504" duration="561000" />
+      <workItem from="1709208503508" duration="3446000" />
+      <workItem from="1709329614716" duration="194000" />
+      <workItem from="1709766550009" duration="1251000" />
+      <workItem from="1709826948702" duration="45000" />
+      <workItem from="1709914826601" duration="2953000" />
+      <workItem from="1709925819737" duration="930000" />
+      <workItem from="1710340278670" duration="7098000" />
+      <workItem from="1710438370189" duration="4098000" />
+      <workItem from="1710529970256" duration="2225000" />
+      <workItem from="1710707168097" duration="2464000" />
+      <workItem from="1710786004444" duration="382000" />
+      <workItem from="1710941763830" duration="104000" />
+      <workItem from="1710941964275" duration="436000" />
+      <workItem from="1710942975316" duration="5102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
