@@ -11,4 +11,10 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 <img src="Images/BlockAPI.png" alt="Panda Spigot Core" width="600">
 </h2>
 
+```
+public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int radius, int gap, Material... materials);
+```
+
+
+
 
