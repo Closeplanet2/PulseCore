@@ -21,6 +21,20 @@ public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int ra
 
 ```
 public static String FormatMessage(String message, boolean translateColorCodes, boolean translateHexCodes);
+
+ChatAPI.chatBuilder()
+  .messagePrefix(messagePrefix)
+  .messageType(MessageType.Player)
+  .playerToo(player)
+  .translateHexCodes(true)
+  .translateColorCodes(true)
+  .SendMessage("hello");
+ChatAPI.chatBuilder()
+  .messagePrefix(messagePrefix)
+  .messageType(MessageType.Broadcast)
+  .translateHexCodes(true)
+  .translateColorCodes(true)
+  .SendMessage("hello");
 ```
 
 <h2 align="center">
