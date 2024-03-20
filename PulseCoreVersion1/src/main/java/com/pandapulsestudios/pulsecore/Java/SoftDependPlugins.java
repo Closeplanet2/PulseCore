@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Java;
+package com.pandapulsestudios.pulsecore.Class;
 
 public enum SoftDependPlugins {
     WorldGuard,

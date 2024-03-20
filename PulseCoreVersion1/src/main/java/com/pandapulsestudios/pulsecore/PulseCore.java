@@ -5,7 +5,7 @@ import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
 import com.pandapulsestudios.pulsecore.Events.EventWrapper;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;
-import com.pandapulsestudios.pulsecore.Java.ClassAPI;
+import com.pandapulsestudios.pulsecore.Class.ClassAPI;
 import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;

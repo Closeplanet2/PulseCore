@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore.Events;
 
-import com.pandapulsestudios.pulsecore.Java.PluginAPI;
-import com.pandapulsestudios.pulsecore.Java.SoftDependPlugins;
+import com.pandapulsestudios.pulsecore.Class.PluginAPI;
+import com.pandapulsestudios.pulsecore.Class.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import com.pandapulsestudios.pulsecore._External.WorldGuard.WorldGuardAPI;
 import org.bukkit.Bukkit;

@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore._External.WorldEdit;
 
-import com.pandapulsestudios.pulsecore.Java.PluginAPI;
-import com.pandapulsestudios.pulsecore.Java.SoftDependPlugins;
+import com.pandapulsestudios.pulsecore.Class.PluginAPI;
+import com.pandapulsestudios.pulsecore.Class.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import com.pandapulsestudios.pulsecore._External.WorldGuard.WorldGuardAPI;
 import com.sk89q.worldedit.WorldEdit;

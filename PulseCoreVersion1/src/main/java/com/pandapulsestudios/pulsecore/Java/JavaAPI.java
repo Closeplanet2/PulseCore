@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Java;
+package com.pandapulsestudios.pulsecore.Class;
 
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.PulseCore;

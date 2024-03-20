@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore._External.WorldGuard;
 
-import com.pandapulsestudios.pulsecore.Java.PluginAPI;
-import com.pandapulsestudios.pulsecore.Java.SoftDependPlugins;
+import com.pandapulsestudios.pulsecore.Class.PluginAPI;
+import com.pandapulsestudios.pulsecore.Class.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.math.BlockVector2;

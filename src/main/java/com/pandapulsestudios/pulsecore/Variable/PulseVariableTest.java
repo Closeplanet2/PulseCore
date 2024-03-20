@@ -4,4 +4,5 @@ import com.pandapulsestudios.pulsecore.Data.PersistentDataTypeEnum;
 
 public interface PulseVariableTest {
     PersistentDataTypeEnum persistentDataType();
+    Class<?>[] variableTestTypes();
 }
