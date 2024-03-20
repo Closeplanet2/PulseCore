@@ -29,6 +29,7 @@ ChatAPI.chatBuilder()
       .translateHexCodes(true)
       .translateColorCodes(true)
       .SendMessage("hello");
+
 ChatAPI.chatBuilder()
       .messagePrefix(messagePrefix)
       .messageType(MessageType.Broadcast)
