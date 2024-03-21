@@ -9,14 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9704e485-bdd3-4651-b509-2637480e226a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/ServerDataAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Data/UUIDDataAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Chat/ChatAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/Chat/ChatAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" afterDir="false" />
-    </list>
+    <list default="true" id="9704e485-bdd3-4651-b509-2637480e226a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
