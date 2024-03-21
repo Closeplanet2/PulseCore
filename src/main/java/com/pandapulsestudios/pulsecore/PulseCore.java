@@ -14,6 +14,8 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<Class<?>, PulseVariableTest> pulseVariableTests = new LinkedHashMap<>();
     public static LinkedHashMap<Block, LinkedHashMap<String, Object>> customBlockData = new LinkedHashMap<>();
     public static LinkedHashMap<UUID, LinkedHashMap<PlayerAction, Boolean>> playerActionLocks = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, LinkedHashMap<String, Object>> uuidData = new LinkedHashMap<>();
+    public static LinkedHashMap<String, Object> serverData = new LinkedHashMap<>();
     public static String SetMessageStringPluginToPlayer = "%PLAYER_MESSAGE%";
     public static String SetMessageStringPlayerToPlayer = "[%PLAYER_FROM%] -> [%PLAYER_TOO%] %PLAYER_MESSAGE%";
     public static String SetMessageConsole = "%MESSAGE_PREFIX% -> %CONSOLE_MESSAGE";

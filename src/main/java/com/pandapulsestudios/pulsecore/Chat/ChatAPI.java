@@ -47,7 +47,7 @@ public class ChatAPI {
     }
 
     private static String FormatConsoleMessage(String prefix, String message){
-        var stage1 = PulseCore.SetMessageStringPlayerToPlayer.replace("%MESSAGE_PREFIX%", prefix);
+        var stage1 = PulseCore.SetMessageConsole.replace("%MESSAGE_PREFIX%", prefix);
         return stage1.replace("%CONSOLE_MESSAGE%", message);
     }
 
@@ -70,17 +70,22 @@ public class ChatAPI {
             return this;
         }
 
+        public ChatBuilder playerToo(Player playerToo){
+            this.playerToo = playerToo;
+            return this;
+        }
+
         public ChatBuilder playerFrom(Player playerFrom){
             this.playerFrom = playerFrom;
             return this;
         }
 
-        public ChatBuilder translateHexCodes(boolean translateHexCodes){
-            this.translateHexCodes = translateHexCodes;
+        public ChatBuilder translateColorCodes(boolean translateColorCodes){
+            this.translateColorCodes = translateColorCodes;
             return this;
         }
 
-        public ChatBuilder playerToo(boolean translateHexCodes){
+        public ChatBuilder translateHexCodes(boolean translateHexCodes){
             this.translateHexCodes = translateHexCodes;
             return this;
         }
