@@ -15,6 +15,19 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int radius, int gap, Material... materials);
 ```
 
+```
+<repositories>
+      <id>pulsecore</id>
+      <url>https://maven.pkg.github.com/closeplanet2/PulseCore</url>
+</repository>
+
+<dependency>
+      <groupId>com.pandapulsestudios</groupId>
+      <artifactId>pulsecore</artifactId>
+      <version>1.2.0-a</version>
+</dependency>
+```
+
 <h2 align="center">
 <img src="Images/ChatAPI.png" alt="ChatAPI" width="600">
 </h2>
