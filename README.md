@@ -60,7 +60,23 @@ public static void Remove(Block block, PersistentDataType persistentDataType, Na
 </h2>
 
 ```
+public static void Store(String key, Object data);
+public static boolean Contains(String key);
+public static void Remove(String key);
+public static Object Get(String key, Object defaultValue);
+public static LinkedHashMap<String, Object> ReturnAll();
+```
 
+<h2 align="center">
+<img src="Images/UUIDDataAPI.png" alt=UUIDDataAPI" width="600">
+</h2>
+
+```
+public static void Store(UUID uuid, String key, Object data);
+public static boolean Contains(UUID uuid, String key);
+public static void Remove(UUID uuid, String key);
+public static Object Get(UUID uuid, String key, Object defaultValue);
+public static LinkedHashMap<String, Object> GetAll(UUID uuid);
 ```
 
 <h2 align="center">
