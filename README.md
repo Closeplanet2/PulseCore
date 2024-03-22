@@ -31,6 +31,33 @@ public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int ra
 ```
 
 <h2 align="center">
+<img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
+</h2>
+
+```
+public static PersistentDataContainer ReturnPersistentDataContainer(Block block);
+public static LinkedHashMap<PersistentDataTypeEnum, LinkedHashMap<String, Object>> GetALl(Block block);
+public static LinkedHashMap<String, Object> GetALl(Block block, PersistentDataType persistentDataType);
+public static Object Get(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
+public static boolean Has(Block block, NamespacedKey namespacedKey);
+public static void Add(Block block, NamespacedKey namespacedKey, Object dataObject);
+public static void Add(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey, Object dataObject);
+public static void Remove(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
+```
+
+<h2 align="center">
+<img src="Images/TempBlockDataAPI.png" alt="TempBlockDataAPI" width="600">
+</h2>
+
+```
+public static LinkedHashMap<String, Object> GetALl(Block block);
+public static Object Get(Block block, String nameSpacedKey);
+public static boolean Has(Block block, String nameSpacedKey);
+public static void Add(Block block, String nameSpacedKey, Object object);
+public static void Remove(Block block, String nameSpacedKey);
+```
+
+<h2 align="center">
 <img src="Images/ChatAPI.png" alt="ChatAPI" width="600">
 </h2>
 
@@ -55,20 +82,7 @@ ChatAPI.chatBuilder()
       .SendMessage("hello");
 ```
 
-<h2 align="center">
-<img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
-</h2>
 
-```
-public static PersistentDataContainer ReturnPersistentDataContainer(Block block);
-public static LinkedHashMap<PersistentDataTypeEnum, LinkedHashMap<String, Object>> GetALl(Block block);
-public static LinkedHashMap<String, Object> GetALl(Block block, PersistentDataType persistentDataType);
-public static Object Get(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
-public static boolean Has(Block block, NamespacedKey namespacedKey);
-public static void Add(Block block, NamespacedKey namespacedKey, Object dataObject);
-public static void Add(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey, Object dataObject);
-public static void Remove(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
-```
 
 <h2 align="center">
 <img src="Images/ServerDataAPI.png" alt=ServerDataAPI" width="600">
@@ -95,13 +109,55 @@ public static LinkedHashMap<String, Object> GetAll(UUID uuid);
 ```
 
 <h2 align="center">
-<img src="Images/TempBlockDataAPI.png" alt="TempBlockDataAPI" width="600">
+<img src="Images/VariableAPI.png" alt=VariableAPI" width="600">
 </h2>
 
 ```
-public static LinkedHashMap<String, Object> GetALl(Block block);
-public static Object Get(Block block, String nameSpacedKey);
-public static boolean Has(Block block, String nameSpacedKey);
-public static void Add(Block block, String nameSpacedKey, Object object);
-public static void Remove(Block block, String nameSpacedKey);
+public static boolean REGISTER_VAR_TEST(Class<?> test_class, PulseVariableTest variableLogic, boolean override_if_found);
+public static PulseVariableTest RETURN_TEST_FROM_TYPE(Class<?> classType);
+public static PersistentDataTypes ReturnTypeFromVariableTest(Class<?> classType);
+public static List<String> RETURN_AS_ALL_TYPES(String text, boolean addVariableName, boolean isArrayType);
 ```
+
+<h2 align="center">
+<img src="Images/CustomVariable.png" alt=CustomVariable" width="600">
+</h2>
+
+```
+@PulseAutoRegister
+public class TestCustomVariable implements CustomVariable{
+    public int x;
+    public int y;
+    public int z;
+    
+    public TestCustomVariable(int x, int y, int z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+    
+    @Override
+    public HashMap<String, Object> SerializeData() {
+        var data = new HashMap<String, Object>();
+        data.put("x", x);
+        data.put("y", y);
+        data.put("z", z);
+        return data;
+    }
+
+    @Override
+    public Object DeSerializeData(HashMap<String, Object> configData) {
+        x = (Integer) configData.getOrDefault("x", 0);
+        y = (Integer) configData.getOrDefault("y", 0);
+        z = (Integer) configData.getOrDefault("z", 0);
+        return this;
+    }
+
+    @Override
+    public Object DefaultValue() {
+        return new TestCustomVariable(0, 0, 0);
+    }
+}
+```
+
+
