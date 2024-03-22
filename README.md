@@ -12,7 +12,9 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
       <id>pulsecore</id>
       <url>https://maven.pkg.github.com/closeplanet2/PulseCore</url>
 </repository>
+```
 
+```
 <dependency>
       <groupId>com.pandapulsestudios</groupId>
       <artifactId>pulsecore</artifactId>
