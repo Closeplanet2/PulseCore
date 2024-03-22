@@ -1,0 +1,6 @@
+name: PulseCore
+version: 1.2.0-a
+main: com.pandapulsestudios.pulsecore.PulseCore
+authors: [Closeplanet2, PandaPulseStudios]
+api-version: 1.20
+

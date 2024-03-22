@@ -1,0 +1,5 @@
+Bundle Delimiter -> N/A
+Spawn Entity -> PacketAPI.Play.Server.SpawnEntityPacket
+Spawn Experience Orb -> PacketAPI.Play.Server.SpawnExperienceOrb
+Entity Animation -> PacketAPI.Play.Server.EntityAnimationPacket
+Set Title Text -> player.sendTitle();

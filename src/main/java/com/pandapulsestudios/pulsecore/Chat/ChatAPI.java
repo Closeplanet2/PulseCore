@@ -98,19 +98,19 @@ public class ChatAPI {
                 var formattedMessage = ChatAPI.FormatMessage(storedMessage, translateColorCodes, translateHexCodes);
                 switch (messageType){
                     case Player -> {
-                        if(playerToo == null || !PlayerAPI.CanPlayerAction(PlayerAction.PlayerGetMessage, playerToo)) return;
+                        if(playerToo == null || !PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo)) return;
                         var playerMessage = playerFrom == null ?
                                 ChatAPI.FormatPluginToPlayerMessage(messagePrefix, formattedMessage, playerToo) :
                                 ChatAPI.FormatPlayerToPlayerMessage(messagePrefix, formattedMessage, playerToo, playerFrom);
-                        playerToo.sendMessage(playerMessage);
+                        playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
                     }
                     case Console -> {
-                         var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, message);
-                         Bukkit.getConsoleSender().sendMessage(consoleMessage);
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, message);
+                        Bukkit.getConsoleSender().sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
                     }
                     case Broadcast -> {
                         var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, message);
-                        Bukkit.broadcastMessage(consoleMessage);
+                        Bukkit.broadcastMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
                     }
                 }
             }

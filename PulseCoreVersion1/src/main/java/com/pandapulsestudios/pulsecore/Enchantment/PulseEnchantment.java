@@ -31,7 +31,7 @@ public interface PulseEnchantment {
     default boolean treasure(){ return false; };
     default boolean cursed(){ return false; };
     default List<Enchantment> conflictsWith(){ return new ArrayList<>(); };
-    default Enchantment ReturnEnchantment(){ return new EnchantWrapper(this); }
+
     default boolean AddEnchantmentToItemStack(ItemStack itemStack){
         var itemMeta = itemStack.getItemMeta();
         itemMeta.addEnchant(ReturnEnchantment(), 1, true);
