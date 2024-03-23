@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0899730-5956-4a52-a16c-88db1dd58f51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/BarData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaBossBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaBossBarAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaEntityBossBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaEntityBossValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaBosBarDeleteEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaBossBarCreateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaBossBarPlayeRemovedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaBossBarPlayerAddEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaEntityBossBarCreateEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaEntityBossBarDeleteEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/BossBar/PandaEntityBossBarPlayerAddEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Events/CustomEvents/PandaEntityBossBarPlayerRemoveEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Player/PlayerAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Player/PlayerAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/PulseCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaBossBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaBossBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaEntityBossBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/BossBar/PandaEntityBossBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711133820360</updated>
-      <workItem from="1711133821308" duration="23936000" />
+      <workItem from="1711133821308" duration="24728000" />
     </task>
     <servers />
   </component>

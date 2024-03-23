@@ -1,8 +1,7 @@
 package com.pandapulsestudios.pulsecore.BossBar;
 
-import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.PandaBosBarDeleteEvent;
-import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.PandaBossBarPlayeRemovedEvent;
-import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.PandaBossBarPlayerAddEvent;
+import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.*;
+import com.pandapulsestudios.pulsecore.Events.CustomEvents.PandaEntityBossBarPlayerRemoveEvent;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCore;
@@ -21,6 +20,7 @@ import java.util.UUID;
 
 public class PandaEntityBossBar {
 
+    private final String barID;
     private final LivingEntity livingEntity;
     private final BarData barData;
     private final PandaEntityBossValue pandaEntityBossValue;
@@ -29,6 +29,7 @@ public class PandaEntityBossBar {
 
     private PandaEntityBossBar(LivingEntity livingEntity, String barID, BarData barData, PandaEntityBossValue pandaEntityBossValue, BarFlag... barFlags){
         this.livingEntity = livingEntity;
+        this.barID = barID;
         this.barData = barData;
         this.pandaEntityBossValue = pandaEntityBossValue;
         this.barFlags = barFlags;
@@ -42,16 +43,16 @@ public class PandaEntityBossBar {
 
     public void AddPlayer(Player player){
         if(bossBar == null || !PlayerAPI.CanPlayerAction(PlayerAction.PlayerBossBar, player) || IsPlayerInBossBar(player)) return;
-        var pandaBossBarPlayerAddEvent =  new PandaBossBarPlayerAddEvent(this, player);
+        var pandaBossBarPlayerAddEvent =  new PandaEntityBossBarPlayerAddEvent(this, player);
         if(pandaBossBarPlayerAddEvent.isCancelled()) return;
         bossBar.addPlayer(player);
     }
 
     public void DeleteBossBar(){
-        var pandaBossBarDeleteEvent = new PandaBosBarDeleteEvent(this);
+        var pandaBossBarDeleteEvent = new PandaEntityBossBarDeleteEvent(this);
         if(pandaBossBarDeleteEvent.isCancelled()) return;
         RemoveAllPlayers();
-        PulseCore.pandaBossBars.remove(barID);
+        PulseCore.pandaEntityBossBars.remove(barID);
     }
 
     public void RemoveAllPlayers(){
@@ -61,7 +62,7 @@ public class PandaEntityBossBar {
 
     public void RemovePlayer(Player player){
         if(bossBar == null || !IsPlayerInBossBar(player)) return;
-        var pandaBossBarPlayeRemovedEvent = new PandaBossBarPlayeRemovedEvent(this, player);
+        var pandaBossBarPlayeRemovedEvent = new PandaEntityBossBarPlayerRemoveEvent(this, player);
         if(pandaBossBarPlayeRemovedEvent.isCancelled()) return;
         bossBar.removePlayer(player);
     }
@@ -109,6 +110,8 @@ public class PandaEntityBossBar {
                 for(var player : toAdd) storedBossBar.AddPlayer(player);
                 return storedBossBar;
             }
+            var createEvent = new PandaEntityBossBarCreateEvent(this);
+            if(createEvent.isCancelled()) return null;
             var createdBossBar = new PandaEntityBossBar(livingEntity, barID, barData, pandaEntityBossValue, barFlags);
             for(var player : toAdd) createdBossBar.AddPlayer(player);
             PulseCore.pandaEntityBossBars.put(barID, createdBossBar);
