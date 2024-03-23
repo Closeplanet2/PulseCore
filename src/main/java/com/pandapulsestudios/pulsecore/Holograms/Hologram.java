@@ -84,7 +84,7 @@ public class Hologram {
             return this;
         }
 
-        public HologramBuilder GapBetweenLines(int gapBetweenLines){
+        public HologramBuilder GapBetweenLines(float gapBetweenLines){
             this.gapBetweenLines = gapBetweenLines;
             return this;
         }
