@@ -31,6 +31,47 @@ public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int ra
 ```
 
 <h2 align="center">
+<img src="Images/PandaBossBarAPI.png" alt="PandaBossBarAPI" width="600">
+</h2>
+
+```
+public static PandaBossBar ReturnPandaBossBarByName(String barId);
+public static PandaEntityBossBar ReturnPandaEntityBossBarByName(String barId);
+```
+
+<h2 align="center">
+<img src="Images/PandaBossBar.png" alt="PandaBossBar" width="600">
+</h2>
+
+```
+public static void Create(Player player, boolean translateColorCodes, boolean translateHexCodes){
+        var entityBossBar = PandaBossBar
+                .builder()
+                .barID(UUID.randomUUID().toString())
+                .barData(new BarData("TITLE", BarColor.BLUE, BarStyle.SEGMENTED_6, 0), 20)
+                .barData(new BarData("TITLE2", BarColor.BLUE, BarStyle.SEGMENTED_6, 0), 20)
+                .toAdd(player)
+                .build(translateColorCodes, translateHexCodes, BarFlag.CREATE_FOG);
+}
+```
+
+<h2 align="center">
+<img src="Images/PandaEntityBossBar.png" alt="PandaEntityBossBar" width="600">
+</h2>
+
+```
+public static void Create(LivingEntity livingEntity, Player player){
+        var entityBossBar = PandaEntityBossBar
+                .builder()
+                .barID(UUID.randomUUID().toString())
+                .pandaEntityBossValue(PandaEntityBossValue.HEALTH)
+                .barData(new BarData("TITLE", BarColor.BLUE, BarStyle.SEGMENTED_6, 0))
+                .toAdd(player)
+                .build(livingEntity, BarFlag.CREATE_FOG);
+}
+```
+
+<h2 align="center">
 <img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
 </h2>
 
