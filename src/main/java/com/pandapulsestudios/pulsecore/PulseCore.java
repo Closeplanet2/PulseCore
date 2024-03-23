@@ -1,5 +1,7 @@
 package com.pandapulsestudios.pulsecore;
 
+import com.pandapulsestudios.pulsecore.BossBar.PandaBossBar;
+import com.pandapulsestudios.pulsecore.BossBar.PandaEntityBossBar;
 import com.pandapulsestudios.pulsecore.Data.Interface.PersistentDataCallbacks;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
@@ -38,6 +40,8 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<String, PulseNBTListener> customNBTListener = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseWorld> customWorlds = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseLocation> customLocations = new LinkedHashMap<>();
+    public static LinkedHashMap<String, PandaBossBar> pandaBossBars = new LinkedHashMap<>();
+    public static LinkedHashMap<String, PandaEntityBossBar> pandaEntityBossBars = new LinkedHashMap<>();
     public static LinkedHashMap<UUID, List<UUID>> targetViewerHideMatrix = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseLoop> customPulseLoop = new LinkedHashMap<>();
     public static LinkedHashMap<UUID, LinkedHashMap<String, Object>> uuidData = new LinkedHashMap<>();

@@ -22,5 +22,7 @@ public class PulseLoop1 implements PulseLoop {
         for(var player : Bukkit.getOnlinePlayers()) PlayerMove.PlayerMoveLoop(player);
         WorldAPI.HandleLoop();
         for(var scoreboardName : PulseCore.customScoreboards.keySet()) PulseCore.customScoreboards.get(scoreboardName).UpdateScoreboard();
+        for(var pandaBossBar : PulseCore.pandaBossBars.values()) pandaBossBar.TickBossBar();
+        for(var pandaBossBar : PulseCore.pandaEntityBossBars.values()) pandaBossBar.TickBossBar();
     }
 }

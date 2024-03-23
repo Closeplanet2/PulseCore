@@ -42,5 +42,6 @@ public enum PlayerAction {
     PlayerSounds,
     PlayerCommand,
     PlayerInteract,
-    PlayerToggleSneak
+    PlayerToggleSneak,
+    PlayerBossBar
 }
