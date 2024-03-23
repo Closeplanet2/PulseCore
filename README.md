@@ -524,3 +524,216 @@ public class TestPulseLoop implements PulseLoop{
     }
 }
 ```
+
+<h2 align="center">
+<img src="Images/MovementAPI.png" alt=MovementAPI" width="600">
+</h2>
+
+```
+public static Location ReturnLocationLock(Player player);
+public static void LockPlayerLocation(Player player, boolean state, Location location);
+public static void LockPlayerRotation(Player player, boolean state, Location location);
+```
+
+<h2 align="center">
+<img src="Images/TeleportsAPI.png" alt=TeleportsAPI" width="600">
+</h2>
+
+```
+public static void TeleportPlayer(Player player, LivingEntity liveTarget, Location softTarget, int timeToWait, boolean displayTime, boolean cancelOnMove);
+public static boolean isPlayerTeleporting(Player player);
+public static void CANCEL_PLAYER_TELEPORT(Player player);
+```
+
+<h2 align="center">
+<img src="Images/NBTAPI.png" alt=NBTAPI" width="600">
+</h2>
+
+```
+public static boolean DoesItemStackContainNBTTags(ItemStack itemStack, List<String> tags);
+public static HashMap<String, Object> GetAll(ItemStack itemStack, PersistentDataType persistentDataType);
+public static HashMap<String, Object> GetAll(ItemStack itemStack);
+public static Object Get(JavaPlugin javaPlugin, ItemStack itemStack, String key, PersistentDataType persistentDataType);
+public static void Add(JavaPlugin javaPlugin, ItemStack itemStack, PersistentDataType persistentDataType, String key, Object value);
+public static boolean Has(JavaPlugin javaPlugin, ItemStack itemStack, PersistentDataType persistentDataType, String key);
+public static void Remove(JavaPlugin javaPlugin, ItemStack itemStack, String key);
+```
+
+<h2 align="center">
+<img src="Images/ParticleAPI.png" alt=ParticleAPI" width="600">
+</h2>
+
+```
+public static void SpawnParticle(World world, Particle particle, Location point);
+public static void SpawnParticle(World world, Particle particle, Vector point);
+public static void SpawnParticle(World world, Particle particle, Location location, int i, int vm, int v1, int v2, int v3);
+public static void SpawnSphere(Location location, Particle particle, int density, int duration, double sphereRadius);
+```
+
+<h2 align="center">
+<img src="Images/HeadAPI.png" alt=HeadAPI" width="600">
+</h2>
+
+```
+public static ItemStack ReturnPlayerHead(OfflinePlayer player);
+public static ItemStack ReturnPlayerHead(String uuid);
+public static ItemStack ReturnPlayerHead(String name, int amount, String url); <- https://textures.minecraft.net/texture/
+```
+
+<h2 align="center">
+<img src="Images/PlayerAPI.png" alt=PlayerAPI" width="600">
+</h2>
+
+```
+public static LinkedHashMap<PlayerAction, Boolean> ReturnPlayerActionData(Player player)
+public static boolean CanPlayerAction(PlayerAction playerAction, Player player);
+public static void TogglePlayerAction(PlayerAction playerAction, boolean actionState, Player player);
+public static String[] GetPlayerTexture(Player player);
+```
+
+<h2 align="center">
+<img src="Images/TitleAPI.png" alt=TitleAPI" width="600">
+</h2>
+
+```
+public static void SendTitleToAllPlayers(String title, String subtitle, int fadeIn, int stay, int fadeOut);
+public static void SendTitleToPlayer(Player player, String title, String subtitle, int fadeIn, int stay, int fadeOut);
+```
+
+
+<h2 align="center">
+<img src="Images/VanishAPI.png" alt=VanishAPI" width="600">
+</h2>
+
+```
+public static void HideTargetFromViewer(Player target, Player viewer);
+public static void ShowTargetToViewer(Player target, Player viewer;
+public static boolean CanViewerSeeTarget(Player target, Player viewer);
+```
+
+<h2 align="center">
+<img src="Images/PulseRecipe.png" alt=PulseRecipe" width="600">
+</h2>
+
+```
+@PulseAutoRegister
+public class TestPulseRecipe implements PulseRecipe, PulseItemStack {
+
+    @Override
+    public String itemName() {
+        return "Test Item";
+    }
+
+    @Override
+    public Material itemType() {
+        return Material.DIAMOND_SWORD;
+    }
+
+    @Override
+    public int itemAmount() {
+        return 0;
+    }
+
+    @Override
+    public RecipeType recipeType() {
+        return RecipeType.ShapedRecipe;
+    }
+
+    @Override
+    public ItemStack recipeResult() {
+        return PulseItemStackAPI.ReturnItemStack(this);
+    }
+}
+```
+
+<h2 align="center">
+<img src="Images/PulseScoreboard.png" alt=PulseScoreboard" width="600">
+</h2>
+
+```
+var firstSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 1")
+                .addLine(1, new PulseScoreboardData("Hello1"))
+                .addLine(2, new PulseScoreboardData("Hello2"))
+                .build();
+        var secondSection = PulseScoreboardLines.builder()
+                .scoreboardTitle("Section 2")
+                .addLine(1, new PulseScoreboardData("Hello3"))
+                .addLine(2, new PulseScoreboardData("Hello4"))
+                .build();
+        var pulseScoreboard = PulseScoreboard.builder()
+                .scoreboardID(event.getPlayer().getDisplayName())
+                .addPlayer(event.getPlayer())
+                .addLineHolder(20, firstSection)
+                .addLineHolder(20, secondSection)
+                .create(false);
+```
+
+<h2 align="center">
+<img src="Images/SoundAPI.png" alt=SoundAPI" width="600">
+</h2>
+
+```
+public static void PlaySound(Sound minecraftSound, Player player, Location location, int volume, int pitch);
+public static void PlaySound(Sound minecraftSound, Location location, int volume, int pitch);
+```
+
+<h2 align="center">
+<img src="Images/WorldAPI.png" alt=WorldAPI" width="600">
+</h2>
+
+```
+public static boolean IsWorldLoaded(String worldName);
+public static boolean IsWorldLoaded(UUID worldUUID);
+public static World LoadWorld(String worldName);
+public static void UnloadWorld(String worldName);
+public static void UnloadWorld(UUID worldUUID);
+public static void UnloadWorld(World world);
+public static void DeleteWorld(String worldName;
+public static void DeleteWorld(UUID worldUUID);
+public static void DeleteWorld(World world);
+public static void DeleteWorld(File worldSource);
+public static World CreateCopy(String baseWorldName, String newWorldName, boolean deleteOldWorld, ArrayList<String> ignore);
+public static void WorldLockPlayerAction(String worldName, PlayerAction playerAction, boolean playerActionState);
+public static void WorldLockPlayerAction(World world, PlayerAction playerAction, boolean playerActionState);
+public static void TimeLock(World world, TimeLock timeLock);
+public static void DifficultyLock(World world, Difficulty difficulty);
+public static void GameModeLock(World world, GameMode gameMode);
+public static void HeartLock(World world, int heartLevel);
+public static void HungerLock(World world, int hungerLevel);
+public static void SaturationLock(World world, int saturationLevel);
+```
+
+<h2 align="center">
+<img src="Images/WorldEditAPI.png" alt=WorldEditAPI" width="600">
+</h2>
+
+```
+public static void LoadAndPasteSchematic(String schematicName, Location location);
+public static Clipboard LoadSchematic(String schematicName);
+public static void PasteSchematic(Clipboard clipboard, Location location);
+```
+
+<h2 align="center">
+<img src="Images/WorldGuardAPI.png" alt=WorldGuardAPI" width="600">
+</h2>
+
+```
+public static ProtectedRegion ReturnProtectedRegion(org.bukkit.World world, String regionName)
+public static ProtectedRegion CreateCuboidProtectedRegion(String regionName, org.bukkit.World world, List<BlockVector3> points, boolean addToManager)
+public static ProtectedRegion CreatePolygonProtectedRegion(String regionName, org.bukkit.World world, int minY, int maxY, List<BlockVector2> points, boolean addToManager)
+public static ProtectedRegion CreateglobalProtectedRegion(String regionName, org.bukkit.World world, boolean addToManager)
+public static void AddProtectedRegion(org.bukkit.World world, ProtectedRegion protectedRegion)
+public static void RemoveProtectedRegion(org.bukkit.World world, String regionName)
+public static boolean IsLocationInRegion(org.bukkit.World world, String regionName, Location location)
+public static boolean IsLocationInRegion(ProtectedRegion protectedRegion, Location location)
+public static boolean DoesRegionOverlap(org.bukkit.World world, String regionNameA, String regionNameB)
+public static boolean DoesRegionOverlap(ProtectedRegion protectedRegionA, ProtectedRegion protectedRegionB)
+public static boolean DoAllRegionOverlap(ProtectedRegion protectedRegionA, List<ProtectedRegion> protectedRegions)
+public static  List<ProtectedRegion> ReturnOverlapRegions(org.bukkit.World world, String regionNameA, String regionNameB)
+public static  List<ProtectedRegion> ReturnOverlapRegions(ProtectedRegion protectedRegionA, ProtectedRegion protectedRegionB)
+public static List<ProtectedRegion> ReturnAllOverlapRegions(ProtectedRegion protectedRegionA, List<ProtectedRegion> protectedRegions)
+public static boolean IsPlayerWithinRegion(Player player, org.bukkit.World world, String regionName)
+public static boolean IsPlayerWithinRegion(Player player, ProtectedRegion protectedRegion)
+public static void RegisterCustomFlag(String flagName, boolean state)
+```
