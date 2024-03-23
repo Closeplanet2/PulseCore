@@ -322,6 +322,22 @@ public class TestPulseEnchantment implements PulseEnchantment{
 @PulseAutoRegister
 public class TestEvents implements Listener {
     @EventHandler
+    public void Test(PandaBosBarDeleteEvent event){ }
+    @EventHandler
+    public void Test(PandaBossBarCreateEvent event){ }
+    @EventHandler
+    public void Test(PandaBossBarPlayerAddEvent event){ }
+    @EventHandler
+    public void Test(PandaBossBarPlayeRemovedEvent event){ }
+    @EventHandler
+    public void Test(PandaEntityBossBarCreateEvent event){ }
+    @EventHandler
+    public void Test(PandaEntityBossBarDeleteEvent event){ }
+    @EventHandler
+    public void Test(PandaEntityBossBarPlayerAddEvent event){ }
+    @EventHandler
+    public void Test(PandaEntityBossBarPlayerRemoveEvent event){ }
+    @EventHandler
     public void Test(PersistentDataAddedEvent event){ }
     @EventHandler
     public void Test(PersistentDataRemovedEvent event){ }
