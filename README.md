@@ -28,18 +28,14 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int radius, int gap, Material... materials);
 ```
 
-<h2 align="center">
-<img src="Images/PandaBossBarAPI.png" alt="PandaBossBarAPI" width="600">
-</h2>
+<h1 align="center"> PandaBossBarAPI </h1>
 
 ```
 public static PandaBossBar ReturnPandaBossBarByName(String barId);
 public static PandaEntityBossBar ReturnPandaEntityBossBarByName(String barId);
 ```
 
-<h2 align="center">
-<img src="Images/PandaBossBar.png" alt="PandaBossBar" width="600">
-</h2>
+<h1 align="center"> PandaBossBar </h1>
 
 ```
 public static void Create(Player player, boolean translateColorCodes, boolean translateHexCodes){
@@ -53,9 +49,7 @@ public static void Create(Player player, boolean translateColorCodes, boolean tr
 }
 ```
 
-<h2 align="center">
-<img src="Images/PandaEntityBossBar.png" alt="PandaEntityBossBar" width="600">
-</h2>
+<h1 align="center"> PandaEntityBossBar </h1>
 
 ```
 public static void Create(LivingEntity livingEntity, Player player){
@@ -69,9 +63,7 @@ public static void Create(LivingEntity livingEntity, Player player){
 }
 ```
 
-<h2 align="center">
-<img src="Images/PersistentDataAPI.png" alt=PersistentDataAPI" width="600">
-</h2>
+<h1 align="center"> PersistentDataAPI </h1>
 
 ```
 public static PersistentDataContainer ReturnPersistentDataContainer(Block block);
@@ -84,9 +76,7 @@ public static void Add(Block block, PersistentDataType persistentDataType, Names
 public static void Remove(Block block, PersistentDataType persistentDataType, NamespacedKey namespacedKey);
 ```
 
-<h2 align="center">
-<img src="Images/TempBlockDataAPI.png" alt="TempBlockDataAPI" width="600">
-</h2>
+<h1 align="center"> TempBlockDataAPI </h1>
 
 ```
 public static LinkedHashMap<String, Object> GetALl(Block block);
@@ -96,9 +86,7 @@ public static void Add(Block block, String nameSpacedKey, Object object);
 public static void Remove(Block block, String nameSpacedKey);
 ```
 
-<h2 align="center">
-<img src="Images/ChatAPI.png" alt="ChatAPI" width="600">
-</h2>
+<h1 align="center"> ChatAPI </h1>
 
 ```
 public static String FormatMessage(String message, boolean translateColorCodes, boolean translateHexCodes);
@@ -121,11 +109,7 @@ ChatAPI.chatBuilder()
       .SendMessage("hello");
 ```
 
-
-
-<h2 align="center">
-<img src="Images/ServerDataAPI.png" alt=ServerDataAPI" width="600">
-</h2>
+<h1 align="center"> ServerDataAPI </h1>
 
 ```
 public static void Store(String key, Object data);
@@ -135,9 +119,7 @@ public static Object Get(String key, Object defaultValue);
 public static LinkedHashMap<String, Object> ReturnAll();
 ```
 
-<h2 align="center">
-<img src="Images/UUIDDataAPI.png" alt=UUIDDataAPI" width="600">
-</h2>
+<h1 align="center"> UUIDDataAPI </h1>
 
 ```
 public static void Store(UUID uuid, String key, Object data);
@@ -147,9 +129,7 @@ public static Object Get(UUID uuid, String key, Object defaultValue);
 public static LinkedHashMap<String, Object> GetAll(UUID uuid);
 ```
 
-<h2 align="center">
-<img src="Images/VariableAPI.png" alt=VariableAPI" width="600">
-</h2>
+<h1 align="center"> VariableAPI </h1>
 
 ```
 public static boolean REGISTER_VAR_TEST(Class<?> test_class, PulseVariableTest variableLogic, boolean override_if_found);
@@ -158,9 +138,7 @@ public static PersistentDataTypes ReturnTypeFromVariableTest(Class<?> classType)
 public static List<String> RETURN_AS_ALL_TYPES(String text, boolean addVariableName, boolean isArrayType);
 ```
 
-<h2 align="center">
-<img src="Images/CustomVariable.png" alt=CustomVariable" width="600">
-</h2>
+<h1 align="center"> CustomVariable </h1>
 
 ```
 @PulseAutoRegister
@@ -199,9 +177,7 @@ public class TestCustomVariable implements CustomVariable{
 }
 ```
 
-<h2 align="center">
-<img src="Images/PersistentDataCallbacks.png" alt=PersistentDataCallbacks" width="600">
-</h2>
+<h1 align="center"> PersistentDataCallbacks </h1>
 
 ```
 @PulseAutoRegister
@@ -223,9 +199,7 @@ public class TestPersistentDataCallbacks implements PersistentDataCallbacks{
 }
 ```
 
-<h2 align="center">
-<img src="Images/PulseVariableTest.png" alt=PulseVariableTest" width="600">
-</h2>
+<h1 align="center"> PulseVariableTest </h1>
 
 ```
 @PulseAutoRegister
@@ -274,9 +248,7 @@ public class UUIDTest implements PulseVariableTest {
 }
 ```
 
-<h2 align="center">
-<img src="Images/EnchantmentAPI.png" alt=EnchantmentAPI" width="600">
-</h2>
+<h1 align="center"> EnchantmentAPI </h1>
 
 ```
 public static LinkedHashMap<String, PulseEnchantment> ReturnAllStoredEnchantments();
@@ -285,9 +257,7 @@ public static PulseEnchantment ReturnPulseEnchantment(String pulseEnchantmentNam
 public static boolean AddPulseEnchantmentToItemStack(ItemStack itemStack, String pulseEnchantmentName);
 ```
 
-<h2 align="center">
-<img src="Images/PulseEnchantment.png" alt=PulseEnchantment" width="600">
-</h2>
+<h1 align="center"> PulseEnchantment </h1>
 
 ```
 @PulseAutoRegister
@@ -304,17 +274,13 @@ public class TestPulseEnchantment implements PulseEnchantment{
 }
 ```
 
-<h2 align="center">
-<img src="Images/ArmorStandAPI.png" alt=ArmorStandAPI" width="600">
-</h2>
+<h1 align="center"> ArmorStandAPI </h1>
 
 ```
  public static ArmorStand SpawnArmorStand(Location location, boolean isVisible, boolean customNameVisible, String customName, boolean canPickupItems, boolean useGravity);
 ```
 
-<h2 align="center">
-<img src="Images/CustomEvents.png" alt=CustomEvents" width="600">
-</h2>
+<h1 align="center"> CustomEvents </h1>
 
 ```
 @PulseAutoRegister
@@ -382,9 +348,7 @@ public class TestEvents implements Listener {
 }
 ```
 
-<h2 align="center">
-<img src="Images/DirAPI.png" alt=DirAPI" width="600">
-</h2>
+<h1 align="center"> DirAPI </h1>
 
 ```
 public static void DeleteAllFiles(File directory, boolean cascadeFolders);
@@ -394,18 +358,14 @@ public static List<File> ReturnAllFilesFromDirectory(File directory, boolean cas
 public static void CopyAllFiles(File dirA, File dirB, ArrayList<String> ignore);
 ```
 
-<h2 align="center">
-<img src="Images/FileAPI.png" alt=FileAPI" width="600">
-</h2>
+<h1 align="center"> FileAPI </h1>
 
 ```
 public static void DeleteFile(File sourceFile);
 public static void CreateFile(String directory, String sourceFile) throws IOException;
 ```
 
-<h2 align="center">
-<img src="Images/Hologram.png" alt=Hologram" width="600">
-</h2>
+<h1 align="center"> Hologram </h1>
 
 ```
 var hologram = new Hologram.HologramBuilder()
@@ -424,18 +384,14 @@ public void DeleteHologram();
 public void RemoveLine(int index);
 ```
 
-<h2 align="center">
-<img src="Images/InventoryAPI.png" alt=InventoryAPI" width="600">
-</h2>
+<h1 align="center"> InventoryAPI </h1>
 
 ```
 public static HashMap<ItemStack, ItemLocation> ReturnALlItemsWithLocation(LivingEntity livingEntity);
 public static HashMap<ItemStack, ItemLocation> ReturnALlItemsWithLocation(PlayerInventory playerInventory);
 ```
 
-<h2 align="center">
-<img src="Images/ItemStackAPI.png" alt=ItemStackAPI" width="600">
-</h2>
+<h1 align="center"> ItemStackAPI </h1>
 
 ```
 public static int CountItem(Player player, ItemStack itemStack);
@@ -447,9 +403,7 @@ public static PulseItemStack ReturnPulseItem(String itemName);
 public static PulseItemStack ReturnPulseItem(ItemStack itemStack);
 ```
 
-<h2 align="center">
-<img src="Images/PulseItemStack.png" alt=PulseItemStack" width="600">
-</h2>
+<h1 align="center"> PulseItemStack </h1>
 
 ```
 @PulseAutoRegister
@@ -471,18 +425,14 @@ public class TestPulseItemStack implements PulseItemStack{
 }
 ```
 
-<h2 align="center">
-<img src="Images/ClassAPI.png" alt=ClassAPI" width="600">
-</h2>
+<h1 align="center"> ClassAPI </h1>
 
 ```
 public static void RegisterClasses(JavaPlugin javaPlugin);
 public static void RegisterClassesRaw(JavaPlugin javaPlugin) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
 ```
 
-<h2 align="center">
-<img src="Images/JavaAPI.png" alt=JavaAPI" width="600">
-</h2>
+<h1 align="center"> JavaAPI </h1>
 
 ```
 public static ArrayList<Class<?>> ReturnAllAutoRegisterClasses(JavaPlugin javaPlugin);
@@ -490,9 +440,7 @@ public static ArrayList<Class<?>> ReturnAllAutoRegisterClassesRaw(JavaPlugin jav
 public static List<Class<?>> ReturnAllCLassesFromPlugin(JavaPlugin javaPlugin) throws URISyntaxException, IOException, ClassNotFoundException;
 ```
 
-<h2 align="center">
-<img src="Images/LocationAPI.png" alt=LocationAPI" width="600">
-</h2>
+<h1 align="center"> LocationAPI </h1>
 
 ```
 public static Location LOCATION(Player player, double x, double y, double z);
@@ -513,9 +461,7 @@ public Location[] ReturnAllLocationsBetweenTwoLocations(Location start, Location
 public static List<Location> GetAllLocationsInCubeArea(Location a, Location b);
 ```
 
-<h2 align="center">
-<img src="Images/PulseLocation.png" alt=PulseLocation" width="600">
-</h2>
+<h1 align="center"> PulseLocation </h1>
 
 ```
 @PulseAutoRegister
@@ -545,9 +491,7 @@ public class TestPulseLocation implements PulseLocation{
 }
 ```
 
-<h2 align="center">
-<img src="Images/LoopAPI.png" alt=LoopAPI" width="600">
-</h2>
+<h1 align="center"> LoopAPI </h1>
 
 ```
 public static void CancelLoops(JavaPlugin javaPlugin);
@@ -556,9 +500,7 @@ public static void CancelLoops(String loopName);
 public static void CancelLoops(PulseLoop pulseLoop);
 ```
 
-<h2 align="center">
-<img src="Images/PulseLoop.png" alt=PulseLoop" width="600">
-</h2>
+<h1 align="center"> PulseLoop </h1>
 
 ```
 @PulseAutoRegister
@@ -580,9 +522,7 @@ public class TestPulseLoop implements PulseLoop{
 }
 ```
 
-<h2 align="center">
-<img src="Images/MovementAPI.png" alt=MovementAPI" width="600">
-</h2>
+<h1 align="center"> MovementAPI </h1>
 
 ```
 public static Location ReturnLocationLock(Player player);
@@ -590,9 +530,7 @@ public static void LockPlayerLocation(Player player, boolean state, Location loc
 public static void LockPlayerRotation(Player player, boolean state, Location location);
 ```
 
-<h2 align="center">
-<img src="Images/TeleportsAPI.png" alt=TeleportsAPI" width="600">
-</h2>
+<h1 align="center"> TeleportsAPI </h1>
 
 ```
 public static void TeleportPlayer(Player player, LivingEntity liveTarget, Location softTarget, int timeToWait, boolean displayTime, boolean cancelOnMove);
@@ -600,9 +538,7 @@ public static boolean isPlayerTeleporting(Player player);
 public static void CANCEL_PLAYER_TELEPORT(Player player);
 ```
 
-<h2 align="center">
-<img src="Images/NBTAPI.png" alt=NBTAPI" width="600">
-</h2>
+<h1 align="center"> NBTAPI </h1>
 
 ```
 public static boolean DoesItemStackContainNBTTags(ItemStack itemStack, List<String> tags);
@@ -614,9 +550,7 @@ public static boolean Has(JavaPlugin javaPlugin, ItemStack itemStack, Persistent
 public static void Remove(JavaPlugin javaPlugin, ItemStack itemStack, String key);
 ```
 
-<h2 align="center">
-<img src="Images/ParticleAPI.png" alt=ParticleAPI" width="600">
-</h2>
+<h1 align="center"> ParticleAPI </h1>
 
 ```
 public static void SpawnParticle(World world, Particle particle, Location point);
@@ -625,9 +559,7 @@ public static void SpawnParticle(World world, Particle particle, Location locati
 public static void SpawnSphere(Location location, Particle particle, int density, int duration, double sphereRadius);
 ```
 
-<h2 align="center">
-<img src="Images/HeadAPI.png" alt=HeadAPI" width="600">
-</h2>
+<h1 align="center"> HeadAPI </h1>
 
 ```
 public static ItemStack ReturnPlayerHead(OfflinePlayer player);
@@ -635,9 +567,7 @@ public static ItemStack ReturnPlayerHead(String uuid);
 public static ItemStack ReturnPlayerHead(String name, int amount, String url); <- https://textures.minecraft.net/texture/
 ```
 
-<h2 align="center">
-<img src="Images/PlayerAPI.png" alt=PlayerAPI" width="600">
-</h2>
+<h1 align="center"> PlayerAPI </h1>
 
 ```
 public static LinkedHashMap<PlayerAction, Boolean> ReturnPlayerActionData(Player player)
@@ -646,19 +576,14 @@ public static void TogglePlayerAction(PlayerAction playerAction, boolean actionS
 public static String[] GetPlayerTexture(Player player);
 ```
 
-<h2 align="center">
-<img src="Images/TitleAPI.png" alt=TitleAPI" width="600">
-</h2>
+<h1 align="center"> TitleAPI </h1>
 
 ```
 public static void SendTitleToAllPlayers(String title, String subtitle, int fadeIn, int stay, int fadeOut);
 public static void SendTitleToPlayer(Player player, String title, String subtitle, int fadeIn, int stay, int fadeOut);
 ```
 
-
-<h2 align="center">
-<img src="Images/VanishAPI.png" alt=VanishAPI" width="600">
-</h2>
+<h1 align="center"> VanishAPI </h1>
 
 ```
 public static void HideTargetFromViewer(Player target, Player viewer);
@@ -666,9 +591,7 @@ public static void ShowTargetToViewer(Player target, Player viewer;
 public static boolean CanViewerSeeTarget(Player target, Player viewer);
 ```
 
-<h2 align="center">
-<img src="Images/PulseRecipe.png" alt=PulseRecipe" width="600">
-</h2>
+<h1 align="center"> PulseRecipe </h1>
 
 ```
 @PulseAutoRegister
@@ -701,9 +624,7 @@ public class TestPulseRecipe implements PulseRecipe, PulseItemStack {
 }
 ```
 
-<h2 align="center">
-<img src="Images/PulseScoreboard.png" alt=PulseScoreboard" width="600">
-</h2>
+<h1 align="center"> PulseScoreboard </h1>
 
 ```
 var firstSection = PulseScoreboardLines.builder()
@@ -724,18 +645,14 @@ var firstSection = PulseScoreboardLines.builder()
                 .create(false);
 ```
 
-<h2 align="center">
-<img src="Images/SoundAPI.png" alt=SoundAPI" width="600">
-</h2>
+<h1 align="center"> SoundAPI </h1>
 
 ```
 public static void PlaySound(Sound minecraftSound, Player player, Location location, int volume, int pitch);
 public static void PlaySound(Sound minecraftSound, Location location, int volume, int pitch);
 ```
 
-<h2 align="center">
-<img src="Images/WorldAPI.png" alt=WorldAPI" width="600">
-</h2>
+<h1 align="center"> WorldAPI </h1>
 
 ```
 public static boolean IsWorldLoaded(String worldName);
@@ -759,9 +676,7 @@ public static void HungerLock(World world, int hungerLevel);
 public static void SaturationLock(World world, int saturationLevel);
 ```
 
-<h2 align="center">
-<img src="Images/WorldEditAPI.png" alt=WorldEditAPI" width="600">
-</h2>
+<h1 align="center"> WorldEditAPI </h1>
 
 ```
 public static void LoadAndPasteSchematic(String schematicName, Location location);
@@ -769,9 +684,7 @@ public static Clipboard LoadSchematic(String schematicName);
 public static void PasteSchematic(Clipboard clipboard, Location location);
 ```
 
-<h2 align="center">
-<img src="Images/WorldGuardAPI.png" alt=WorldGuardAPI" width="600">
-</h2>
+<h1 align="center"> WorldGuardAPI </h1>
 
 ```
 public static ProtectedRegion ReturnProtectedRegion(org.bukkit.World world, String regionName)
