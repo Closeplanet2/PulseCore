@@ -22,7 +22,7 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 </dependency>
 ```
 
-<h2 align="center"> BlockAPI </h2>
+<h1 align="center"> BlockAPI </h1>
 
 ```
 public static ArrayList<Block> ReturnAllBlocksInRadius(Location location, int radius, int gap, Material... materials);
