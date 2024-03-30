@@ -109,6 +109,32 @@ ChatAPI.chatBuilder()
       .SendMessage("hello");
 ```
 
+<h1 align="center"> PulsePrompt </h1>
+
+```
+PulsePrompt.PulsePromptBuilder()
+                    .promptText("Password")
+                    .clearPlayerChatOnStart(false)
+                    .clearPlayerChatOnRestart(true)
+                    .clearPlayerChatOnEnd(true)
+                    .translateColorCodes(true)
+                    .translateHexCodes(true)
+                    .onResponseCallback((triplet)->{
+                        triplet.getC().setSessionData("END", userPasswords.IsPasswordCorrect(triplet.getA(), triplet.getB()));
+                    })
+                    .onConversationRestartCallback((triplet)->{
+                        triplet.getC().getForWhom().sendRawMessage("Incorrect Password!");
+                    })
+                    .onEndConversationCallback((triplet)->{
+                        triplet.getC().getForWhom().sendRawMessage("Correct Password!");
+                        userMethod.stillToAuth.arrayList.remove(0);
+                        userMethodSettings.hashMap.put(triplet.getA().getUniqueId(), userMethod);
+                        TryAndSendNextAuthMethodToPlayer(player, userPasswords);
+                    })
+                    .StartConversation(player, false);
+```
+
+
 <h1 align="center"> ServerDataAPI </h1>
 
 ```
