@@ -21,6 +21,7 @@ import com.pandapulsestudios.pulsecore.World.TimeLock;
 import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.conversations.Conversation;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
@@ -63,6 +64,7 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<World, Integer> HungerLockLock = new LinkedHashMap<>();
     public static LinkedHashMap<World, Integer> SaturationLockLock = new LinkedHashMap<>();
     public static LinkedHashMap<World, List<PlayerAction>> PlayerActionLock = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, Conversation> allConversations = new LinkedHashMap<>();
     public static ArrayList<TeleportObject> teleportObjects = new ArrayList<>();
     public static String SetMessageStringPluginToPlayer = "%PLAYER_MESSAGE%";
     public static String SetMessageStringPlayerToPlayer = "[%PLAYER_FROM%] -> [%PLAYER_TOO%] %PLAYER_MESSAGE%";
@@ -80,5 +82,6 @@ public final class PulseCore extends JavaPlugin {
     @Override
     public void onDisable() {
         for(var blockMask : PulseCore.blockMasksPerPlayer.values()) blockMask.CancelMask();
+        for(var conversation : allConversations.values()) conversation.abandon();
     }
 }

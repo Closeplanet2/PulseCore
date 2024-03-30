@@ -29,14 +29,10 @@ public class PlayerMove {
         if(PulseCore.handlePlayerAction){
             var playerMoveState = PlayerAPI.CanPlayerAction(PlayerAction.PlayerMove, player);
             var playerRotateState = PlayerAPI.CanPlayerAction(PlayerAction.PlayerRotate, player);
-            if(!moveEventCancelled){
-                moveEventCancelled = !playerMoveState;
-                lastLocation = (Location) UUIDDataAPI.Get(player.getUniqueId(), "MovementLoop", lastLocation);
-            }
-            if(!rotateEventCancelled){
-                rotateEventCancelled = !playerRotateState;
-                lastLocation = (Location) UUIDDataAPI.Get(player.getUniqueId(), "MovementLoop", lastLocation);
-            }
+            moveEventCancelled = !playerMoveState;
+            lastLocation = (Location) UUIDDataAPI.Get(player.getUniqueId(), "MovementLoop", lastLocation);
+            rotateEventCancelled = !playerRotateState;
+            lastLocation = (Location) UUIDDataAPI.Get(player.getUniqueId(), "MovementLoop", lastLocation);
         }
 
         var moveDistance = lastLocation.distance(newLocation);
@@ -94,21 +90,13 @@ public class PlayerMove {
             }
         }
 
-        if(moveEventCancelled || rotateEventCancelled){
-            var locationToTeleport = newLocation.clone();
+        if(moveEventCancelled && moveDistance > PulseCore.playerMoveRadius){
+            player.teleport(lastLocation);
+        }
 
-            if(moveEventCancelled && lastLocation.distance(newLocation) > PulseCore.playerMoveRadius){
-                locationToTeleport.setX(lastLocation.getX());
-                locationToTeleport.setY(lastLocation.getY());
-                locationToTeleport.setZ(lastLocation.getZ());
-            }
-
-            if(rotateEventCancelled && lastLocation.toVector().angle(newLocation.toVector()) > PulseCore.playerMoveRadius){
-                locationToTeleport.setYaw(lastLocation.getYaw());
-                locationToTeleport.setPitch(lastLocation.getPitch());
-            }
-
-            player.teleport(locationToTeleport);
+        if(rotateEventCancelled && angleDistance > PulseCore.playerMoveRadius){
+            player.getLocation().setYaw(lastLocation.getYaw());
+            player.getLocation().setPitch(lastLocation.getPitch());
         }
     }
 }
