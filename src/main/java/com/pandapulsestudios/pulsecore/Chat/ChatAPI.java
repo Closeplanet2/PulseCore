@@ -105,11 +105,11 @@ public class ChatAPI {
                         playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
                     }
                     case Console -> {
-                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, message);
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
                         Bukkit.getConsoleSender().sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
                     }
                     case Broadcast -> {
-                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, message);
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
                         Bukkit.broadcastMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
                     }
                 }

@@ -90,7 +90,6 @@ public class ClassAPI {
 
     public static void RegisterPulseVariableTest(PulseVariableTest pulseVariableTest){
         for(var classType : pulseVariableTest.ClassTypes()){
-            if(PulseCore.customVariableTests.containsKey(classType)) continue;
             PulseCore.customVariableTests.put(classType, pulseVariableTest);
             ChatAPI.chatBuilder().SendMessage(String.format("&3Registered Pulse Variable Test: %s", classType.getSimpleName()));
         }

@@ -7,12 +7,15 @@ import com.pandapulsestudios.pulsecore.Items.ItemStackAPI;
 import com.pandapulsestudios.pulsecore.Java.PulseAutoRegister;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
 import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
+import com.pandapulsestudios.pulsecore.Player.BlockMask;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 @PulseAutoRegister
 public class PlayerJoin implements Listener {
@@ -34,7 +37,7 @@ public class PlayerJoin implements Listener {
 
         var playerInventoryItems = InventoryAPI.ReturnALlItemsWithLocation(event.getPlayer());
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.customNBTListener.values()){
                 if(!NBTAPI.DoesItemStackContainNBTTags(itemStack, nbtListener.BlockHasTags())) continue;

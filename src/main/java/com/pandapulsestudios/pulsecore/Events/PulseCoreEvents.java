@@ -59,6 +59,6 @@ public interface PulseCoreEvents {
     default boolean PlayerTeleportEvent(PlayerTeleportEvent event){ return false; }
     default boolean PlayerToggleSprintEvent(PlayerToggleSprintEvent event){ return false; }
     default boolean PlayerToggleSneakEvent(PlayerToggleSneakEvent event){ return false; }
-    default boolean PlayerMove(Player player, Location lastLocation, Location newLocation) { return false; }
-    default boolean PlayerRotate(Player player, Location lastLocation, Location newLocation) { return false; }
+    default boolean PlayerMove(Player player, Location lastLocation, Location newLocation, double moveDistance) { return false; }
+    default boolean PlayerRotate(Player player, Location lastLocation, Location newLocation, double angleDistance) { return false; }
 }

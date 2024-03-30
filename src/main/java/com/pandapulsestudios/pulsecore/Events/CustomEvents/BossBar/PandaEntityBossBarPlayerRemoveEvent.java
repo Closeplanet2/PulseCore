@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Events.CustomEvents;
+package com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar;
 
 import com.pandapulsestudios.pulsecore.BossBar.PandaBossBar;
 import com.pandapulsestudios.pulsecore.BossBar.PandaEntityBossBar;

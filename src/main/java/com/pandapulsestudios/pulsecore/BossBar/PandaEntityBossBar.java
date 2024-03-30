@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore.BossBar;
 
 import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.*;
-import com.pandapulsestudios.pulsecore.Events.CustomEvents.PandaEntityBossBarPlayerRemoveEvent;
+import com.pandapulsestudios.pulsecore.Events.CustomEvents.BossBar.PandaEntityBossBarPlayerRemoveEvent;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCore;
@@ -110,9 +110,9 @@ public class PandaEntityBossBar {
                 for(var player : toAdd) storedBossBar.AddPlayer(player);
                 return storedBossBar;
             }
-            var createEvent = new PandaEntityBossBarCreateEvent(this);
-            if(createEvent.isCancelled()) return null;
             var createdBossBar = new PandaEntityBossBar(livingEntity, barID, barData, pandaEntityBossValue, barFlags);
+            var createEvent = new PandaEntityBossBarCreateEvent(createdBossBar);
+            if(createEvent.isCancelled()) return null;
             for(var player : toAdd) createdBossBar.AddPlayer(player);
             PulseCore.pandaEntityBossBars.put(barID, createdBossBar);
             return createdBossBar;

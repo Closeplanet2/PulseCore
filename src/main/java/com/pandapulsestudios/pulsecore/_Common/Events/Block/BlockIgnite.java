@@ -32,12 +32,12 @@ public class BlockIgnite implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerAction){
+        if(PulseCore.handlePlayerAction && event.getPlayer() != null){
             var state = PlayerAPI.CanPlayerAction(PlayerAction.BlockIgnite, event.getPlayer());
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 
-        var playerWorld = event.getPlayer().getWorld();
+        var playerWorld = event.getBlock().getWorld();
         if(PulseCore.PlayerActionLock.containsKey(playerWorld)){
             var state = PulseCore.PlayerActionLock.get(playerWorld).contains(PlayerAction.BlockIgnite);
             if(!event.isCancelled()) event.setCancelled(state);
@@ -51,7 +51,7 @@ public class BlockIgnite implements Listener {
         if(event.getPlayer() != null){
             var playerInventoryItems = InventoryAPI.ReturnALlItemsWithLocation(event.getPlayer().getInventory());
             for(var itemStack : playerInventoryItems.keySet()){
-                if(itemStack.getItemMeta() == null) continue;
+                if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
                 for(var nbtListener : PulseCore.customNBTListener.values()){
                     if(!NBTAPI.DoesItemStackContainNBTTags(itemStack, nbtListener.BlockHasTags())) continue;

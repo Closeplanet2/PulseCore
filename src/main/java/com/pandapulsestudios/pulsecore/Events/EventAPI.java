@@ -16,17 +16,20 @@ public class EventAPI {
             for(var perm : pulseCoreEvents.perms()) if(!player.hasPermission(perm)) return false;
         }
 
-        var isInWorld = pulseCoreEvents.worlds().length == 0 || Arrays.stream(pulseCoreEvents.worlds()).toList().contains(location.getWorld().getName());
-        if(!isInWorld) return false;
-
-        var isInRegion = true;
-        if(PluginAPI.IsPluginInstalled(PulseCore.Instance, SoftDependPlugins.WorldGuard)){
-            for(var regionName : pulseCoreEvents.regions()){
-                var state = WorldGuardAPI.REGION.IsLocationInRegion(location.getWorld(), regionName, location);
-                if(!state) isInRegion = false;
+        if(location.getWorld() != null){
+            for(var world : pulseCoreEvents.worlds()){
+                if(!location.getWorld().getName().equals(world)) return false;
             }
         }
 
-        return isInRegion;
+        if(location.getWorld() != null && PluginAPI.IsPluginInstalled(PulseCore.Instance, SoftDependPlugins.WorldGuard)){
+            var runningState = true;
+            for(var region : pulseCoreEvents.regions()){
+                runningState = WorldGuardAPI.REGION.IsLocationInRegion(location.getWorld(), region, location);
+            }
+            return runningState;
+        }
+
+        return true;
     }
 }

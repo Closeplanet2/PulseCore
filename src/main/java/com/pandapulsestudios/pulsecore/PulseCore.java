@@ -12,20 +12,28 @@ import com.pandapulsestudios.pulsecore.Location.PulseLocation;
 import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
 import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
+import com.pandapulsestudios.pulsecore.Player.BlockMask;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
 import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
 import com.pandapulsestudios.pulsecore.World.PulseWorld;
 import com.pandapulsestudios.pulsecore.World.TimeLock;
 import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
-import org.bukkit.Difficulty;
-import org.bukkit.GameMode;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
+//TODO block highlighter
+//TODO entity highlighter
+//TODO entity masking
+//TODO discord core
+//TODO Event when block masking is created
+//TODO Event when player is added to block mask - allow multiple players to be added to the same block mask
+//TODO gridObject 2d & 3D
+//TODO particle trails
+//TODO tablist
 public final class PulseCore extends JavaPlugin {
     public static PulseCore Instance;
     public static SmartInvsPlugin SmartInvsPlugin;
@@ -46,6 +54,7 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<String, PulseLoop> customPulseLoop = new LinkedHashMap<>();
     public static LinkedHashMap<UUID, LinkedHashMap<String, Object>> uuidData = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseItemStack> customItemStacks = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, BlockMask> blockMasksPerPlayer = new LinkedHashMap<>();
     public static LinkedHashMap<String, Object> serverData = new LinkedHashMap<>();
     public static LinkedHashMap<World, Difficulty> DifficultyLock = new LinkedHashMap<>();
     public static LinkedHashMap<World, GameMode> GameModeLock = new LinkedHashMap<>();
@@ -58,6 +67,7 @@ public final class PulseCore extends JavaPlugin {
     public static String SetMessageStringPluginToPlayer = "%PLAYER_MESSAGE%";
     public static String SetMessageStringPlayerToPlayer = "[%PLAYER_FROM%] -> [%PLAYER_TOO%] %PLAYER_MESSAGE%";
     public static String SetMessageConsole = "%MESSAGE_PREFIX%%CONSOLE_MESSAGE%";
+    public static double playerMoveRadius = 0.75;
     public static boolean handlePlayerAction = true;
 
     @Override
@@ -65,5 +75,10 @@ public final class PulseCore extends JavaPlugin {
         Instance = this;
         SmartInvsPlugin = new SmartInvsPlugin(this);
         ClassAPI.RegisterClasses(this);
+    }
+
+    @Override
+    public void onDisable() {
+        for(var blockMask : PulseCore.blockMasksPerPlayer.values()) blockMask.CancelMask();
     }
 }

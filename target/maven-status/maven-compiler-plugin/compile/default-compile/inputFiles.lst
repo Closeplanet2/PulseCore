@@ -3,6 +3,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\MaterialTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\opener\InventoryOpener.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerToggleSprint.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Loops\TestPulseLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockDamage.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Inventory\InventoryAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerFish.java
@@ -21,8 +22,10 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityRegainHealth.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityExplode.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Scoreboard\ScoreboardCreationEvent.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\BossBar\PandaEntityBossBar.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\TempBlockDataRemovedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\AxisTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\BlockMask.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\EntityEffectTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\RotationTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\PlayerAction\TogglePlayerActionEvent.java
@@ -37,6 +40,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerDropItem.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\GameModeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Java\SoftDependPlugins.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\BlockViewerAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBucketEmpty.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Dir\DirCreatedEvent.java
@@ -49,6 +53,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Inventory\ItemLocation.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockIgnite.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\API\UUIDDataAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\TestEvents.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DifficultyTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\InventoryManager.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\Enum\GameProfileKeys.java
@@ -59,6 +64,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerJoin.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundCategoryTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerInteractEntity.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Holograms\TestHologram.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBucketFill.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\API\NMS_API.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\PlayerAction.java
@@ -81,22 +87,27 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\StatisticTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Chat\MessageSymbols.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\GrassSpeciesTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Items\TestPulseItemStack.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\UUIDDataAddedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\HeadAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockPlace.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityDamageByEntity.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidCollisionModeTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaBosBarDeleteEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\VanishAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityPortalEnter.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\PlayerAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Enchantment\PrepareItemEnchant.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NBT\NBTAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaEntityBossBarCreateEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Loops\PulseLoop20L.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\PluginMessagingChannel\PluginMessageReceivedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WarningWarningTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\BossBar\PandaEntityBossValue.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Loops\PulseLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\Enum\EntityAnimationType.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\BanListTypeTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaBossBarPlayerAddEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\EventAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\PersistentDataAddedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Enchantment\EnchantWrapper.java
@@ -112,6 +123,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaUtil\UUIDTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerLevelChange.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\opener\SpecialInventoryOpener.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\BossBar\BarData.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Block\API\TempBlockDataAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\ServerDataAddedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerExpChange.java
@@ -136,6 +148,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\NMS\API\GlowAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBedLeave.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityShootBow.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaBossBarPlayeRemovedEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Movement\TeleportsAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityInteract.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\TreeTypeTest.java
@@ -147,6 +160,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Enchantment\PulseEnchantment.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Java\PulseAutoRegister.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityDamageByBlock.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaEntityBossBarPlayerRemoveEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerItemHeld.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Reflection\ReflectionAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Scoreboard\PulseScoreboardLines.java
@@ -159,6 +173,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\NetherWartsStateTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryProvider.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ArtTest.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\BossBar\PandaBossBar.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Movement\TeleportObject.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\WorldGuard\WorldGuardAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerGameModeChange.java
@@ -172,6 +187,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerItemBreak.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Holograms\HologramDeleteLineEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Enums\PersistentDataTypes.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaEntityBossBarPlayerAddEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\BoolTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\EffectTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\SmartInventory.java
@@ -189,6 +205,9 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\JavaLang\DoubleTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Location\LocationAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\API\VariableAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaBossBarCreateEvent.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\BossBar\PandaBossBarAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\BossBar\PandaEntityBossBarDeleteEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Events\CustomEvents\Sound\WorldPlaySoundEvent.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Data\Interface\PersistentDataCallbacks.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBedEnter.java

@@ -51,7 +51,7 @@ public class EnchantItem implements Listener {
 
         var playerInventoryItems = InventoryAPI.ReturnALlItemsWithLocation(event.getEnchanter().getInventory());
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.customNBTListener.values()){
                 if(!NBTAPI.DoesItemStackContainNBTTags(itemStack, nbtListener.BlockHasTags())) continue;

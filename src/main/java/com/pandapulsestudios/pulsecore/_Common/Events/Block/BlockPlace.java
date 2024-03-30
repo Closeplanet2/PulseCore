@@ -50,7 +50,7 @@ public class BlockPlace implements Listener {
 
         var playerInventoryItems = InventoryAPI.ReturnALlItemsWithLocation(event.getPlayer().getInventory());
         for(var itemStack : playerInventoryItems.keySet()){
-            if(itemStack.getItemMeta() == null) continue;
+            if(itemStack == null || itemStack.getItemMeta() == null) continue;
 
             for(var nbtListener : PulseCore.customNBTListener.values()){
                 if(!NBTAPI.DoesItemStackContainNBTTags(itemStack, nbtListener.BlockHasTags())) continue;
