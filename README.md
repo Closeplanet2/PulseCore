@@ -583,6 +583,36 @@ public static void SpawnParticle(World world, Particle particle, Location locati
 public static void SpawnSphere(Location location, Particle particle, int density, int duration, double sphereRadius);
 ```
 
+
+<h1 align="center"> Block Mask </h1>
+
+```
+var blockMask = BlockMask.builder()
+                    .blockExceptions()
+                    .deleteMaskOnNull(true)
+                    .ignoreAir(true)
+                    .resetLastFrames(true)
+                    .keepTrailTheSame(false)
+                    .minDistance(5)
+                    .maxX(10)
+                    .maxY(10)
+                    .maxZ(10)
+                    .CreateMask(event.getPlayer())
+```
+
+<h1 align="center"> Entity Mask </h1>
+
+```
+var entityMask = EntityMask.builder()
+                    .deleteMaskOnNull(true)
+                    .entityMaskType(EntityMaskType.Entity)
+                    .uuidExceptions()
+                    .entityTypeExceptions()
+                    .minDistance(5)
+                    .maxDistance(100)
+                    .CreateMask(event.getPlayer());
+```
+
 <h1 align="center"> HeadAPI </h1>
 
 ```
