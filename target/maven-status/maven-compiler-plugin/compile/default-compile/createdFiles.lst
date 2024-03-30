@@ -30,6 +30,7 @@ com\pandapulsestudios\pulsecore\_Common\Enums\PersistentDataTypes.class
 com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerExpChange.class
 com\pandapulsestudios\pulsecore\_Common\Loops\PulseLoop1.class
 com\pandapulsestudios\pulsecore\Player\BlockViewerAPI.class
+com\pandapulsestudios\pulsecore\Chat\PulsePrompt$Builder.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\NoteToneTest.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ArtTest.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\Pagination$Impl.class
@@ -137,6 +138,7 @@ com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\UUIDDataAddedEvent.clas
 com\pandapulsestudios\pulsecore\Chat\MessageSymbols.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryContents.class
 com\pandapulsestudios\pulsecore\Events\TestEvents.class
+com\pandapulsestudios\pulsecore\Chat\PulsePrompt.class
 com\pandapulsestudios\pulsecore\Data\API\UUIDDataAPI.class
 com\pandapulsestudios\pulsecore\NMS\API\PacketAPI$Play$Server.class
 com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\ServerDataRemovedEvent.class
