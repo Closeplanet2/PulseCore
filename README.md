@@ -127,9 +127,7 @@ PulsePrompt.PulsePromptBuilder()
                     })
                     .onEndConversationCallback((triplet)->{
                         triplet.getC().getForWhom().sendRawMessage("Correct Password!");
-                        userMethod.stillToAuth.arrayList.remove(0);
-                        userMethodSettings.hashMap.put(triplet.getA().getUniqueId(), userMethod);
-                        TryAndSendNextAuthMethodToPlayer(player, userPasswords);
+                        AuthUserMethod(userMethod, AuthMethod.PasswordUsername, userPasswords, triplet.getA());
                     })
                     .StartConversation(player, false);
 ```
