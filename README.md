@@ -18,7 +18,7 @@ A Bukkit/Spigot API to allow for the ease and accesibility of spigot creation!
 <dependency>
       <groupId>com.pandapulsestudios</groupId>
       <artifactId>pulsecore</artifactId>
-      <version>1.2.2-a</version>
+      <version>1.2.5-a</version>
 </dependency>
 ```
 
@@ -108,6 +108,30 @@ ChatAPI.chatBuilder()
       .translateColorCodes(true)
       .SendMessage("hello");
 ```
+
+<h1 align="center"> PulsePrompt </h1>
+
+```
+PulsePrompt.PulsePromptBuilder()
+                    .promptText("Password")
+                    .clearPlayerChatOnStart(false)
+                    .clearPlayerChatOnRestart(true)
+                    .clearPlayerChatOnEnd(true)
+                    .translateColorCodes(true)
+                    .translateHexCodes(true)
+                    .onResponseCallback((triplet)->{
+                        triplet.getC().setSessionData("END", userPasswords.IsPasswordCorrect(triplet.getA(), triplet.getB()));
+                    })
+                    .onConversationRestartCallback((triplet)->{
+                        triplet.getC().getForWhom().sendRawMessage("Incorrect Password!");
+                    })
+                    .onEndConversationCallback((triplet)->{
+                        triplet.getC().getForWhom().sendRawMessage("Correct Password!");
+                        AuthUserMethod(userMethod, AuthMethod.PasswordUsername, userPasswords, triplet.getA());
+                    })
+                    .StartConversation(player, false);
+```
+
 
 <h1 align="center"> ServerDataAPI </h1>
 
@@ -557,6 +581,36 @@ public static void SpawnParticle(World world, Particle particle, Location point)
 public static void SpawnParticle(World world, Particle particle, Vector point);
 public static void SpawnParticle(World world, Particle particle, Location location, int i, int vm, int v1, int v2, int v3);
 public static void SpawnSphere(Location location, Particle particle, int density, int duration, double sphereRadius);
+```
+
+
+<h1 align="center"> Block Mask </h1>
+
+```
+var blockMask = BlockMask.builder()
+                    .blockExceptions()
+                    .deleteMaskOnNull(true)
+                    .ignoreAir(true)
+                    .resetLastFrames(true)
+                    .keepTrailTheSame(false)
+                    .minDistance(5)
+                    .maxX(10)
+                    .maxY(10)
+                    .maxZ(10)
+                    .CreateMask(event.getPlayer())
+```
+
+<h1 align="center"> Entity Mask </h1>
+
+```
+var entityMask = EntityMask.builder()
+                    .deleteMaskOnNull(true)
+                    .entityMaskType(EntityMaskType.Entity)
+                    .uuidExceptions()
+                    .entityTypeExceptions()
+                    .minDistance(5)
+                    .maxDistance(100)
+                    .CreateMask(event.getPlayer());
 ```
 
 <h1 align="center"> HeadAPI </h1>
