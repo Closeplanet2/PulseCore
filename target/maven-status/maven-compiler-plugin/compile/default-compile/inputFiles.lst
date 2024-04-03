@@ -2,6 +2,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Entity\ArmorStandAPI.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\MaterialTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_External\SmartInvs\opener\InventoryOpener.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\EntityMask.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerToggleSprint.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Loops\TestPulseLoop.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockDamage.java
@@ -37,6 +38,7 @@ D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapu
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\RaidRaidStatusTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Items\PulseItemStackAPI.java
+D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Player\EntityMaskType.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerDropItem.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\GameModeTest.java
 D:\Coding Portfolio\Spigot Plugins\PulseCore\PulseCore\src\main\java\com\pandapulsestudios\pulsecore\Java\SoftDependPlugins.java

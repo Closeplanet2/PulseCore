@@ -13,15 +13,18 @@ import com.pandapulsestudios.pulsecore.Loops.PulseLoop;
 import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
 import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.Player.BlockMask;
+import com.pandapulsestudios.pulsecore.Player.EntityMask;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import com.pandapulsestudios.pulsecore.Recipes.PulseRecipe;
 import com.pandapulsestudios.pulsecore.Scoreboard.PulseScoreboard;
 import com.pandapulsestudios.pulsecore.World.PulseWorld;
 import com.pandapulsestudios.pulsecore.World.TimeLock;
+import com.pandapulsestudios.pulsecore._Common.Events.Player.PlayerJoin;
 import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.conversations.Conversation;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
@@ -56,6 +59,7 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<UUID, LinkedHashMap<String, Object>> uuidData = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseItemStack> customItemStacks = new LinkedHashMap<>();
     public static LinkedHashMap<UUID, BlockMask> blockMasksPerPlayer = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, EntityMask> entityMasksPerPlayer = new LinkedHashMap<>();
     public static LinkedHashMap<String, Object> serverData = new LinkedHashMap<>();
     public static LinkedHashMap<World, Difficulty> DifficultyLock = new LinkedHashMap<>();
     public static LinkedHashMap<World, GameMode> GameModeLock = new LinkedHashMap<>();
@@ -82,6 +86,7 @@ public final class PulseCore extends JavaPlugin {
     @Override
     public void onDisable() {
         for(var blockMask : PulseCore.blockMasksPerPlayer.values()) blockMask.CancelMask();
+        for(var entityMask : PulseCore.entityMasksPerPlayer.values()) entityMask.CancelMask();
         for(var conversation : allConversations.values()) conversation.abandon();
     }
 }

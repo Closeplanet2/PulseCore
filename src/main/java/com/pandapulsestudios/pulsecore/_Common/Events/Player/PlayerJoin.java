@@ -8,6 +8,7 @@ import com.pandapulsestudios.pulsecore.Java.PulseAutoRegister;
 import com.pandapulsestudios.pulsecore.Location.LocationAPI;
 import com.pandapulsestudios.pulsecore.NBT.NBTAPI;
 import com.pandapulsestudios.pulsecore.Player.BlockMask;
+import com.pandapulsestudios.pulsecore.Player.EntityMask;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Bukkit;
@@ -17,10 +18,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.UUID;
+
 @PulseAutoRegister
 public class PlayerJoin implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
-    public void OnBlockBreak(PlayerJoinEvent event){
+    public void OnPlayerJoin(PlayerJoinEvent event){
         for(var pulseCoreEvent : PulseCore.customCoreEvents.values()){
             if(EventAPI.CanDoEvent(event.getPlayer(), event.getPlayer().getLocation(), pulseCoreEvent)){
                 pulseCoreEvent.PlayerJoinEvent(event);

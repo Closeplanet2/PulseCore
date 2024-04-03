@@ -25,5 +25,6 @@ public class PulseLoop1 implements PulseLoop {
         for(var pandaBossBar : PulseCore.pandaBossBars.values()) pandaBossBar.TickBossBar();
         for(var pandaBossBar : PulseCore.pandaEntityBossBars.values()) pandaBossBar.TickBossBar();
         for(var blockMask : PulseCore.blockMasksPerPlayer.values()) if(blockMask.UpdateBlockMask()) blockMask.CancelMask();
+        for(var entityMask : PulseCore.entityMasksPerPlayer.values()) if(entityMask.UpdateEntityMask()) entityMask.CancelMask();
     }
 }

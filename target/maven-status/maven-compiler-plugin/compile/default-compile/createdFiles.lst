@@ -52,6 +52,7 @@ com\pandapulsestudios\pulsecore\Inventory\ItemLocation.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryProvider.class
 com\pandapulsestudios\pulsecore\Events\CustomEvents\Scoreboard\ScoreboardPlayerAddEvent.class
 com\pandapulsestudios\pulsecore\Holograms\Hologram.class
+com\pandapulsestudios\pulsecore\Player\EntityMaskType.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\SlotIterator$1.class
 com\pandapulsestudios\pulsecore\Movement\MovementAPI.class
 com\pandapulsestudios\pulsecore\Java\ClassAPI$1.class
@@ -70,6 +71,7 @@ com\pandapulsestudios\pulsecore\Block\API\PersistentDataAPI.class
 com\pandapulsestudios\pulsecore\Recipes\RecipeType.class
 com\pandapulsestudios\pulsecore\NBT\NBTAPI.class
 com\pandapulsestudios\pulsecore\Player\TitleAPI.class
+com\pandapulsestudios\pulsecore\Player\EntityMask$Builder.class
 com\pandapulsestudios\pulsecore\NMS\Builder\SynchedEntityDataBuilder.class
 com\pandapulsestudios\pulsecore\FileSystem\FileAPI.class
 com\pandapulsestudios\pulsecore\NMS\Enum\PacketSender.class
@@ -128,6 +130,7 @@ com\pandapulsestudios\pulsecore\Player\HeadAPI.class
 com\pandapulsestudios\pulsecore\Java\JavaAPI.class
 com\pandapulsestudios\pulsecore\Particle\ParticleAPI.class
 com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\TempBlockDataAddedEvent.class
+com\pandapulsestudios\pulsecore\Player\EntityMask.class
 com\pandapulsestudios\pulsecore\BossBar\PandaEntityBossBar$Builder.class
 com\pandapulsestudios\pulsecore\PluginMessagingChannel\PluginMessageReceivedEvent.class
 com\pandapulsestudios\pulsecore\Events\CustomEvents\Data\ServerDataAddedEvent.class
