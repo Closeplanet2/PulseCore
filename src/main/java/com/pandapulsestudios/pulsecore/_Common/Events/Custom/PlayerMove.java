@@ -35,7 +35,7 @@ public class PlayerMove {
             lastLocation = (Location) UUIDDataAPI.Get(player.getUniqueId(), "MovementLoop", lastLocation);
         }
 
-        var moveDistance = lastLocation.distance(newLocation);
+        var moveDistance = lastLocation.getWorld().getUID().equals(newLocation.getWorld().getUID()) ? lastLocation.distance(newLocation) : Double.POSITIVE_INFINITY;
         var angleDistance = lastLocation.toVector().angle(newLocation.toVector());
 
         for(var pulseCoreEvent : PulseCore.customCoreEvents.values()){
