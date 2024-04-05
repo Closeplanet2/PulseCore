@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0899730-5956-4a52-a16c-88db1dd58f51" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Custom/PlayerMove.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-pulsecore-1.2.5-a.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-pulsecore-1.2.5-a.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pulsecore-1.2.5-a-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/pulsecore-1.2.5-a-remapped-obf.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pulsecore-1.2.5-a.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/pulsecore-1.2.5-a.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
