@@ -37,7 +37,8 @@ public class LongTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Long.parseLong(serializedData.toString());
+        try {return Long.parseLong(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override

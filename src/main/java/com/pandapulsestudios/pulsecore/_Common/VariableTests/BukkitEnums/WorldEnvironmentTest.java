@@ -3,6 +3,7 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Java.PulseAutoRegister;
 import com.pandapulsestudios.pulsecore._Common.Enums.PersistentDataTypes;
+import org.bukkit.TreeType;
 import org.bukkit.WeatherType;
 import org.bukkit.World;
 
@@ -24,8 +25,8 @@ public class WorldEnvironmentTest implements PulseVariableTest {
     @Override
     public List<Class<?>> ClassTypes() {
         var data = new ArrayList<Class<?>>();
-        data.add(WeatherType.class);
-        data.add(WeatherType[].class);
+        data.add(World.Environment.class);
+        data.add(World.Environment[].class);
         return data;
     }
 
@@ -35,7 +36,10 @@ public class WorldEnvironmentTest implements PulseVariableTest {
     }
 
     @Override
-    public Object DeSerializeData(Object serializedData) { return World.Environment.valueOf(serializedData.toString()); }
+    public Object DeSerializeData(Object serializedData) {
+        try {return World.Environment.valueOf(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
+    }
 
     @Override
     public Object SerializeBinaryData(Object serializedData) {
@@ -53,5 +57,12 @@ public class WorldEnvironmentTest implements PulseVariableTest {
     @Override
     public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
         toAdd.add(castedData.toArray(new World.Environment[0]));
+    }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        var data = new ArrayList<String>();
+        for(var x : World.Environment.values()) if(x.name().contains(currentArgument)) data.add(x.name());
+        return data;
     }
 }

@@ -9,14 +9,16 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
+import java.util.UUID;
+
 public class TogglePlayerActionEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private boolean cancelled;
-    private final Player player;
+    private final UUID player;
     private final PlayerAction playerAction;
     private final boolean newState;
 
-    public TogglePlayerActionEvent(Player player, PlayerAction playerAction, boolean newState){
+    public TogglePlayerActionEvent(UUID player, PlayerAction playerAction, boolean newState){
         this.player = player;
         this.playerAction = playerAction;
         this.newState = newState;
@@ -36,7 +38,7 @@ public class TogglePlayerActionEvent extends Event implements Cancellable {
         cancelled = cancel;
     }
 
-    public Player getPlayer(){ return player; }
+    public UUID getPlayer(){ return player; }
     public PlayerAction getPlayerAction(){ return playerAction; }
     public Boolean getNewState(){ return newState; }
 }

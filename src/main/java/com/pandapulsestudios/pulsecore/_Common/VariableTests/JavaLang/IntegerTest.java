@@ -36,7 +36,8 @@ public class IntegerTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Integer.parseInt(serializedData.toString());
+        try {return Integer.parseInt(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override

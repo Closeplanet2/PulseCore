@@ -36,7 +36,8 @@ public class DoubleTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Double.parseDouble(serializedData.toString());
+        try {return Double.parseDouble(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override

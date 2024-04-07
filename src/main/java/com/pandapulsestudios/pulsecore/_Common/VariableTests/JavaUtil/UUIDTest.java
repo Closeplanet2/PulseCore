@@ -36,7 +36,8 @@ public class UUIDTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return UUID.fromString(serializedData.toString());
+        try {return UUID.fromString(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override

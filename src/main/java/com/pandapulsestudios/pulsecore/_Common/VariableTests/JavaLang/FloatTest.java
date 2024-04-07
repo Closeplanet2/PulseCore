@@ -36,7 +36,8 @@ public class FloatTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Float.parseFloat(serializedData.toString());
+        try {return Float.parseFloat(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override

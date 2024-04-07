@@ -47,7 +47,6 @@ public class StringTest implements PulseVariableTest {
         return serializedData.toString();
     }
 
-
     @Override
     public Object ReturnDefaultValue() { return ""; }
 }

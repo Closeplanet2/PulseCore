@@ -36,7 +36,8 @@ public class ArtTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Art.valueOf(serializedData.toString());
+        try {return Art.valueOf(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override
@@ -55,5 +56,12 @@ public class ArtTest implements PulseVariableTest {
     @Override
     public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
         toAdd.add(castedData.toArray(new Art[0]));
+    }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        var data = new ArrayList<String>();
+        for(var x : Art.values()) if(x.name().contains(currentArgument)) data.add(x.name());
+        return data;
     }
 }

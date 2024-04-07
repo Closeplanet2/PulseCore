@@ -3,6 +3,8 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Java.PulseAutoRegister;
 import com.pandapulsestudios.pulsecore._Common.Enums.PersistentDataTypes;
+import org.bukkit.Axis;
+import org.bukkit.PortalType;
 import org.bukkit.Raid;
 
 import java.util.ArrayList;
@@ -35,7 +37,8 @@ public class RaidRaidStatusTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Raid.RaidStatus.valueOf(serializedData.toString());
+        try {return Raid.RaidStatus.valueOf(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override
@@ -54,5 +57,12 @@ public class RaidRaidStatusTest implements PulseVariableTest {
     @Override
     public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
         toAdd.add(castedData.toArray(new Raid.RaidStatus[0]));
+    }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        var data = new ArrayList<String>();
+        for(var x : Raid.RaidStatus.values()) if(x.name().contains(currentArgument)) data.add(x.name());
+        return data;
     }
 }

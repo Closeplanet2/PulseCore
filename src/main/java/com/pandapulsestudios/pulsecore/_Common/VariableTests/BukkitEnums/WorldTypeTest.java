@@ -3,6 +3,7 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Java.PulseAutoRegister;
 import com.pandapulsestudios.pulsecore._Common.Enums.PersistentDataTypes;
+import org.bukkit.World;
 import org.bukkit.WorldType;
 
 import java.util.ArrayList;
@@ -35,7 +36,8 @@ public class WorldTypeTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return WorldType.valueOf(serializedData.toString());
+        try {return WorldType.valueOf(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override
@@ -54,5 +56,12 @@ public class WorldTypeTest implements PulseVariableTest {
     @Override
     public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
         toAdd.add(castedData.toArray(new WorldType[0]));
+    }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        var data = new ArrayList<String>();
+        for(var x : WorldType.values()) if(x.name().contains(currentArgument)) data.add(x.name());
+        return data;
     }
 }

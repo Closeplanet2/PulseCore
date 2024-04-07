@@ -36,7 +36,8 @@ public class BoolTest implements PulseVariableTest {
 
     @Override
     public Object DeSerializeData(Object serializedData) {
-        return Boolean.parseBoolean(serializedData.toString());
+        try {return Boolean.parseBoolean(serializedData.toString());}
+        catch (NumberFormatException e) { return serializedData; }
     }
 
     @Override
