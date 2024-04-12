@@ -1,10 +1,14 @@
 package com.pandapulsestudios.pulsecore.Chat;
 
+import com.pandapulsestudios.pulsecore.Java.PluginAPI;
+import com.pandapulsestudios.pulsecore.Java.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore._External.WorldGuard.WorldGuardAPI;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -57,6 +61,7 @@ public class ChatAPI {
         private String messagePrefix = "";
         private Player playerFrom = null;
         private Player playerToo = null;
+        private String permWorldRegionData = "";
         private boolean translateColorCodes = true;
         private boolean translateHexCodes = true;
 
@@ -77,6 +82,11 @@ public class ChatAPI {
 
         public ChatBuilder playerFrom(Player playerFrom){
             this.playerFrom = playerFrom;
+            return this;
+        }
+
+        public ChatBuilder permWorldRegionData(String permWorldRegionData){
+            this.permWorldRegionData = permWorldRegionData;
             return this;
         }
 
@@ -102,6 +112,8 @@ public class ChatAPI {
                         var playerMessage = playerFrom == null ?
                                 ChatAPI.FormatPluginToPlayerMessage(messagePrefix, formattedMessage, playerToo) :
                                 ChatAPI.FormatPlayerToPlayerMessage(messagePrefix, formattedMessage, playerToo, playerFrom);
+                        if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo)) continue;
+                        if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatSend, playerFrom)) continue;
                         playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
                     }
                     case Console -> {
@@ -110,7 +122,43 @@ public class ChatAPI {
                     }
                     case Broadcast -> {
                         var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
-                        Bukkit.broadcastMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        for(var player : Bukkit.getOnlinePlayers()){
+                            if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)) continue;
+                            player.sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        }
+                    }
+                    case OP ->{
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
+                        for(var player : Bukkit.getOnlinePlayers()){
+                            if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)) continue;
+                            if(!player.isOp()) continue;
+                            player.sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        }
+                    }
+                    case PERM ->{
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
+                        for(var player : Bukkit.getOnlinePlayers()){
+                            if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)) continue;
+                            if(!permWorldRegionData.isEmpty() && !player.hasPermission(permWorldRegionData)) continue;
+                            player.sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        }
+                    }
+                    case WORLD ->{
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
+                        for(var player : Bukkit.getOnlinePlayers()){
+                            if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)) continue;
+                            if(!permWorldRegionData.isEmpty() && !player.getWorld().getName().equals(permWorldRegionData)) continue;
+                            player.sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        }
+                    }
+                    case REGION ->{
+                        if(!PluginAPI.IsPluginInstalled(PulseCore.Instance, SoftDependPlugins.WorldGuard)) continue;
+                        var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);
+                        for(var player : Bukkit.getOnlinePlayers()){
+                            if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)) continue;
+                            if(!permWorldRegionData.isEmpty() && !WorldGuardAPI.REGION.IsLocationInRegion(player.getWorld(), permWorldRegionData, player.getLocation())) continue;
+                            player.sendMessage(ChatAPI.FormatMessage(consoleMessage, translateColorCodes, translateHexCodes));
+                        }
                     }
                 }
             }

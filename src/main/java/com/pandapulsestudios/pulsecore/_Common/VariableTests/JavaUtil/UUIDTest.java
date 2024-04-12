@@ -41,15 +41,10 @@ public class UUIDTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData.toString();
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return UUID.fromString(serializedData.toString());
-    }
-
-    @Override
     public Object ReturnDefaultValue() { return UUID.randomUUID(); }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        return List.of("[UUID]");
+    }
 }

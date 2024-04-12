@@ -41,22 +41,7 @@ public class BanListTypeTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData.toString();
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return DeSerializeData(serializedData);
-    }
-
-    @Override
     public Object ReturnDefaultValue() { return BanList.Type.IP; }
-
-    @Override
-    public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
-        toAdd.add(castedData.toArray(new BanList.Type[0]));
-    }
 
     @Override
     public List<String> TabData(List<String> baseTabList, String currentArgument) {

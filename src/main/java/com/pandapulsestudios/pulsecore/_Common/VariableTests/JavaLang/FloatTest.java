@@ -41,16 +41,10 @@ public class FloatTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData;
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return Float.parseFloat(serializedData.toString());
-    }
-
-
-    @Override
     public Object ReturnDefaultValue() { return 0f; }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        return List.of("[FLOAT]");
+    }
 }

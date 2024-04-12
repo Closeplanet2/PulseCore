@@ -11,21 +11,16 @@ public interface PulseVariableTest {
     List<Class<?>> ClassTypes();
     Object SerializeData(Object serializedData);
     Object DeSerializeData(Object serializedData);
-    Object SerializeBinaryData(Object serializedData);
-    Object DeSerializeBinaryData(Object serializedData);
-
     Object ReturnDefaultValue();
-    default List<String> TabData(List<String> baseTabList, String currentArgument){
-        return baseTabList;
-    }
-
-    default void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType){
-        toAdd.add(arrayType.cast(castedData.toArray()));
-    }
-
-    default List<?> SerializeData(List<String> convert){
+    List<String> TabData(List<String> baseTabList, String currentArgument);
+    default List<Object> SerializeData(List<Object> convert){
         var data = new ArrayList<>();
         for(var x : convert) data.add(SerializeData(x));
+        return data;
+    }
+    default List<Object> DeSerializeData(List<Object> convert){
+        var data = new ArrayList<>();
+        for(var x : convert) data.add(DeSerializeData(x));
         return data;
     }
 }

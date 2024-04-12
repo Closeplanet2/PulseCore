@@ -41,15 +41,10 @@ public class DoubleTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData;
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return Double.parseDouble(serializedData.toString());
-    }
-
-    @Override
     public Object ReturnDefaultValue() { return 0.0; }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        return List.of("[DOUBLE]");
+    }
 }

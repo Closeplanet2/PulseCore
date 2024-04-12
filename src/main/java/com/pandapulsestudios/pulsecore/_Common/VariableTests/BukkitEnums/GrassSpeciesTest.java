@@ -40,24 +40,8 @@ public class GrassSpeciesTest implements PulseVariableTest {
         try {return GrassSpecies.valueOf(serializedData.toString());}
         catch (NumberFormatException e) { return serializedData; }
     }
-
-    @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData.toString();
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return DeSerializeData(serializedData);
-    }
-
     @Override
     public Object ReturnDefaultValue() { return GrassSpecies.FERN_LIKE; }
-
-    @Override
-    public void CUSTOM_CAST_AND_PLACE(List<Object> toAdd, int place, List<?> castedData, Class<?> arrayType) {
-        toAdd.add(castedData.toArray(new GrassSpecies[0]));
-    }
 
     @Override
     public List<String> TabData(List<String> baseTabList, String currentArgument) {

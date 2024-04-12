@@ -41,16 +41,11 @@ public class IntegerTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData;
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return Integer.parseInt(serializedData.toString());
-    }
-
-
-    @Override
     public Object ReturnDefaultValue() { return 0; }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        return List.of("[INTEGER]");
+    }
 }
+

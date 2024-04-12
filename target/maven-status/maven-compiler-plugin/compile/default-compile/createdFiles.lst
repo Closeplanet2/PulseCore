@@ -218,6 +218,7 @@ com\pandapulsestudios\pulsecore\FileSystem\DirAPI.class
 com\pandapulsestudios\pulsecore\Data\Interface\CustomVariable.class
 com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityExplode.class
 com\pandapulsestudios\pulsecore\NMS\Enum\EntityAnimationType.class
+com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\InventoryTypeTest.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\SmartInvsPlugin.class
 com\pandapulsestudios\pulsecore\BossBar\PandaBossBar$Builder.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\ParticleTest.class

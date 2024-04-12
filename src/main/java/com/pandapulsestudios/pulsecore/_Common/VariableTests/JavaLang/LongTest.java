@@ -42,16 +42,10 @@ public class LongTest implements PulseVariableTest {
     }
 
     @Override
-    public Object SerializeBinaryData(Object serializedData) {
-        return serializedData;
-    }
-
-    @Override
-    public Object DeSerializeBinaryData(Object serializedData) {
-        return Long.parseLong(serializedData.toString());
-    }
-
-
-    @Override
     public Object ReturnDefaultValue() { return 0L; }
+
+    @Override
+    public List<String> TabData(List<String> baseTabList, String currentArgument) {
+        return List.of("[LONG]");
+    }
 }
