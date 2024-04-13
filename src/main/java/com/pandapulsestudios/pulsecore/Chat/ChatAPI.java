@@ -113,7 +113,7 @@ public class ChatAPI {
                                 ChatAPI.FormatPluginToPlayerMessage(messagePrefix, formattedMessage, playerToo) :
                                 ChatAPI.FormatPlayerToPlayerMessage(messagePrefix, formattedMessage, playerToo, playerFrom);
                         if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo)) continue;
-                        if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatSend, playerFrom)) continue;
+                        if(playerFrom != null && !PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatSend, playerFrom)) continue;
                         playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
                     }
                     case Console -> {
