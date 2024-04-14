@@ -188,7 +188,6 @@ com\pandapulsestudios\pulsecore\Player\PlayerAction.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DifficultyTest.class
 com\pandapulsestudios\pulsecore\Sound\SoundAPI.class
 com\pandapulsestudios\pulsecore\Chat\MessageType.class
-com\pandapulsestudios\pulsecore\Loops\TestPulseLoop.class
 com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityTeleport.class
 com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerBucketFill.class
 com\pandapulsestudios\pulsecore\Entity\ArmorStandAPI.class

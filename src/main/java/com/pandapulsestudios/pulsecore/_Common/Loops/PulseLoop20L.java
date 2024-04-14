@@ -7,18 +7,14 @@ import com.pandapulsestudios.pulsecore.PulseCore;
 
 @PulseAutoRegister
 public class PulseLoop20L implements PulseLoop {
+
     @Override
-    public Long StartDelay() {
-        return 0L;
+    public void START() {
+
     }
 
     @Override
-    public Long LoopInterval() {
-        return 20L;
-    }
-
-    @Override
-    public void LoopFunction() {
+    public void LOOP() {
         PulseCore.teleportObjects.removeIf(TeleportObject::HandleOnLoop);
     }
 }

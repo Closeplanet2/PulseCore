@@ -17,7 +17,12 @@ public class PulseLoop1 implements PulseLoop {
     public Long LoopInterval() { return 1L; }
 
     @Override
-    public void LoopFunction() {
+    public void START() {
+
+    }
+
+    @Override
+    public void LOOP() {
         VanishAPI.UpdateVanishOnAllPlayers();
         for(var player : Bukkit.getOnlinePlayers()) PlayerMove.PlayerMoveLoop(player);
         WorldAPI.HandleLoop();

@@ -43,12 +43,15 @@ public class ClassAPI {
     }
 
     public static void RegisterPulseLoop(JavaPlugin javaPlugin, PulseLoop pulseLoop){
-        PulseCore.customPulseLoop.put(pulseLoop.ReturnID(), pulseLoop);
+        pulseLoop.START();
         var id = Bukkit.getScheduler().scheduleSyncRepeatingTask(javaPlugin, new Runnable() {
             @Override
-            public void run() { pulseLoop.LoopFunction(); }
+            public void run() {
+                pulseLoop.LOOP();
+            }
         }, pulseLoop.StartDelay(), pulseLoop.LoopInterval());
         ServerDataAPI.Store("LOOP:" + pulseLoop.ReturnID(), id);
+        PulseCore.customPulseLoop.put(pulseLoop.ReturnID(), pulseLoop);
         ChatAPI.chatBuilder().SendMessage(String.format("&8Registered Loop: %s", pulseLoop.ReturnID()));
     }
 

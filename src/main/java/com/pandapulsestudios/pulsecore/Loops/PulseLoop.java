@@ -2,7 +2,8 @@ package com.pandapulsestudios.pulsecore.Loops;
 
 public interface PulseLoop {
     default String ReturnID(){ return getClass().getSimpleName();}
-    Long StartDelay();
-    Long LoopInterval();
-    void LoopFunction();
+    default Long StartDelay(){return 0L;}
+    default Long LoopInterval(){return 20L;}
+    void START();
+    void LOOP();
 }
