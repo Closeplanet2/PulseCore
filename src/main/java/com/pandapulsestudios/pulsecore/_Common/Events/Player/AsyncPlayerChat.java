@@ -77,13 +77,11 @@ public class AsyncPlayerChat implements Listener {
             if(!event.isCancelled()){
                 event.setCancelled(true);
                 for(var player : event.getRecipients()){
-                    if(PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, player)){
-                        ChatAPI.chatBuilder()
-                                .messageType(MessageType.Player)
-                                .playerFrom(event.getPlayer())
-                                .playerToo(player)
-                                .SendMessage(event.getMessage());
-                    }
+                    ChatAPI.chatBuilder()
+                            .messageType(MessageType.Player)
+                            .playerFrom(event.getPlayer())
+                            .playerToo(player)
+                            .SendMessage(event.getMessage());
                 }
             }
         }

@@ -33,7 +33,7 @@ public class WorldEditAPI {
 
     public static Clipboard LoadSchematic(String schematicName) {
         if(!PluginAPI.IsPluginInstalled(PulseCore.Instance, SoftDependPlugins.WorldEdit)) return null;
-        var schematicPath = String.format("plugins/WorldEdit/schematics/%s", schematicName + ".schem");
+        var schematicPath = String.format("plugins/WorldEdit/schematics/%s", schematicName);
         var format = ClipboardFormats.findByFile(new File(schematicPath));
         try(var reader = format.getReader(new FileInputStream(new File(schematicPath)))){
             return reader.read();

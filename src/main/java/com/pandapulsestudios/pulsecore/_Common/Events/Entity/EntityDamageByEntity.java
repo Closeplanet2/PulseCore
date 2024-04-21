@@ -42,8 +42,8 @@ public class EntityDamageByEntity implements Listener {
             if(!event.isCancelled()) event.setCancelled(state);
         }
 
-        if(PulseCore.handlePlayerAction && isEntityPlayer){
-            var state = PlayerAPI.CanPlayerAction(PlayerAction.EntityDamageByEntity, (Player) event.getEntity());
+        if(PulseCore.handlePlayerAction && livingEntity instanceof Player player){
+            var state = PlayerAPI.CanPlayerAction(PlayerAction.EntityDamageByEntity, player);
             if(!event.isCancelled()) event.setCancelled(!state);
         }
 

@@ -19,6 +19,11 @@
     <remote-repository>
       <option name="id" value="github" />
       <option name="name" value="github" />
+      <option name="url" value="https://maven.pkg.github.com/closeplanet2/AutoStructurePlugin" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="github" />
       <option name="url" value="https://maven.pkg.github.com/closeplanet2/PulseDiscord" />
     </remote-repository>
     <remote-repository>

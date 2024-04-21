@@ -108,13 +108,17 @@ public class ChatAPI {
                 var formattedMessage = ChatAPI.FormatMessage(storedMessage, translateColorCodes, translateHexCodes);
                 switch (messageType){
                     case Player -> {
-                        if(playerToo == null || !PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo)) return;
-                        var playerMessage = playerFrom == null ?
-                                ChatAPI.FormatPluginToPlayerMessage(messagePrefix, formattedMessage, playerToo) :
-                                ChatAPI.FormatPlayerToPlayerMessage(messagePrefix, formattedMessage, playerToo, playerFrom);
-                        if(!PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo)) continue;
-                        if(playerFrom != null && !PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatSend, playerFrom)) continue;
-                        playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
+                        if(playerToo == null) return;
+                        var fromPlugin = playerFrom == null;
+                        if(!fromPlugin && PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatGet, playerToo) && PlayerAPI.CanPlayerAction(PlayerAction.AsyncPlayerChatSend, playerFrom)){
+                            var playerMessage =  ChatAPI.FormatPlayerToPlayerMessage(messagePrefix, formattedMessage, playerToo, playerFrom);
+                            playerToo.sendMessage(ChatAPI.FormatMessage(playerMessage, translateColorCodes, translateHexCodes));
+                            return;
+                        }
+                        playerToo.sendMessage(ChatAPI.FormatMessage(
+                                ChatAPI.FormatPluginToPlayerMessage(messagePrefix, formattedMessage, playerToo),
+                                translateColorCodes, translateHexCodes)
+                        );
                     }
                     case Console -> {
                         var consoleMessage = ChatAPI.FormatConsoleMessage(messagePrefix, storedMessage);

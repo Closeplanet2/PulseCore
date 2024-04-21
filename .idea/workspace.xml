@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0899730-5956-4a52-a16c-88db1dd58f51" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Java/ClassAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Java/ClassAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Loops/PulseLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Loops/PulseLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Loops/TestPulseLoop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop20L.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Loops/PulseLoop20L.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Loops/PulseLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Loops/PulseLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Chat/ChatAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Chat/ChatAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Location/LocationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/Location/LocationAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Entity/EntityDamageByEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Chat/ChatAPI$ChatBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Chat/ChatAPI$ChatBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Location/LocationAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/Location/LocationAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_Common/Events/Player/AsyncPlayerChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pandapulsestudios/pulsecore/_External/WorldEdit/WorldEditAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-pulsecore-1.2.13-a.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-pulsecore-1.2.13-a.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pulsecore-1.2.13-a-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/pulsecore-1.2.13-a-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pulsecore-1.2.13-a-remapped.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/pulsecore-1.2.13-a-remapped.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pulsecore-1.2.13-a.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/pulsecore-1.2.13-a.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +122,12 @@
       <workItem from="1712959590827" duration="23000" />
       <workItem from="1712963286322" duration="3007000" />
       <workItem from="1713031499931" duration="3554000" />
+      <workItem from="1713096308857" duration="4103000" />
+      <workItem from="1713558238490" duration="1204000" />
+      <workItem from="1713619589906" duration="4027000" />
+      <workItem from="1713642537587" duration="269000" />
+      <workItem from="1713651302813" duration="368000" />
+      <workItem from="1713652741110" duration="2542000" />
     </task>
     <servers />
   </component>

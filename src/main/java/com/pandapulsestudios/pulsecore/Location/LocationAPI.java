@@ -49,6 +49,7 @@ public class LocationAPI {
         var data = new ArrayList<PulseLocation>();
         for(var pulseLocationName : PulseCore.customLocations.keySet()){
             var pulseLocation = PulseCore.customLocations.get(pulseLocationName);
+            if(location.getWorld() != pulseLocation.storedLocation().getWorld()) continue;
             var isLocationForEvent = pulseLocation.storedLocation().distance(location) <= (useDistanceForEvent ? pulseLocation.distanceForEvents() : 1);
             if (isLocationForEvent) data.add(pulseLocation);
         }
