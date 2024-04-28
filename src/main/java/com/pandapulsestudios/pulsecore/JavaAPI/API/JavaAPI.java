@@ -1,5 +1,6 @@
 package com.pandapulsestudios.pulsecore.JavaAPI.API;
 
+import com.pandapulsestudios.pulsecore.JavaAPI.Enum.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.JavaAPI.Interface.PulseAutoRegister;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -39,7 +40,8 @@ public class JavaAPI {
         while(entry != null){
             if(!entry.isDirectory() && entry.getName().endsWith(".class") && !entry.getName().contains("$")){
                 var className = entry.getName().replace('/', '.').replace(".class", "");
-                if(className.contains(javaPlugin.getClass().getPackageName()) && !className.contains("com.pandapulsestudios.pulsecore._External")) classNames.add(className);
+                for(var plugin : SoftDependPlugins.values())  if(className.contains(plugin.name())) continue;
+                if(className.contains(javaPlugin.getClass().getPackageName())) classNames.add(className);
             }
             entry = zip.getNextEntry();
         }

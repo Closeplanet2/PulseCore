@@ -3,9 +3,12 @@ package com.pandapulsestudios.pulsecore.ChatAPI.Object;
 import com.pandapulsestudios.pulsecore.ChatAPI.API.MessageAPI;
 import com.pandapulsestudios.pulsecore.ChatAPI.Enum.MessageSymbols;
 import com.pandapulsestudios.pulsecore.ChatAPI.Enum.MessageType;
+import com.pandapulsestudios.pulsecore.JavaAPI.API.PluginAPI;
+import com.pandapulsestudios.pulsecore.JavaAPI.Enum.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.PlayerAPI.API.PlayerActionAPI;
 import com.pandapulsestudios.pulsecore.PlayerAPI.Enum.PlayerAction;
 import com.pandapulsestudios.pulsecore.PulseCore;
+import com.pandapulsestudios.pulsecore.WorldGuard.API.WorldGuardAPI;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -59,6 +62,7 @@ public class ChatBuilderAPI {
                 else if(messageType == MessageType.OP) SendMessageToOP(message, overrideChecks);
                 else if(messageType == MessageType.WORLD) SendMessageToWorld(message, overrideChecks);
                 else if(messageType == MessageType.PERM) SendMessageToPerm(message, overrideChecks);
+                else if(messageType == MessageType.REGION) SendMessageToRegion(message, overrideChecks);
             }
         }
 
@@ -93,6 +97,14 @@ public class ChatBuilderAPI {
         private void SendMessageToPerm(String message, boolean overrideChecks){
             for(var player : Bukkit.getOnlinePlayers()){
                 if(permWorldRegionData.isEmpty() || !player.hasPermission(permWorldRegionData)) continue;
+                SendMessageToPlayer(message, overrideChecks);
+            }
+        }
+
+        private void SendMessageToRegion(String message, boolean overrideChecks){
+            if(!PluginAPI.IsPluginInstalled(PulseCore.PulseCore, SoftDependPlugins.WorldGuard)) return;
+            for(var player : Bukkit.getOnlinePlayers()){
+                if(!WorldGuardAPI.REGION.IsLocationInRegion(player.getWorld(), permWorldRegionData, player.getLocation())) continue;
                 SendMessageToPlayer(message, overrideChecks);
             }
         }
