@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore._Common.VariableTests.JavaUtil;
 
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
-import com.pandapulsestudios.pulsecore.Data.Interface.CustomVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.CustomVariableTest;
 
 import java.util.ArrayList;
 import java.util.List;

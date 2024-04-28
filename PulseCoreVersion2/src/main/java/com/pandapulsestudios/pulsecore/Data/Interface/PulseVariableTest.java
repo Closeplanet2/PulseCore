@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Data.Interface;
+package com.pandapulsestudios.pulsecore.StorageDataAPI.Interface;
 
 import com.pandapulsestudios.pulsecore.Block.Enum.PersistentDataTypeEnum;
 

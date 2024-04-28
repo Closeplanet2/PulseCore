@@ -1,5 +1,7 @@
 name: PulseCore
-version: 1.2.13-a
+version: 2.0.0
 main: com.pandapulsestudios.pulsecore.PulseCore
 authors: [Closeplanet2, PandaPulseStudios]
+depend: [PlaceholderAPI]
+softdepend: [WorldGuard, WorldEdit]
 api-version: 1.20

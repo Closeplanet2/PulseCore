@@ -11,7 +11,7 @@ import com.pandapulsestudios.pulsecore.Movement.TeleportObject;
 import com.pandapulsestudios.pulsecore.NBT.PulseNBTListener;
 import com.pandapulsestudios.pulsecore.Player.HandlePlayerAction;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 import org.bukkit.block.Block;
 import org.bukkit.plugin.java.JavaPlugin;
 

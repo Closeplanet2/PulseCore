@@ -3,7 +3,7 @@ package com.pandapulsestudios.pulsecore.Block.API;
 import com.pandapulsestudios.pulsecore.Block.Enum.PersistentDataTypeEnum;
 import com.pandapulsestudios.pulsecore.Events.CustomEvents.PersistentDataAddedEvent;
 import com.pandapulsestudios.pulsecore.Events.CustomEvents.PersistentDataRemovedEvent;
-import com.pandapulsestudios.pulsecore.Data.Interface.VariableAPI;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.VariableAPI;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.block.TileState;

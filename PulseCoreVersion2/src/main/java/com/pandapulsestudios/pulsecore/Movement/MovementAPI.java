@@ -1,6 +1,6 @@
 package com.pandapulsestudios.pulsecore.Movement;
 
-import com.pandapulsestudios.pulsecore.Data.API.UUIDDataAPI;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.API.UUIDDataAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAPI;
 import com.pandapulsestudios.pulsecore.Player.PlayerAction;
 import org.bukkit.Location;

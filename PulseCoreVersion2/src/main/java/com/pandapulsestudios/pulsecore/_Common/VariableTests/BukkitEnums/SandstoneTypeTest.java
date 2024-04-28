@@ -2,7 +2,7 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 
 import com.pandapulsestudios.pulsecore.Block.Enum.PersistentDataTypeEnum;
 import com.pandapulsestudios.pulsecore.Class.PulseAutoRegister;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 import org.bukkit.SandstoneType;
 
 import java.util.ArrayList;

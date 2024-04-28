@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Data.Enum;
+package com.pandapulsestudios.pulsecore.StorageDataAPI.Enum;
 
 import com.google.common.primitives.Floats;
 import com.google.common.primitives.Shorts;

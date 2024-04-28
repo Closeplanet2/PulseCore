@@ -1,7 +1,7 @@
-package com.pandapulsestudios.pulsecore.Data.API;
+package com.pandapulsestudios.pulsecore.StorageDataAPI.API;
 
 import com.pandapulsestudios.pulsecore.PulseCore;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 
 import java.util.ArrayList;
 import java.util.List;

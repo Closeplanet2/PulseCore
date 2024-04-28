@@ -2,7 +2,7 @@ package com.pandapulsestudios.pulsecore._Common.VariableTests.JavaLang;
 
 import com.pandapulsestudios.pulsecore.Block.Enum.PersistentDataTypeEnum;
 import com.pandapulsestudios.pulsecore.Class.PulseAutoRegister;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 
 import java.util.ArrayList;
 import java.util.List;

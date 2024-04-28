@@ -1,6 +1,6 @@
 package com.pandapulsestudios.pulsecore.Class;
 
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.plugin.java.JavaPlugin;
 

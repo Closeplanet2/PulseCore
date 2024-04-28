@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore._Common.VariableTests.BukkitEnums;
 
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
-import com.pandapulsestudios.pulsecore.Data.Interface.CustomVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.CustomVariableTest;
 import org.bukkit.CropState;
 
 import java.util.ArrayList;

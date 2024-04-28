@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.Data.API;
+package com.pandapulsestudios.pulsecore.StorageDataAPI.API;
 
 import com.pandapulsestudios.pulsecore.Events.CustomEvents.ServerDataAddedEvent;
 import com.pandapulsestudios.pulsecore.Events.CustomEvents.ServerDataRemovedEvent;

@@ -1,6 +1,6 @@
-package com.pandapulsestudios.pulsecore.Data;
+package com.pandapulsestudios.pulsecore.StorageDataAPI;
 
-import com.pandapulsestudios.pulsecore.Data.Enum.DataType;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Enum.DataType;
 
 import java.util.*;
 

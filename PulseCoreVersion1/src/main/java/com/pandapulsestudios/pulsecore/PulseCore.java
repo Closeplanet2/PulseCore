@@ -1,7 +1,7 @@
 package com.pandapulsestudios.pulsecore;
 
 import com.pandapulsestudios.pulsecore.Block.Interface.PersistentDataCallbacks;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.Enchantment.PulseEnchantment;
 import com.pandapulsestudios.pulsecore.Events.EventWrapper;
 import com.pandapulsestudios.pulsecore.Items.PulseItemStack;

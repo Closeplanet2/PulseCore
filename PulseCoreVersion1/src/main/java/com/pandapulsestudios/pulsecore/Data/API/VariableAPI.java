@@ -1,8 +1,8 @@
-package com.pandapulsestudios.pulsecore.Data.API;
+package com.pandapulsestudios.pulsecore.StorageDataAPI.API;
 
 import com.pandapulsestudios.pulsecore.Chat.ChatAPI;
 import com.pandapulsestudios.pulsecore.Chat.MessageType;
-import com.pandapulsestudios.pulsecore.Data.Interface.PulseVariableTest;
+import com.pandapulsestudios.pulsecore.StorageDataAPI.Interface.PulseVariableTest;
 import com.pandapulsestudios.pulsecore.PulseCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
