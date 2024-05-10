@@ -132,7 +132,8 @@ public class InventoryManager {
             if(!smartInventory.getBottomClickable()){
                 if (clickedInventory == p.getOpenInventory().getBottomInventory()) {
                     if (e.getAction() == InventoryAction.COLLECT_TO_CURSOR || e.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
-                        e.setCancelled(true);
+                        int slot = e.getSlot();
+                        if(!smartInventory.getClickableTiles().contains(slot)) e.setCancelled(true);
                         return;
                     }
 
@@ -177,17 +178,17 @@ public class InventoryManager {
             if (!inventories.containsKey(p.getUniqueId()))
                 return;
 
-            SmartInventory inv = inventories.get(p.getUniqueId());
+            SmartInventory smartInventory = inventories.get(p.getUniqueId());
 
             for (int slot : e.getRawSlots()) {
                 if (slot >= p.getOpenInventory().getTopInventory().getSize())
                     continue;
 
-                e.setCancelled(true);
+                if(!smartInventory.getClickableTiles().contains(slot)) e.setCancelled(true);
                 break;
             }
 
-            inv.getListeners().stream()
+            smartInventory.getListeners().stream()
                     .filter(listener -> listener.getType() == InventoryDragEvent.class)
                     .forEach(listener -> ((InventoryListener<InventoryDragEvent>) listener).accept(e));
         }
@@ -219,7 +220,7 @@ public class InventoryManager {
                     .filter(listener -> listener.getType() == InventoryCloseEvent.class)
                     .forEach(listener -> ((InventoryListener<InventoryCloseEvent>) listener).accept(e));
 
-            inv.getProvider().closeinventory(p, contents.get(p.getUniqueId()));
+            inv.getProvider().closeinventory(p, contents.get(p.getUniqueId()), e.getView().getTopInventory());
 
             if (inv.isCloseable()) {
                 e.getInventory().clear();

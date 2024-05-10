@@ -23,7 +23,7 @@ public class Hologram {
         var currentLocation = startLocation.clone().add(0, armorStands.size() * gapBetweenLines, 0);
         if(currentLocation.getWorld() == null) return;
         var customLine = MessageAPI.FormatMessage(line, true, true, null);
-        armorStands.add(ArmorStandAPI.SpawnArmorStand(currentLocation, isVisible, customNameVisible, customLine, false, true));
+        armorStands.add(ArmorStandAPI.SpawnArmorStand(currentLocation, isVisible, customNameVisible, customLine, false, useGravity));
     }
 
     public void EditLine(int index, String newLine){
@@ -40,6 +40,10 @@ public class Hologram {
     public void DeleteHologram(){
         for(var i = 0; i < armorStands.size(); i++) RemoveLine(i);
         PulseCore.Holograms.remove(hologramName);
+    }
+
+    public void OnDisable(){
+        for(var i = 0; i < armorStands.size(); i++) RemoveLine(i);
     }
 
     public boolean IsArmorStand(ArmorStand armorStand){

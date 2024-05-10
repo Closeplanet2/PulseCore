@@ -1,5 +1,6 @@
 package com.pandapulsestudios.pulsecore.ScoreboardAPI.Object;
 
+import com.pandapulsestudios.pulsecore.ChatAPI.API.MessageAPI;
 import org.bukkit.scoreboard.Criteria;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Scoreboard;
@@ -38,7 +39,7 @@ public class PulseScoreboardLines {
         private HashMap<Integer, PulseScoreboardData> scoreboardLines = new HashMap<>();
 
         public PulseScoreboardLinesBuilder scoreboardTitle(String scoreboardTitle){
-            this.scoreboardTitle = scoreboardTitle;
+            this.scoreboardTitle = MessageAPI.FormatMessage(scoreboardTitle, true, true, null);
             return this;
         }
 

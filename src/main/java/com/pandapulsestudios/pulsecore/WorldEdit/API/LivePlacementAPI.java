@@ -1,6 +1,6 @@
-package com.pandapulsestudios.pulsecore.BlockAPI.API;
+package com.pandapulsestudios.pulsecore.WorldEdit.API;
 
-import com.pandapulsestudios.pulsecore.BlockAPI.Object.LivePlacement;
+import com.pandapulsestudios.pulsecore.WorldEdit.Object.LivePlacement;
 import com.pandapulsestudios.pulsecore.PulseCore;
 
 import java.util.UUID;

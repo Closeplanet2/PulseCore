@@ -24,8 +24,4 @@ public class PlayerInteractAtEntity implements Listener {
         HologramAPI.CheckForEventClick(event);
     }
 
-    @EventHandler
-    public void onHologramClick(RightClickHologramEvent event){
-        event.getPlayer().sendMessage(event.getHologram().getClass().getSimpleName());
-    }
 }

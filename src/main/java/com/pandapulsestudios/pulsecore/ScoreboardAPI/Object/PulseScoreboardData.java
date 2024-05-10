@@ -1,5 +1,6 @@
 package com.pandapulsestudios.pulsecore.ScoreboardAPI.Object;
 
+import com.pandapulsestudios.pulsecore.ChatAPI.API.MessageAPI;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Scoreboard;
 
@@ -7,7 +8,7 @@ public class PulseScoreboardData {
     public String text = "";
 
     public PulseScoreboardData(String text){
-        this.text = text;
+        this.text = MessageAPI.FormatMessage(text, true, true, null);
     }
 
     public void CreateLine(Scoreboard scoreboard, int lineNumber, int teamCount){

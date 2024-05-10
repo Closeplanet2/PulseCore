@@ -1,7 +1,9 @@
 package com.pandapulsestudios.pulsecore.JavaAPI.API;
 
+import com.pandapulsestudios.pulsecore.ChatAPI.Object.ChatBuilderAPI;
 import com.pandapulsestudios.pulsecore.JavaAPI.Enum.SoftDependPlugins;
 import com.pandapulsestudios.pulsecore.JavaAPI.Interface.PulseAutoRegister;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -40,8 +42,14 @@ public class JavaAPI {
         while(entry != null){
             if(!entry.isDirectory() && entry.getName().endsWith(".class") && !entry.getName().contains("$")){
                 var className = entry.getName().replace('/', '.').replace(".class", "");
-                for(var plugin : SoftDependPlugins.values())  if(className.contains(plugin.name())) continue;
-                if(className.contains(javaPlugin.getClass().getPackageName())) classNames.add(className);
+                var found = false;
+                for(var splugin : SoftDependPlugins.values()){
+                    if (className.contains(splugin.name())) {
+                        found = true;
+                        break;
+                    }
+                }
+                if(className.contains(javaPlugin.getClass().getPackageName()) && !found)  classNames.add(className);
             }
             entry = zip.getNextEntry();
         }

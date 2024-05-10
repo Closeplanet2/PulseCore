@@ -54,6 +54,7 @@ com\pandapulsestudios\pulsecore\ActionBarAPI\Object\ActionBarData.class
 com\pandapulsestudios\pulsecore\PlayerAPI\API\PlayerAPI.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\SlotIterator$1.class
 com\pandapulsestudios\pulsecore\HeadAPI\API\HeadAPI.class
+com\pandapulsestudios\pulsecore\WorldEdit\API\LivePlacementAPI.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\InventoryManager$InvListener.class
 com\pandapulsestudios\pulsecore\BlockMaskAPI\Objects\BlockMask.class
 com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockPlace.class
@@ -96,6 +97,7 @@ com\pandapulsestudios\pulsecore\_External\SmartInvs\opener\SpecialInventoryOpene
 com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityRegainHealth.class
 com\pandapulsestudios\pulsecore\NBTAPI\Enums\PersistentDataTypes.class
 com\pandapulsestudios\pulsecore\VariableAPI\API\VariableAPI.class
+com\pandapulsestudios\pulsecore\_Common\Events\InventoryOpen.class
 com\pandapulsestudios\pulsecore\LoopAPI\Interface\PulseLoop.class
 com\pandapulsestudios\pulsecore\TitleAPI\API\TitleAPI.class
 com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockDamage.class
@@ -108,7 +110,6 @@ com\pandapulsestudios\pulsecore\BlockAPI\API\TempBlockDataAPI.class
 com\pandapulsestudios\pulsecore\CamAPI\Events\CamPathStartEvent.class
 com\pandapulsestudios\pulsecore\_Common\Events\Block\BlockIgnite.class
 com\pandapulsestudios\pulsecore\StorageDataAPI\API\ServerStorageAPI.class
-com\pandapulsestudios\pulsecore\TempListener.class
 com\pandapulsestudios\pulsecore\_Common\Events\Entity\EntityDamageByEntity.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\SlotIterator$Type.class
 com\pandapulsestudios\pulsecore\_Common\Loops\PulseLoop20L.class
@@ -140,13 +141,13 @@ com\pandapulsestudios\pulsecore\EnchantmentAPI\EnchantWrapper.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryContents.class
 com\pandapulsestudios\pulsecore\StorageDataAPI\Event\UUIDDataGetEvent.class
 com\pandapulsestudios\pulsecore\EntityAPI\API\ItemDisplayAPI.class
-com\pandapulsestudios\pulsecore\BlockAPI\Object\LivePlacement.class
 com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerGameModeChange.class
 com\pandapulsestudios\pulsecore\CamAPI\API\CamPathAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\FluidCollisionModeTest.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\InventoryContents$Impl.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\DyeColorTest.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\content\SlotPos.class
+com\pandapulsestudios\pulsecore\WorldEdit\Object\LivePlacement.class
 com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerFish.class
 com\pandapulsestudios\pulsecore\EventsAPI\Interface\PulseCoreEvents.class
 com\pandapulsestudios\pulsecore\VanishAPI\VanishAPI.class
@@ -245,7 +246,6 @@ com\pandapulsestudios\pulsecore\ScoreboardAPI\Object\PulseScoreboardLines.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\SoundTest.class
 com\pandapulsestudios\pulsecore\_External\SmartInvs\InventoryManager.class
 com\pandapulsestudios\pulsecore\_Common\Events\Player\PlayerInteract.class
-com\pandapulsestudios\pulsecore\BlockAPI\API\LivePlacementAPI.class
 com\pandapulsestudios\pulsecore\LocationAPI\API\LocationLimiterAPI.class
 com\pandapulsestudios\pulsecore\_Common\VariableTests\BukkitEnums\WarningWarningTest.class
 com\pandapulsestudios\pulsecore\BlockAPI\API\BlockAPI.class

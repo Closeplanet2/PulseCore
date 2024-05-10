@@ -3,7 +3,7 @@ package com.pandapulsestudios.pulsecore;
 import com.pandapulsestudios.pulsecore.ActionBarAPI.Object.PulseActionBar;
 import com.pandapulsestudios.pulsecore.AdvancementAPI.Object.Advancement;
 import com.pandapulsestudios.pulsecore.BlockAPI.Interface.PersistentDataCallbacks;
-import com.pandapulsestudios.pulsecore.BlockAPI.Object.LivePlacement;
+import com.pandapulsestudios.pulsecore.WorldEdit.Object.LivePlacement;
 import com.pandapulsestudios.pulsecore.BlockMaskAPI.Objects.BlockMask;
 import com.pandapulsestudios.pulsecore.BossBarAPI.Object.PulseBossBar;
 import com.pandapulsestudios.pulsecore.BossBarAPI.Object.PulseEntityBossBar;
@@ -34,6 +34,7 @@ import com.pandapulsestudios.pulsecore._External.SmartInvs.SmartInvsPlugin;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.conversations.Conversation;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
@@ -77,6 +78,7 @@ public final class PulseCore extends JavaPlugin {
     public static LinkedHashMap<String, PersistentDataCallbacks> PersistentDataCallbacks = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseWorld> PulseWorlds = new LinkedHashMap<>();
     public static LinkedHashMap<String, PulseRecipe> PulseRecipes = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, InventoryOpenEvent> LastInventoryOpenEvent = new LinkedHashMap<>();
     public static ArrayList<TeleportObject> TeleportObjects = new ArrayList<>();
     public static ArrayList<PulseTimer> PulseTimers = new ArrayList<>();
     public static ArrayList<PulseStopWatch> PulseStopWatchs = new ArrayList<>();
@@ -98,5 +100,6 @@ public final class PulseCore extends JavaPlugin {
         for(var livePlacement : LivePlacements.values()) livePlacement.CancelRunnable();
         for(var pulseTimer : PulseTimers) pulseTimer.cancelTimer();
         for(var pulseStopwatch : PulseStopWatchs) pulseStopwatch.StopTimer();
+        for(var hologram : Holograms.values()) hologram.OnDisable();
     }
 }

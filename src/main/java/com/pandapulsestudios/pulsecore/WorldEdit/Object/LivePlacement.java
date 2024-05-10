@@ -1,4 +1,4 @@
-package com.pandapulsestudios.pulsecore.BlockAPI.Object;
+package com.pandapulsestudios.pulsecore.WorldEdit.Object;
 
 import com.pandapulsestudios.pulsecore.JavaAPI.API.PluginAPI;
 import com.pandapulsestudios.pulsecore.JavaAPI.Enum.SoftDependPlugins;
